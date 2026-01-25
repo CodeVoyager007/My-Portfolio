@@ -35,14 +35,9 @@ export default function About() {
       items: [],
     },
     {
-      title: about.work.title,
-      display: about.work.display,
-      items: about.work.experiences.map((experience) => experience.company),
-    },
-    {
-      title: about.studies.title,
-      display: about.studies.display,
-      items: about.studies.institutions.map((institution) => institution.name),
+      title: about.highlights.title,
+      display: about.highlights.display,
+      items: about.highlights.sections.map((s: any) => s.title),
     },
     {
       title: about.technical.title,
@@ -131,7 +126,6 @@ export default function About() {
                       <Button
                         key={item.name}
                         href={item.link}
-                        label={item.name}
                         size="s"
                         weight="default"
                         variant="secondary"
@@ -151,83 +145,26 @@ export default function About() {
             </Column>
           )}
 
-          {about.work.display && (
+          {about.highlights.display && (
             <>
-              <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
-                {about.work.title}
+              <Heading as="h2" id={about.highlights.title} variant="display-strong-s" marginBottom="m">
+                {about.highlights.title}
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
-                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
-                      <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company}
-                      </Text>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
-                        {experience.timeframe}
-                      </Text>
-                    </Flex>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
-                      {experience.role}
+                {about.highlights.sections.map((section: any, index: number) => (
+                  <Column key={`${section.title}-${index}`} fillWidth gap="4">
+                    <Text id={section.title} variant="heading-strong-l">
+                      {section.title}
                     </Text>
-                    <Column gap="m">
-                      {experience.achievements.map((achievement, i) => (
-                        <Text key={i} variant="body-default-m">
-                          {achievement}
-                        </Text>
-                      ))}
-                    </Column>
-                    {experience.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
-                        {experience.images.map((image, index) => (
-                          <Flex
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            //@ts-ignore
-                            minWidth={image.width}
-                            //@ts-ignore
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              //@ts-ignore
-                              sizes={image.width.toString()}
-                              //@ts-ignore
-                              alt={image.alt}
-                              //@ts-ignore
-                              src={image.src}
-                            />
-                          </Flex>
-                        ))}
-                      </Flex>
-                    )}
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {section.description}
+                    </Text>
                   </Column>
                 ))}
               </Column>
             </>
           )}
 
-          {about.studies.display && (
-            <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
-                {about.studies.title}
-              </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
-                {about.studies.institutions.map((institution, index) => (
-                  <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Text id={institution.name} variant="heading-strong-l">
-                      {institution.name}
-                    </Text>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
-                      {institution.description}
-                    </Text>
-                  </Column>
-                ))}
-              </Column>
-            </>
-          )}
 
           {about.technical.display && (
             <>

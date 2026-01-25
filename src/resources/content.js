@@ -146,13 +146,13 @@ const about = {
         name: "Higher Secondary Education",
         description: <>Currently in HSC Part II (Pre-Engineering) | HSC Part I completed with strong academic performance</>,
       },
-      {
+      { 
         name: "Secondary School Certificate",
         description: <>Completed SSC with Higher A Grade | Accelerated education - completed at age 13</>,
       },
       {
         name: "GIAIC",
-        description: <>Currently in Quarter 4 of AI, Web3 & Metaverse Development Course (Started Feb 2023)</>,
+        description: <>Currently in Quarter 4 of AI, Web3 & Metaverse Development Course (Started Feb 2024)</>,
       },
       {
         name: "Harvard CS50",
@@ -179,6 +179,36 @@ const about = {
         </>,
       }
     ],
+  },
+  highlights: {
+    display: true,
+    title: "Highlights",
+    sections: [
+      {
+        title: "What I'm focusing on",
+        description: <>
+          Building with Agentic AI patterns, tool-use orchestration, and production-grade evaluations. Recently exploring OpenRouter, LiteLLM, and streaming UIs.
+        </>
+      },
+      {
+        title: "How I work",
+        description: <>
+          Bias toward simple interfaces, fast feedback loops, and writing-first problem solving. Preferred stack: Next.js, TypeScript, Framer Motion.
+        </>
+      },
+      {
+        title: "Toolbox",
+        description: <>
+          Daily drivers include VS Code, GitHub, Postman, Vercel, and Canva. Comfortable shipping on short cycles and iterating with user feedback.
+        </>
+      },
+      {
+        title: "Outside of code",
+        description: <>
+          I enjoy speaking, puzzle challenges (like CS50x), and designing minimal, dark-themed UI concepts.
+        </>
+      }
+    ]
   },
   technical: {
     display: true,
@@ -227,117 +257,68 @@ const blog = {
 };
 
 const work = {
-  path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Development projects by ${person.name}`,
-  projects: [
-    {
-      slug: "course-search-engine",
-      title: "Course Search Engine",
-      summary: "A comprehensive search engine for programming courses and tutorials, featuring content from Harvard CS50, FreeCodeCamp, and other platforms.",
-      images: [
-        "/images/projects/course-search-engine.png",
-        "/images/projects/course-search-engine2.png",
-        "/images/projects/course-search-engine3.png"
-      ],
-      link: "https://courses-search-engine-by-ayesha-mughal.vercel.app/",
-      repo: "https://github.com/CodeVoyager007/courses-search-engine",
-      publishedAt: "2024-03-10",
-    },
-    {
-      slug: "quiz-app",
-      title: "Interactive Quiz App",
-      summary: "A dynamic quiz application with multiple categories including General Knowledge, Computers, Sports, Geography, History, and Science.",
-      images: [
-        "/images/projects/quiz-app1.png",
-        "/images/projects/quiz-app2.png",
-        "/images/projects/quiz-app-3.png"
-      ],
-      link: "https://quiz-app-blue-seven.vercel.app/",
-      repo: "https://github.com/CodeVoyager007/quiz-app",
-      publishedAt: "2024-03-09",
-    },
-    {
-      slug: "weather-widget",
-      title: "Weather Widget",
-      summary: "A sleek weather application providing real-time weather information with a clean, minimalist interface.",
-      images: [
-        "/images/projects/weather-widget1.png",
-        "/images/projects/weather-widget2.png",
-        "/images/projects/weather-widget3.png"
-      ],
-      link: "https://weather-widget-app-alpha.vercel.app/",
-      repo: "https://github.com/CodeVoyager007/weather-widget",
-      publishedAt: "2024-03-08",
-    },
-    {
-      slug: "github-profile-viewer",
-      title: "GitHub Profile Viewer",
-      summary: "An elegant GitHub profile search tool that displays user information, repositories, and statistics.",
-      images: [
-        "/images/projects/github-profile-viewer.png",
-        "/images/projects/github-profile-viewer2.png",
-        "/images/projects/github-profile-viewer3.png"
-      ],
-      link: "https://github-profile-search-app-sage.vercel.app/",
-      repo: "https://github.com/CodeVoyager007/github-profile-search",
-      publishedAt: "2024-03-07",
-    },
-    {
-      slug: "ai-blog-generator",
-      title: "AI Blog Generator",
-      summary: "An AI-powered blog content generator using Streamlit and OpenAI's GPT model.",
-      images: [
-        "/images/projects/syntax-crafter1.png",
-        "/images/projects/syntax-crafter2.png",
-        "/images/projects/syntax-crafter3.png"
-      ],
-      link: "https://blog-generator-by-ayesha-mughal.streamlit.app/",
-      repo: "https://github.com/CodeVoyager007/blog-generator",
-      publishedAt: "2024-03-06",
-    },
-    {
-      slug: "eid-greetings",
-      title: "Eid Greetings Generator",
-      summary: "A creative Eid greeting card generator that creates personalized festive messages.",
-      images: [
-        "/images/projects/eid1.png",
-        "/images/projects/eid2.png",
-        "/images/projects/eid3.png"
-      ],
-      link: "https://eid-greetings-by-ayesha-mughal.streamlit.app/",
-      repo: "https://github.com/CodeVoyager007/eid-greetings",
-      publishedAt: "2024-03-05",
-    },
-    {
-      slug: "codementor-ai",
-      title: "CodeMentor AI",
-      summary: "An AI-powered coding assistant that helps developers with code explanations and debugging.",
-      images: [
-        "/images/projects/code-mentor.png",
-        "/images/projects/code-mentor2.png",
-        "/images/projects/code-mentor3.png"
-      ],
-      link: "https://codementor-by-ayesha-mughal.streamlit.app/",
-      repo: "https://github.com/CodeVoyager007/codementor",
-      publishedAt: "2024-03-04",
-    },
-    {
-      slug: "secure-data-encryption",
-      title: "Secure Data Encryption",
-      summary: "A Python-based tool for secure data encryption and decryption with multiple algorithms.",
-      images: [
-        "/images/projects/secure-data.png",
-        "/images/projects/secure-data2.png",
-        "/images/projects/secure-data3.png"
-      ],
-      link: "https://pythonprojects-secure-data-encryptions.streamlit.app/",
-      repo: "https://github.com/CodeVoyager007/secure-data-encryption",
-      publishedAt: "2024-03-03",
-    }
-  ]
-};
+    display: true,
+    path: "/work",
+    label: "Work",
+    title: "Projects",
+    description: "My latest work",
+    projects: [
+      {
+        slug: "study-forge-ai",
+        title: "StudyForge AI",
+        summary: "An intelligent study platform that transforms topics into personalized study materials including MCQs, flashcards, and summaries using advanced AI.",
+        tech: ["Next.js", "OpenAI API", "Tailwind CSS", "React"],
+        link: "https://study-forge-ai.vercel.app/",
+        repo: "https://github.com/CodeVoyager007/study-forge-ai",
+        publishedAt: "2024-04-15",
+      },
+      {
+        slug: "prompt-vault",
+        title: "PromptVault",
+        summary: "A community-driven marketplace for discovering and sharing high-quality AI prompts for coding, writing, and business automation.",
+        tech: ["Next.js", "Supabase", "Tailwind CSS", "Framer Motion"],
+        link: "https://prompt-vaulet-get-200-plus-prompts.vercel.app/",
+        repo: "https://github.com/CodeVoyager007/prompt-vault",
+        publishedAt: "2024-04-10",
+      },
+      {
+        slug: "luxe-interiors",
+        title: "Luxe Interiors",
+        summary: "A premium interior design portfolio website featuring modern aesthetics, smooth transitions, and a curated gallery of living spaces.",
+        tech: ["React", "Framer Motion", "Styled Components", "Vite"],
+        link: "https://interior-design-website-indol-ten.vercel.app/",
+        repo: "https://github.com/CodeVoyager007/interior-design-website",
+        publishedAt: "2024-04-05",
+      },
+      {
+        slug: "sugar-bliss-bakery",
+        title: "Sugar Bliss Bakery",
+        summary: "A delightful e-commerce frontend for a boutique bakery, featuring product galleries, special order forms, and nutritional information display.",
+        tech: ["React", "Tailwind CSS", "Vercel"],
+        link: "https://bakery-website-by-ayesha-mughal.vercel.app/",
+        repo: "https://github.com/CodeVoyager007/bakery-website",
+        publishedAt: "2024-04-01",
+      },
+      {
+        slug: "course-search-engine",
+        title: "Course Search Engine",
+        summary: "A comprehensive search engine for programming courses aggregation, featuring filtering, search, and detailed metadata for self-learners.",
+        tech: ["Next.js", "API Integration", "Tailwind CSS"],
+        link: "https://courses-search-engine-by-ayesha-mughal.vercel.app/",
+        repo: "https://github.com/CodeVoyager007/courses-search-engine",
+        publishedAt: "2024-03-10",
+      },
+      {
+        slug: "github-profile-viewer",
+        title: "GitHub Profile Viewer",
+        summary: "An elegant analytics tool that visualizes GitHub user data, repositories, and activity using the GitHub public API.",
+        tech: ["React", "GitHub API", "Chart.js", "CSS Modules"],
+        link: "https://github-profile-search-app-sage.vercel.app/",
+        repo: "https://github.com/CodeVoyager007/github-profile-search",
+        publishedAt: "2024-03-07",
+      },
+    ]
+  }
 
 const gallery = {
   path: "/gallery",
@@ -414,21 +395,22 @@ const journey = {
   description: "A timeline of my learning and achievements.",
   milestones: [
     {
-      date: "2023 - Present",
+      date: "2024 - Present",
       title: "GIAIC",
-      description: "Currently in Quarter 4 of AI, Web3 & Metaverse Development Course (Started Feb 2023)",
+      description: "Currently in Quarter 4 of AI, Web3 & Metaverse Development Course , studying Prompt and context engineering and LLM development",
       achievements: [
         "Progressing through AI, Web3 & Metaverse Development Course",
         "Quarter 4 completion in progress",
-        "Learning advanced AI and Web3 technologies"
+        "Learning advanced AI and Web3 technologies",
+        "Studying Prompt and context engineering and LLM development"
       ],
-      skills: ["AI", "Web3", "Metaverse Development", "Blockchain"],
+      skills: ["AI", "Web3", "Metaverse Development", "Blockchain", "Prompt and context engineering", "LLM development", "Agentic AI"],
       type: "learning"
     },
     {
-      date: "2023 - Present",
+      date: "2023 - 2025",
       title: "Higher Secondary Education",
-      description: "Currently in HSC Part II (Computer Science/General Science) | HSC Part I completed with strong academic performance",
+      description: "Completed HSC in Computer science with strong academic performance",
       achievements: [
         "Strong academic performance in HSC Part I",
         "Currently pursuing Computer Science track",
@@ -436,7 +418,7 @@ const journey = {
         "HSC Part II given, waiting for results"
       ],
       skills: ["Computer Science", "Programming", "Mathematics", "Physics"],
-      type: "learning"
+      type: "Finished"
     },
     {
       date: "July 2025 - Present",
