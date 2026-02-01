@@ -171,42 +171,6 @@ const about = {
         </>,
       },
       {
-        name: "Technical Certifications",
-        description: <>
-          - CS50&apos;s Introduction to AI with Python<br/>
-          - freeCodeCamp Responsive Web Design<br/>
-          - Great Learning: JavaScript<br/>
-          - Web Development Certificate<br/>
-          - CS50x Puzzle Day 2024
-        </>,
-        images: [
-          {
-            src: "/certificates/javascript.jpg",
-            alt: "Great Learning JavaScript Certificate",
-            width: 200,
-            height: 140,
-          },
-          {
-            src: "/certificates/freecodecamp.png",
-            alt: "freeCodeCamp Certificate",
-            width: 200,
-            height: 140,
-          },
-          {
-            src: "/certificates/kodeative.png",
-            alt: "Kodeative Certificate",
-            width: 200,
-            height: 140,
-          },
-          {
-            src: "/certificates/puzzel day.png",
-            alt: "CS50x Puzzle Day Certificate",
-            width: 200,
-            height: 140,
-          },
-        ],
-      },
-      {
         name: "Additional Achievements",
         description: <>
           - School&apos;s primary speaker for events and ceremonies<br/>
@@ -267,6 +231,38 @@ const about = {
       },
     ],
   },
+};
+
+const certifications = {
+  display: true,
+  title: "Certifications",
+  description: "A collection of my professional certifications and achievements.",
+  images: [
+    {
+      src: "/certificates/javascript.jpg",
+      alt: "Great Learning JavaScript Certificate",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/freecodecamp.png",
+      alt: "freeCodeCamp Certificate",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/kodeative.png",
+      alt: "Kodeative Certificate",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/puzzel day.png",
+      alt: "CS50x Puzzle Day Certificate",
+      width: 200,
+      height: 140,
+    },
+  ],
 };
 
 const blog = {
@@ -558,4 +554,4 @@ const journey = {
   ]
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery, display, routes, journey };
+export { person, social, newsletter, home, about, blog, work, gallery, display, routes, journey, certifications };

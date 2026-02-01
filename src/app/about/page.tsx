@@ -12,7 +12,7 @@ import {
   Meta,
   Schema
 } from "@once-ui-system/core";
-import { baseURL, about, person, social } from "@/resources";
+import { baseURL, about, person, social, certifications } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
@@ -42,7 +42,12 @@ export default function About() {
     {
       title: about.studies.title,
       display: about.studies.display,
-      items: about.studies.institutions.map((institution) => institution.name),
+      items: about.studies.institutions.map((institution: any) => institution.name),
+    },
+    {
+      title: certifications.title,
+      display: certifications.display,
+      items: [],
     },
     {
       title: about.technical.title,
@@ -184,28 +189,43 @@ export default function About() {
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {institution.description}
                     </Text>
-                    {institution.images && institution.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" gap="12" wrap>
-                        {institution.images.map((image: any, index: number) => (
-                          <Flex
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              src={image.src}
-                              alt={image.alt}
-                            />
-                          </Flex>
-                        ))}
-                      </Flex>
-                    )}
                   </Column>
                 ))}
+              </Column>
+            </>
+          )}
+
+          {certifications.display && (
+            <>
+              <Heading as="h2" id={certifications.title} variant="display-strong-s" marginBottom="m">
+                {certifications.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                <Text variant="body-default-m" onBackground="neutral-weak">
+                  {certifications.description}
+                </Text>
+                <div className="responsive-gallery">
+                  {certifications.images.map((image, index) => (
+                    <Flex
+                      key={index}
+                      border="neutral-medium"
+                      radius="m"
+                      direction="column"
+                      padding="s"
+                      background="surface"
+                    >
+                      <Media
+                        radius="m"
+                        src={image.src}
+                        alt={image.alt}
+                        style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+                      />
+                      <Text variant="body-default-s" align="center" paddingTop="xs">
+                        {image.alt}
+                      </Text>
+                    </Flex>
+                  ))}
+                </div>
               </Column>
             </>
           )}

@@ -9,7 +9,8 @@ export {
   gallery,
   display,
   routes,
-  journey
+  journey,
+  certifications
 } from "./content";
 
 export { protectedRoutes, baseURL, fonts, style, meta, schema, sameAs, effects, dataStyle } from "./portfolio.config";
