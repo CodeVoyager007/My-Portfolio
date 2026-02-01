@@ -339,3 +339,30 @@
     color: #1a1a1a;
   }
 } 
+.main-content-layout {
+  padding-left: var(--static-space-24);
+  padding-right: var(--static-space-24);
+}
+
+@media (max-width: 1024px) {
+  .main-content-layout {
+    padding-left: var(--static-space-16);
+    padding-right: var(--static-space-16);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content-layout {
+    padding-left: var(--static-space-12);
+    padding-right: var(--static-space-12);
+    padding-bottom: calc(var(--static-space-24) + 80px);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content-layout {
+    padding-left: var(--static-space-8);
+    padding-right: var(--static-space-8);
+    padding-bottom: calc(var(--static-space-16) + 80px);
+  }
+}

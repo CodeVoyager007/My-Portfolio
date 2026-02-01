@@ -152,24 +152,7 @@ export default async function RootLayout({
               padding="l"
               horizontal="center"
               flex={1}
-              style={{
-                paddingLeft: 'var(--static-space-24)',
-                paddingRight: 'var(--static-space-24)',
-                '@media (max-width: 1024px)': {
-                  paddingLeft: 'var(--static-space-16)',
-                  paddingRight: 'var(--static-space-16)',
-                },
-                '@media (max-width: 768px)': {
-                  paddingLeft: 'var(--static-space-12)',
-                  paddingRight: 'var(--static-space-12)',
-                  paddingBottom: 'calc(var(--static-space-24) + 80px)', // Add space for fixed nav
-                },
-                '@media (max-width: 480px)': {
-                  paddingLeft: 'var(--static-space-8)',
-                  paddingRight: 'var(--static-space-8)',
-                  paddingBottom: 'calc(var(--static-space-16) + 80px)', // Add space for fixed nav
-                }
-              }}
+              className="main-content-layout"
             >
               <Flex horizontal="center" fillWidth minHeight="0" style={{ maxWidth: '100%' }}>
                   {children}

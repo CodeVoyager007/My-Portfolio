@@ -65,3 +65,49 @@
         visibility: visible !important;
     }
 }
+.locationContainer {
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.navWrapper {
+    @media (max-width: 768px) {
+        justify-content: center;
+        flex: 1;
+    }
+}
+
+.navBar {
+    @media (max-width: 768px) {
+        background: var(--surface-background);
+        border: 1px solid var(--neutral-alpha-weak);
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 8px;
+        gap: 4px;
+    }
+}
+
+.navItems {
+    @media (max-width: 768px) {
+        gap: 8px;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+}
+
+.mobileIcon {
+    @media (max-width: 768px) {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 8px;
+    }
+}
+
+.hideMobile {
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+

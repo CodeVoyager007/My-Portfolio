@@ -63,41 +63,15 @@ export const Header = () => {
         position="unset"
         className={styles.position}
         as="header"
-        zIndex={1000}
         fillWidth
         padding="8"
         horizontal="center"
         data-border="rounded"
-        style={{
-          '@media (max-width: 768px)': {
-            position: 'fixed',
-            bottom: 0,
-            top: 'auto',
-            left: 0,
-            right: 0,
-            background: 'var(--page-background)',
-            borderTop: '1px solid var(--neutral-alpha-weak)',
-            boxShadow: '0 -2px 10px rgba(0, 0, 0, 0.1)',
-            zIndex: 1000,
-            display: 'flex',
-            visibility: 'visible',
-            opacity: 1
-          }
-        }}
       >
-        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s" style={{
-          '@media (max-width: 768px)': {
-            display: 'none'
-          }
-        }}>
+        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s" className={styles.locationContainer}>
           {display.location && <Flex hide="s">{person.location}</Flex>}
         </Flex>
-        <Flex fillWidth horizontal="center" style={{
-          '@media (max-width: 768px)': {
-            justifyContent: 'center',
-            flex: 1
-          }
-        }}>
+        <Flex fillWidth horizontal="center" className={styles.navWrapper}>
           <Flex
             background="page"
             border="neutral-alpha-weak"
@@ -106,43 +80,18 @@ export const Header = () => {
             padding="4"
             horizontal="center"
             zIndex={1}
-            style={{
-              '@media (max-width: 768px)': {
-                background: 'var(--surface-background)',
-                border: '1px solid var(--neutral-alpha-weak)',
-                borderRadius: '12px',
-                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-                padding: '8px',
-                gap: '4px'
-              }
-            }}
+            className={styles.navBar}
           >
-            <Flex gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning style={{
-              '@media (max-width: 768px)': {
-                gap: '8px',
-                flexWrap: 'nowrap',
-                overflow: 'hidden'
-              }
-            }}>
+            <Flex gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning className={styles.navItems}>
               {routes["/"] && (
                 <ToggleButton 
                   prefixIcon="home" 
                   href="/" 
                   selected={pathname === "/"}
-                  style={{
-                    '@media (max-width: 768px)': {
-                      minWidth: '44px',
-                      minHeight: '44px',
-                      padding: '8px'
-                    }
-                  }}
+                  className={styles.mobileIcon}
                 />
               )}
-              <Line background="neutral-alpha-medium" vert maxHeight="24" style={{
-                '@media (max-width: 768px)': {
-                  display: 'none'
-                }
-              }} />
+              <Line background="neutral-alpha-medium" vert maxHeight="24" className={styles.hideMobile} />
               {routes["/about"] && (
                 <>
                   <ToggleButton
@@ -153,17 +102,10 @@ export const Header = () => {
                     selected={pathname === "/about"}
                   />
                   <ToggleButton
-                    className="s-flex-show"
+                    className={`s-flex-show ${styles.mobileIcon}`}
                     prefixIcon="person"
                     href="/about"
                     selected={pathname === "/about"}
-                    style={{
-                      '@media (max-width: 768px)': {
-                        minWidth: '44px',
-                        minHeight: '44px',
-                        padding: '8px'
-                      }
-                    }}
                   />
                 </>
               )}
@@ -177,17 +119,10 @@ export const Header = () => {
                     selected={pathname.startsWith("/work")}
                   />
                   <ToggleButton
-                    className="s-flex-show"
+                    className={`s-flex-show ${styles.mobileIcon}`}
                     prefixIcon="grid"
                     href="/work"
                     selected={pathname.startsWith("/work")}
-                    style={{
-                      '@media (max-width: 768px)': {
-                        minWidth: '44px',
-                        minHeight: '44px',
-                        padding: '8px'
-                      }
-                    }}
                   />
                 </>
               )}
@@ -201,17 +136,10 @@ export const Header = () => {
                     selected={pathname.startsWith("/blog")}
                   />
                   <ToggleButton
-                    className="s-flex-show"
+                    className={`s-flex-show ${styles.mobileIcon}`}
                     prefixIcon="book"
                     href="/blog"
                     selected={pathname.startsWith("/blog")}
-                    style={{
-                      '@media (max-width: 768px)': {
-                        minWidth: '44px',
-                        minHeight: '44px',
-                        padding: '8px'
-                      }
-                    }}
                   />
                 </>
               )}
@@ -225,17 +153,10 @@ export const Header = () => {
                     selected={pathname.startsWith("/contact")}
                   />
                   <ToggleButton
-                    className="s-flex-show"
+                    className={`s-flex-show ${styles.mobileIcon}`}
                     prefixIcon="mail"
                     href="/contact"
                     selected={pathname.startsWith("/contact")}
-                    style={{
-                      '@media (max-width: 768px)': {
-                        minWidth: '44px',
-                        minHeight: '44px',
-                        padding: '8px'
-                      }
-                    }}
                   />
                 </>
               )}
@@ -249,38 +170,23 @@ export const Header = () => {
                     selected={pathname.startsWith("/journey")}
                   />
                   <ToggleButton
-                    className="s-flex-show"
+                    className={`s-flex-show ${styles.mobileIcon}`}
                     prefixIcon="timeline"
                     href="/journey"
                     selected={pathname.startsWith("/journey")}
-                    style={{
-                      '@media (max-width: 768px)': {
-                        minWidth: '44px',
-                        minHeight: '44px',
-                        padding: '8px'
-                      }
-                    }}
                   />
                 </>
               )}
               {display.themeSwitcher && (
                 <>
-                  <Line background="neutral-alpha-medium" vert maxHeight="24" style={{
-                    '@media (max-width: 768px)': {
-                      display: 'none'
-                    }
-                  }} />
+                  <Line background="neutral-alpha-medium" vert maxHeight="24" className={styles.hideMobile} />
                   <ThemeToggle />
                 </>
               )}
             </Flex>
           </Flex>
         </Flex>
-        <Flex fillWidth horizontal="end" vertical="center" style={{
-          '@media (max-width: 768px)': {
-            display: 'none'
-          }
-        }}>
+        <Flex fillWidth horizontal="end" vertical="center" className={styles.hideMobile}>
           <Flex
             paddingRight="12"
             horizontal="end"

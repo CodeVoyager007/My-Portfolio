@@ -171,6 +171,42 @@ const about = {
         </>,
       },
       {
+        name: "Technical Certifications",
+        description: <>
+          - CS50&apos;s Introduction to AI with Python<br/>
+          - freeCodeCamp Responsive Web Design<br/>
+          - Great Learning: JavaScript<br/>
+          - Web Development Certificate<br/>
+          - CS50x Puzzle Day 2024
+        </>,
+        images: [
+          {
+            src: "/certificates/javascript.jpg",
+            alt: "Great Learning JavaScript Certificate",
+            width: 200,
+            height: 140,
+          },
+          {
+            src: "/certificates/freecodecamp.png",
+            alt: "freeCodeCamp Certificate",
+            width: 200,
+            height: 140,
+          },
+          {
+            src: "/certificates/kodeative.png",
+            alt: "Kodeative Certificate",
+            width: 200,
+            height: 140,
+          },
+          {
+            src: "/certificates/puzzel day.png",
+            alt: "CS50x Puzzle Day Certificate",
+            width: 200,
+            height: 140,
+          },
+        ],
+      },
+      {
         name: "Additional Achievements",
         description: <>
           - School&apos;s primary speaker for events and ceremonies<br/>
@@ -263,6 +299,33 @@ const work = {
     title: "Projects",
     description: "My latest work",
     projects: [
+      {
+        slug: "momentum-ai-todo-app",
+        title: "Momentum AI Todo App",
+        summary: "An intelligent todo application that helps you stay organized and focused using AI-driven task management.",
+        tech: ["Next.js", "AI Integration", "Tailwind CSS"],
+        link: "https://momentum-ai-todo-app.vercel.app/",
+        repo: "https://github.com/CodeVoyager007/hackathon-2/tree/main/phase-3",
+        publishedAt: "2024-05-01",
+      },
+      {
+        slug: "humanoid-robotics-course",
+        title: "Physical AI Humanoid Robotics Course",
+        summary: "A comprehensive educational platform for learning about physical AI and humanoid robotics.",
+        tech: ["Next.js", "React", "Tailwind CSS"],
+        link: "https://physical-ai-humanoid-robotics-cours-six.vercel.app/",
+        repo: "https://github.com/CodeVoyager007/Physical-AI-Humanoid-Robotics-Course",
+        publishedAt: "2024-04-28",
+      },
+      {
+        slug: "sm-marketing-real-estate",
+        title: "SM Marketing Real Estate",
+        summary: "A modern real estate marketing platform featuring property listings and interactive elements.",
+        tech: ["Next.js", "React", "Tailwind CSS"],
+        link: "https://sm-markeing-real-estate.vercel.app/",
+        repo: "https://github.com/CodeVoyager007/SM-Markeing-real-estate",
+        publishedAt: "2024-04-25",
+      },
       {
         slug: "study-forge-ai",
         title: "StudyForge AI",
@@ -394,6 +457,18 @@ const journey = {
   title: `Journey – ${person.name}`,
   description: "A timeline of my learning and achievements.",
   milestones: [
+    {
+      date: "2024",
+      title: "Startup Challenge Winner at GIAIC",
+      description: "Won the Startup Challenge at Governor Initiative for AI and Computing (GIAIC)",
+      achievements: [
+        "First place winner in the Startup Challenge",
+        "Demonstrated innovative problem-solving and business acumen",
+        "Recognized for potential impact in the tech industry"
+      ],
+      skills: ["Entrepreneurship", "Innovation", "Pitching", "Problem Solving"],
+      type: "achievement"
+    },
     {
       date: "2024 - Present",
       title: "GIAIC",
