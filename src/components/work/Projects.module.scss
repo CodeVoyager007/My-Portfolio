@@ -92,7 +92,7 @@
 }
 
 .icon {
-  color: var(--brand-solid-medium);
+  color: var(--neutral-on-background-strong); /* Cleaner default color */
   width: fit-content;
   padding: 12px;
   border-radius: 12px;
