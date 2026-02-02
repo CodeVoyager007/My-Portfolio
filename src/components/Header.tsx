@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, about, blog, work, journey } from "@/resources";
+import { routes, display, person, about, blog, work, journey, certifications } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -16,6 +16,7 @@ type Routes = {
   "/blog": boolean;
   "/contact": boolean;
   "/journey": boolean;
+  "/certifications": boolean;
 }
 
 const typedRoutes = routes as Routes;
@@ -174,6 +175,23 @@ export const Header = () => {
                     prefixIcon="timeline"
                     href="/journey"
                     selected={pathname.startsWith("/journey")}
+                  />
+                </>
+              )}
+              {routes["/certifications"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="certificate"
+                    href="/certifications"
+                    label={certifications.label}
+                    selected={pathname.startsWith("/certifications")}
+                  />
+                  <ToggleButton
+                    className={`s-flex-show ${styles.mobileIcon}`}
+                    prefixIcon="certificate"
+                    href="/certifications"
+                    selected={pathname.startsWith("/certifications")}
                   />
                 </>
               )}

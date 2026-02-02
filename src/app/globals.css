@@ -366,3 +366,7 @@
     padding-bottom: calc(var(--static-space-16) + 80px);
   }
 }
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}

@@ -3,20 +3,33 @@ import '@once-ui-system/core/css/tokens.css';
 import './globals.css';
 
 import classNames from "classnames";
-import Head from "next/head";
 
 import { Background, Column, Flex, Meta, opacity, SpacingToken } from "@once-ui-system/core";
 import { Footer, Header, Providers } from '@/components';
 import { baseURL, effects, fonts, style, dataStyle, home } from '@/resources';
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export async function generateMetadata() {
-  return Meta.generate({
+  const meta = await Meta.generate({
     title: home.title,
     description: home.description,
     baseURL: baseURL,
     path: home.path,
     image: home.image,
   });
+
+  return {
+    ...meta,
+    icons: {
+      icon: '/images/avatar.png',
+    },
+  };
 }
 
 export default async function RootLayout({
@@ -25,11 +38,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <Head>
-        <link rel="icon" href="/images/avatar.png" type="image/png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-      </Head>
     <Flex
       suppressHydrationWarning
       as="html"
@@ -162,6 +170,5 @@ export default async function RootLayout({
           </Column>
         </Providers>
       </Flex>
-      </>
   );
 }

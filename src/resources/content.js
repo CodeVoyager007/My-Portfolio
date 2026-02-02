@@ -143,8 +143,8 @@ const about = {
     title: "Education & Certifications",
     institutions: [
       {
-        name: "Higher Secondary Education",
-        description: <>Currently in HSC Part II (Pre-Engineering) | HSC Part I completed with strong academic performance</>,
+        name: "Higher Secondary Education (Completed)",
+        description: <>Completed HSC Part II (Pre-Engineering) in 2025 | Strong academic performance across both years</>,
       },
       { 
         name: "Secondary School Certificate",
@@ -235,30 +235,68 @@ const about = {
 
 const certifications = {
   display: true,
+  path: "/certifications",
+  label: "Certifications",
   title: "Certifications",
-  description: "A collection of my professional certifications and achievements.",
+  description: "A comprehensive collection of my professional certifications, awards, and achievements in technology and development.",
   images: [
     {
-      src: "/certificates/javascript.jpg",
-      alt: "Great Learning JavaScript Certificate",
+      src: "/certificates/CS50AI.pdf",
+      alt: "Harvard CS50 Introduction to AI with Python",
       width: 200,
       height: 140,
     },
     {
       src: "/certificates/freecodecamp.png",
-      alt: "freeCodeCamp Certificate",
+      alt: "freeCodeCamp Responsive Web Design",
       width: 200,
       height: 140,
     },
     {
-      src: "/certificates/kodeative.png",
-      alt: "Kodeative Certificate",
+      src: "/certificates/javascript.jpg",
+      alt: "Great Learning JavaScript",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/CERTIFICATE OF WEB DEVELOPMENT from internship.pdf",
+      alt: "Web Development Certificate",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/CERTIFICATE OF INTERNSHIP.pdf",
+      alt: "Certificate of Internship",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/CERTIFICATE OF DIGITAL MARKETING from internship.pdf",
+      alt: "Certificate of Digital Marketing",
       width: 200,
       height: 140,
     },
     {
       src: "/certificates/puzzel day.png",
-      alt: "CS50x Puzzle Day Certificate",
+      alt: "CS50x Puzzle Day 2024",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/kodeative.png",
+      alt: "Kodeative Achievement",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/graphic-gl.pdf",
+      alt: "Graphic Design - Great Learning",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/hp.pdf",
+      alt: "HP Certificate",
       width: 200,
       height: 140,
     },
@@ -444,7 +482,8 @@ const routes = {
   "/work": true,
   "/blog": true,
   "/contact": true,
-  "/journey": true
+  "/journey": true,
+  "/certifications": true
 };
 
 const journey = {
@@ -454,9 +493,39 @@ const journey = {
   description: "A timeline of my learning and achievements.",
   milestones: [
     {
+      date: "January 2026",
+      title: "GIAIC Hackathon: Evolution of Todo Applications",
+      description: "A comprehensive 5-phase project demonstrating the evolution of task management software, from console to cloud-scale Kubernetes deployment.",
+      achievements: [
+        "Phase 1 & 2: Built robust console-based and modern web-based applications",
+        "Phase 3: Developed an autonomous AI agent to manage tasks (Create, Edit, Delete)",
+        "Phase 4: Containerized the application with Docker and deployed on local Kubernetes",
+        "Phase 5: Orchestrated full-scale cloud deployment on Kubernetes"
+      ],
+      skills: ["Next.js", "AI Agents", "Docker", "Kubernetes", "Cloud Deployment"],
+      type: "achievement"
+    },
+    {
+      date: "December 2025",
+      title: "GIAIC Hackathon: Spec-Driven RAG Chatbot",
+      description: "Built a technical documentation platform and intelligent chatbot using a spec-driven methodology.",
+      achievements: [
+        "Developed a comprehensive technical book using Docusaurus",
+        "Implemented a high-performance RAG (Retrieval-Augmented Generation) chatbot",
+        "Mastered spec-driven development for reliable and predictable AI behavior"
+      ],
+      skills: ["Docusaurus", "RAG", "LLMs", "Spec-Driven Development"],
+      type: "achievement"
+    },
+    {
       date: "2024",
       title: "Startup Challenge Winner at GIAIC",
-      description: "Won the Startup Challenge at Governor Initiative for AI and Computing (GIAIC)",
+      description: <>
+        Won the Startup Challenge at Governor Initiative for AI and Computing (GIAIC). 
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7403769513621839872/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'inherit' }}>
+          View Proof
+        </a>
+      </>,
       achievements: [
         "First place winner in the Startup Challenge",
         "Demonstrated innovative problem-solving and business acumen",
@@ -480,13 +549,13 @@ const journey = {
     },
     {
       date: "2023 - 2025",
-      title: "Higher Secondary Education",
-      description: "Completed HSC in Computer science with strong academic performance",
+      title: "Higher Secondary Education (Completed)",
+      description: "Completed HSC Part II in Computer Science with strong academic performance in 2025.",
       achievements: [
-        "Strong academic performance in HSC Part I",
-        "Currently pursuing Computer Science track",
+        "Strong academic performance in HSC Part I & II",
+        "Specialized in Computer Science track",
         "Focusing on programming and computer fundamentals",
-        "HSC Part II given, waiting for results"
+        "HSC Part II Completed"
       ],
       skills: ["Computer Science", "Programming", "Mathematics", "Physics"],
       type: "Finished"

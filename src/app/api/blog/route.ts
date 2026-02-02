@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = "force-dynamic";
+
 const HASHNODE_USERNAME = 'mughalsyntax';
 const MEDIUM_USERNAME = 'ayeshamughal21';
 

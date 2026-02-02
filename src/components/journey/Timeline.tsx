@@ -1,13 +1,13 @@
 "use client";
 
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Column, Flex, Heading, Text, Tag } from '@once-ui-system/core';
 import styles from './Timeline.module.scss';
 
 interface TimelineMilestone {
   date: string;
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   achievements: string[];
   skills: string[];
   type: 'learning' | 'foundation' | 'achievement';
@@ -48,8 +48,8 @@ export default function Timeline({ milestones }: TimelineProps) {
           key={`${milestone.date}-${index}`}
           className={`${styles.timelineItem} ${styles[milestone.type]}`}
         >
+          <div className={styles.timelineDot} />
           <div className={styles.timelineContent}>
-            <div className={styles.timelineDot} />
             <Column gap="m" className={styles.content}>
               <Column gap="xs">
                 <Text variant="label-strong-m" className={styles.date}>
