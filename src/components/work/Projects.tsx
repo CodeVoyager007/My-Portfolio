@@ -83,24 +83,26 @@ export function Projects() {
 
                   <div className={styles.links}>
                     {project.link && (
-                      <Button
-                        href={project.link}
-                        variant="secondary"
-                        size="s"
-                        arrowIcon
-                      >
-                        Visit Site
-                      </Button>
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                        <Button
+                          variant="secondary"
+                          size="s"
+                          arrowIcon
+                        >
+                          Visit Site
+                        </Button>
+                      </a>
                     )}
                     {project.repo && (
-                      <Button
-                        href={project.repo}
-                        variant="tertiary"
-                        size="s"
-                        prefixIcon="github"
-                      >
-                        Source Code
-                      </Button>
+                      <a href={project.repo} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                        <Button
+                          variant="tertiary"
+                          size="s"
+                          prefixIcon="github"
+                        >
+                          Source Code
+                        </Button>
+                      </a>
                     )}
                   </div>
                 </div>
