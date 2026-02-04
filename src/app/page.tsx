@@ -58,9 +58,15 @@ export default function Home() {
       <section className={styles.hero}>
         <RevealFx translateY="8">
           {home.featured && (
-            <a href={home.featured.href} className={styles.featuredPill}>
-              {home.featured.title} <Icon name="arrowRight" size="s" style={{ marginLeft: 8 }}/>
-            </a>
+            (home.featured as any).href ? (
+              <a href={(home.featured as any).href} className={styles.featuredPill}>
+                {home.featured.title} <Icon name="arrowRight" size="s" style={{ marginLeft: 8 }}/>
+              </a>
+            ) : (
+              <div className={styles.featuredPill}>
+                {home.featured.title}
+              </div>
+            )
           )}
         </RevealFx>
         
@@ -128,7 +134,7 @@ export default function Home() {
         
         <div className={styles.projectPreviewGrid}>
           {work.projects.slice(0, 3).map((p) => (
-            <a key={p.slug} href={`${work.path}/${p.slug}`} className={styles.projectCard}>
+            <a key={p.slug} href={work.path} className={styles.projectCard}>
               <div className={styles.projectTitle}>{p.title}</div>
               <div className={styles.projectSummary}>{p.summary}</div>
               <Flex gap="8" wrap>

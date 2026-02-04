@@ -1,5 +1,3 @@
-import { Logo } from "@once-ui-system/core";
-
 const person = {
   firstName: "Ayesha",
   lastName: "Mughal",
@@ -33,7 +31,7 @@ const social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/ayesha-mughal-260264342",
+    link: "https://www.linkedin.com/in/ayeshaintech/",
   },
   {
     name: "Twitter",
@@ -67,7 +65,6 @@ const home = {
   featured: {
     display: true,
     title: <>Recent focus: <strong className="ml-4">Agentic AI</strong></>,
-    href: "/work/exploring-agentic-ai",
   },
   subline: (
     <>
