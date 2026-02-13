@@ -68,7 +68,7 @@ const home = {
   },
   subline: (
     <>
-      I&apos;m Ayesha, a <b>16-year-old</b> developer passionate about AI and innovative technology.
+      I&apos;m Ayesha, a <b>{new Date().getFullYear() - 2009}-year-old</b> developer passionate about AI and innovative technology.
               <br /> With 27+ certifications, I&apos;m constantly learning and building new experiences.
     </>
   ),
@@ -490,7 +490,7 @@ const journey = {
   description: "A timeline of my learning and achievements.",
   milestones: [
     {
-      date: "January 2026",
+      date: `January ${new Date().getFullYear()}`,
       title: "GIAIC Hackathon: Evolution of Todo Applications",
       description: "A comprehensive 5-phase project demonstrating the evolution of task management software, from console to cloud-scale Kubernetes deployment.",
       achievements: [
