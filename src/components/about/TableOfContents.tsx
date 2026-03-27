@@ -7,8 +7,12 @@ import styles from "./about.module.scss";
 interface TableOfContentsProps {
   structure: {
     title: string;
+    slug: string;
     display: boolean;
-    items: string[];
+    items: {
+        title: string;
+        slug: string;
+    }[];
   }[];
   about: {
     tableOfContent: {
@@ -36,46 +40,39 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
 
   return (
     <Column
-      left="0"
-      style={{
-        top: "50%",
-        transform: "translateY(-50%)",
-        whiteSpace: "nowrap",
-      }}
-      position="fixed"
-      paddingLeft="24"
       gap="32"
-      hide="m"
+      horizontal="end"
+      style={{ textAlign: 'right' }}
     >
       {structure
         .filter((section) => section.display)
-        .map((section, sectionIndex) => (
-          <Column key={sectionIndex} gap="12">
+        .map((section) => (
+          <Column key={section.slug} gap="12" horizontal="end">
             <Flex
               cursor="interactive"
               className={styles.hover}
               gap="8"
               vertical="center"
-              onClick={() => scrollTo(section.title, 80)}
+              onClick={() => scrollTo(section.slug, 140)}
             >
+              <Text variant="body-default-s" onBackground="neutral-weak">{section.title}</Text>
               <Flex height="1" minWidth="16" background="neutral-strong"></Flex>
-              <Text>{section.title}</Text>
             </Flex>
             {about.tableOfContent.subItems && (
               <>
-                {section.items.map((item, itemIndex) => (
+                {section.items.map((item) => (
                   <Flex
                     hide="l"
-                    key={itemIndex}
+                    key={item.slug}
                     style={{ cursor: "pointer" }}
                     className={styles.hover}
                     gap="12"
-                    paddingLeft="24"
+                    paddingRight="24"
                     vertical="center"
-                    onClick={() => scrollTo(item, 80)}
+                    onClick={() => scrollTo(item.slug, 140)}
                   >
+                    <Text variant="body-default-xs" onBackground="neutral-weak">{item.title}</Text>
                     <Flex height="1" minWidth="8" background="neutral-strong"></Flex>
-                    <Text>{item}</Text>
                   </Flex>
                 ))}
               </>

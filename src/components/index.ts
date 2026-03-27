@@ -6,3 +6,8 @@ export { Providers } from "@/components/Providers";
 export { ScrollToHash } from "@/components/ScrollToHash";
 export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";
+export { TextReveal } from "@/components/TextReveal";
+export { MaskedReveal } from "@/components/MaskedReveal";
+export { Cinematic } from "@/components/Cinematic";
+export { default as Magnetic } from "@/components/Magnetic";
+export { HorizontalWork } from "@/components/work/HorizontalWork";

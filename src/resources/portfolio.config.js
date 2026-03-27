@@ -58,16 +58,16 @@ const fonts = {
 
 // default customization applied to the HTML in the main layout.tsx
 const style = {
-  theme: "system", // dark | light | system
-  neutral: "gray", // sand | gray | slate
-  brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-  accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-  solid: "contrast", // color | contrast
-  solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative
-  surface: "translucent", // filled | translucent
-  transition: "all", // all | micro | macro
-  scaling: "100" // 90 | 95 | 100 | 105 | 110
+  theme: "dark",
+  neutral: "gray",
+  brand: "gray", // Pure monochrome
+  accent: "gray", // Pure monochrome
+  solid: "contrast",
+  solidStyle: "flat",
+  border: "playful",
+  surface: "translucent",
+  transition: "all",
+  scaling: "100"
 };
 
 const dataStyle = {
@@ -86,38 +86,38 @@ const dataStyle = {
 
 const effects = {
   mask: {
-    cursor: false,
-    x: 50,
+    cursor: true,
+    x: 0,
     y: 0,
-    radius: 100,
+    radius: 75,
   },
   gradient: {
-    display: false,
-    opacity: 100,
+    display: true,
+    opacity: 10, // Very subtle "projector" light
     x: 50,
-    y: 60,
+    y: 0,
     width: 100,
-    height: 50,
+    height: 100,
     tilt: 0,
-    colorStart: "accent-background-strong",
+    colorStart: "neutral-background-strong",
     colorEnd: "page-background",
   },
   dots: {
-    display: true,
-    opacity: 40,
+    display: false, // Remove distraction
+    opacity: 0,
     size: "2",
-    color: "brand-background-strong",
+    color: "neutral-alpha-medium",
   },
   grid: {
     display: false,
-    opacity: 100,
+    opacity: 0,
     color: "neutral-alpha-medium",
     width: "0.25rem",
     height: "0.25rem",
   },
   lines: {
     display: false,
-    opacity: 100,
+    opacity: 0,
     color: "neutral-alpha-weak",
     size: "16",
     thickness: 1,

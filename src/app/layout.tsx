@@ -5,14 +5,12 @@ import './globals.css';
 import classNames from "classnames";
 
 import { Background, Column, Flex, Meta, opacity, SpacingToken } from "@once-ui-system/core";
-import { Footer, Header, Providers } from '@/components';
+import { Footer, Header, Providers, Cinematic } from '@/components';
 import { baseURL, effects, fonts, style, dataStyle, home } from '@/resources';
 
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 };
 
 export async function generateMetadata() {
@@ -110,7 +108,8 @@ export default async function RootLayout({
         />
       </head>
       <Providers>
-        <Column as="body" background="page" fillWidth style={{minHeight: "100vh"}} margin="0" padding="0" horizontal="center">
+        <Column as="body" background="page" fillWidth style={{minHeight: "100vh", overflowX: 'visible'}} margin="0" padding="0" horizontal="center">
+          <Cinematic />
           <Background
             position="fixed"
             mask={{
@@ -154,18 +153,13 @@ export default async function RootLayout({
           />
           <Flex fillWidth minHeight="16" hide="s"/>
             <Header />
-            <Flex
-              zIndex={0}
-              fillWidth
-              padding="l"
-              horizontal="center"
-              flex={1}
-              className="main-content-layout"
-            >
-              <Flex horizontal="center" fillWidth minHeight="0" style={{ maxWidth: '100%' }}>
-                  {children}
-              </Flex>
-            </Flex>
+            <main id="main-content" style={{ width: '100%', flex: 1, position: 'relative' }}>
+                <Flex fillWidth direction="column" horizontal="center" paddingX="l">
+                  <Flex fillWidth maxWidth="l" direction="column">
+                    {children}
+                  </Flex>
+                </Flex>
+            </main>
             <Footer/>
           </Column>
         </Providers>

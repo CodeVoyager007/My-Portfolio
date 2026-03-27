@@ -91,16 +91,27 @@ async function fetchMediumPosts() {
       return [];
     }
 
-    return data.items.map((post: any) => ({
-      title: post.title,
-      description: post.description.replace(/<[^>]*>/g, '').substring(0, 200) + '...',
-      link: post.link,
-      date: post.pubDate,
-      image: post.thumbnail || null,
-      reactions: 0,
-      comments: 0,
-      platform: 'Medium'
-    }));
+    return data.items.map((post: any) => {
+      // Extract image from description if thumbnail is missing
+      let imageUrl = post.thumbnail;
+      if (!imageUrl || imageUrl === "") {
+        const imgMatch = post.description.match(/<img[^>]+src="([^">]+)"/);
+        if (imgMatch && imgMatch[1]) {
+          imageUrl = imgMatch[1];
+        }
+      }
+
+      return {
+        title: post.title,
+        description: post.description.replace(/<[^>]*>/g, '').substring(0, 200) + '...',
+        link: post.link,
+        date: post.pubDate,
+        image: imageUrl || null,
+        reactions: 0,
+        comments: 0,
+        platform: 'Medium'
+      };
+    });
   } catch (error) {
     console.error('Error fetching Medium posts:', error);
     return [];

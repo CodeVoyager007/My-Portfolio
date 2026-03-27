@@ -31,7 +31,7 @@ export default function Timeline({ milestones }: TimelineProps) {
       },
       {
         threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        rootMargin: '0px 0px -50px 0px'
       }
     );
 
@@ -50,20 +50,18 @@ export default function Timeline({ milestones }: TimelineProps) {
         >
           <div className={styles.timelineDot} />
           <div className={styles.timelineContent}>
-            <Column gap="m" className={styles.content}>
-              <Column gap="xs">
-                <Text variant="label-strong-m" className={styles.date}>
-                  {milestone.date}
-                </Text>
-                <Heading as="h3" variant="heading-strong-l">
-                  {milestone.title}
-                </Heading>
-              </Column>
-              <Text variant="body-default-m" onBackground="neutral-weak">
+            <Column gap="8">
+              <Text variant="label-default-s" className={styles.date}>
+                {milestone.date}
+              </Text>
+              <Heading as="h3" variant="heading-strong-l" style={{ marginBottom: '0.5rem' }}>
+                {milestone.title}
+              </Heading>
+              <Text variant="body-default-m" onBackground="neutral-weak" style={{ lineHeight: '1.6' }}>
                 {milestone.description}
               </Text>
-              <Column gap="s">
-                <Text variant="label-strong-s">Key Achievements:</Text>
+              
+              {milestone.achievements && milestone.achievements.length > 0 && (
                 <ul className={styles.achievements}>
                   {milestone.achievements.map((achievement, i) => (
                     <li key={i}>
@@ -71,10 +69,11 @@ export default function Timeline({ milestones }: TimelineProps) {
                     </li>
                   ))}
                 </ul>
-              </Column>
-              <Flex gap="xs" wrap className={styles.skills}>
+              )}
+
+              <Flex gap="8" wrap className={styles.skills}>
                 {milestone.skills.map((skill, i) => (
-                  <Tag key={i} label={skill} variant="neutral" />
+                  <Tag key={i} label={skill} variant="neutral" size="s" />
                 ))}
               </Flex>
             </Column>

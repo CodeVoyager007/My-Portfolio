@@ -23,8 +23,8 @@
   flex-direction: column;
   align-items: flex-start; /* Changed to left */
   text-align: left; /* Changed to left */
-  padding: 8rem 0 6rem;
-  gap: 2.5rem;
+  padding: 15rem 0 12rem;
+  gap: 4rem;
   max-width: 900px;
   margin: 0; /* Align to the left of the container */
   
@@ -136,9 +136,10 @@
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.5rem;
+  gap: 2.5rem;
   width: 100%;
-  margin-top: 4rem;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
 }
 
 .statCard {
@@ -179,7 +180,7 @@
 .techGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 4rem;
   width: 100%;
 }
 
@@ -223,9 +224,33 @@
 
 .projectCard {
   @include stone-card;
-  padding: 2rem;
+  padding: 2.5rem;
   text-decoration: none;
   display: block;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid #1a1a1a;
+
+  &:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.05);
+    
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
 }
 
 .projectTitle {

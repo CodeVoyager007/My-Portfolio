@@ -238,6 +238,12 @@ const certifications = {
   description: "A comprehensive collection of my professional certifications, awards, and achievements in technology and development.",
   images: [
     {
+      src: "/certificates/RPN-Certificate.pdf",
+      alt: "5th Place - Ramadan Prompting Nights",
+      width: 200,
+      height: 140,
+    },
+    {
       src: "/certificates/CS50AI.pdf",
       alt: "Harvard CS50 Introduction to AI with Python",
       width: 200,
@@ -276,6 +282,12 @@ const certifications = {
     {
       src: "/certificates/puzzel day.png",
       alt: "CS50x Puzzle Day 2024",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/CS50x Puzzle Day 2024 (1).pdf",
+      alt: "CS50x Puzzle Day 2024 Official Certificate",
       width: 200,
       height: 140,
     },
@@ -330,6 +342,24 @@ const work = {
     title: "Projects",
     description: "My latest work",
     projects: [
+      {
+        slug: "serveease-next",
+        title: "ServeEase",
+        summary: "A high-end hospitality management platform designed to digitize the fine dining experience with real-time KDS and predictive analytics.",
+        tech: ["Next.js", "React", "Tailwind CSS", "SaaS"],
+        link: "https://serveease-next.vercel.app/",
+        repo: "https://github.com/CodeVoyager007/serveease-next",
+        publishedAt: "2024-06-15",
+      },
+      {
+        slug: "audionic-soundscape-shop",
+        title: "Audionic Soundscape Shop",
+        summary: "A premium e-commerce storefront for audio equipment, featuring a 'Neo-Tech' aesthetic, high-performance interactions, and robust type-safety.",
+        tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn-ui"],
+        link: "https://audionic-soundscape-shop.vercel.app/",
+        repo: "https://github.com/CodeVoyager007/audionic-soundscape-shop",
+        publishedAt: "2024-06-10",
+      },
       {
         slug: "momentum-ai-todo-app",
         title: "Momentum AI Todo App",
@@ -489,6 +519,19 @@ const journey = {
   title: `Journey – ${person.name}`,
   description: "A timeline of my learning and achievements.",
   milestones: [
+    {
+      date: "March 2026",
+      title: "Viral Reach & AI Excellence",
+      description: "A transformative month marked by significant audience growth and recognition in the AI prompting space.",
+      achievements: [
+        "Reached a major milestone of 44k+ views on Medium articles",
+        "Won 5th place in the Ramadan Prompting Nights challenge",
+        "Completed 'Personal AI Employee Hackathon 0: Building Autonomous FTEs'",
+        "Finished '🏭 The CRM Digital FTE Factory Final Hackathon 5'"
+      ],
+      skills: ["Medium Writing", "Prompt Engineering", "Autonomous Agents", "Digital FTEs"],
+      type: "achievement"
+    },
     {
       date: `January ${new Date().getFullYear()}`,
       title: "GIAIC Hackathon: Evolution of Todo Applications",

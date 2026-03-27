@@ -5,7 +5,6 @@ import {
   Flex,
   Heading,
   Icon,
-  IconButton,
   Media,
   Tag,
   Text,
@@ -27,31 +26,47 @@ export async function generateMetadata() {
   });
 }
 
+const slugify = (str: string) => str.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+
 export default function About() {
   const structure = [
     {
       title: about.intro.title,
+      slug: slugify(about.intro.title),
       display: about.intro.display,
       items: [],
     },
     {
       title: about.highlights.title,
+      slug: slugify(about.highlights.title),
       display: about.highlights.display,
-      items: about.highlights.sections.map((s: any) => s.title),
+      items: about.highlights.sections.map((s: any) => ({
+        title: s.title,
+        slug: slugify(s.title)
+      })),
     },
     {
       title: about.studies.title,
+      slug: slugify(about.studies.title),
       display: about.studies.display,
-      items: about.studies.institutions.map((institution: any) => institution.name),
+      items: about.studies.institutions.map((institution: any) => ({
+        title: institution.name,
+        slug: slugify(institution.name)
+      })),
     },
     {
       title: about.technical.title,
+      slug: slugify(about.technical.title),
       display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
+      items: about.technical.skills.map((skill) => ({
+        title: skill.title,
+        slug: slugify(skill.title)
+      })),
     },
   ];
+
   return (
-    <Column maxWidth="m">
+    <Column maxWidth="m" paddingTop="128">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -67,10 +82,13 @@ export default function About() {
       />
       {about.tableOfContent.display && (
         <Column
-          left="0"
-          style={{ top: "50%", transform: "translateY(-50%)" }}
+          style={{ 
+            top: "50%", 
+            transform: "translateY(-50%)", 
+            right: "var(--static-space-32)",
+            zIndex: 100
+          }}
           position="fixed"
-          paddingLeft="24"
           gap="32"
           hide="s"
         >
@@ -96,7 +114,7 @@ export default function About() {
             </Flex>
             {person.languages.length > 0 && (
               <Flex wrap gap="8">
-                {person.languages.map((language, index) => (
+                {person.languages.map((language) => (
                   <Tag key={language} size="l">
                     {language}
                   </Tag>
@@ -107,7 +125,7 @@ export default function About() {
         )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
           <Column
-            id={about.intro.title}
+            id={slugify(about.intro.title)}
             fillWidth
             minHeight="160"
             vertical="center"
@@ -152,13 +170,13 @@ export default function About() {
 
           {about.highlights.display && (
             <>
-              <Heading as="h2" id={about.highlights.title} variant="display-strong-s" marginBottom="m">
+              <Heading as="h2" id={slugify(about.highlights.title)} variant="display-strong-s" marginBottom="m">
                 {about.highlights.title}
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.highlights.sections.map((section: any, index: number) => (
-                  <Column key={`${section.title}-${index}`} fillWidth gap="4">
-                    <Text id={section.title} variant="heading-strong-l">
+                {about.highlights.sections.map((section: any) => (
+                  <Column key={section.title} fillWidth gap="4">
+                    <Text id={slugify(section.title)} variant="heading-strong-l">
                       {section.title}
                     </Text>
                     <Text variant="body-default-m" onBackground="neutral-weak">
@@ -172,13 +190,13 @@ export default function About() {
 
           {about.studies.display && (
             <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
+              <Heading as="h2" id={slugify(about.studies.title)} variant="display-strong-s" marginBottom="m">
                 {about.studies.title}
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.studies.institutions.map((institution: any, index: number) => (
-                  <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Text id={institution.name} variant="heading-strong-l">
+                {about.studies.institutions.map((institution: any) => (
+                  <Column key={institution.name} fillWidth gap="4">
+                    <Text id={slugify(institution.name)} variant="heading-strong-l">
                       {institution.name}
                     </Text>
                     <Text variant="body-default-m" onBackground="neutral-weak">
@@ -194,24 +212,24 @@ export default function About() {
             <>
               <Heading
                 as="h2"
-                id={about.technical.title}
+                id={slugify(about.technical.title)}
                 variant="display-strong-s"
                 marginBottom="40"
               >
                 {about.technical.title}
               </Heading>
               <Column fillWidth gap="l">
-                {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text variant="heading-strong-l">{skill.title}</Text>
+                {about.technical.skills.map((skill) => (
+                  <Column key={skill.title} fillWidth gap="4">
+                    <Text id={slugify(skill.title)} variant="heading-strong-l">{skill.title}</Text>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {skill.description}
                     </Text>
                     {skill.images && skill.images.length > 0 && (
                       <Flex fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
+                        {skill.images.map((image: any, imgIndex: number) => (
                           <Flex
-                            key={index}
+                            key={`${skill.title}-img-${imgIndex}`}
                             border="neutral-medium"
                             radius="m"
                             //@ts-ignore

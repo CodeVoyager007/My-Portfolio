@@ -1,34 +1,39 @@
 'use client';
 
-import React from "react";
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Schema, Icon } from "@once-ui-system/core";
-import { home, about, person, baseURL, work } from "@/resources";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { Heading, Flex, Text, Button, Column, Schema, Icon } from "@once-ui-system/core";
+import { home, about, person, baseURL } from "@/resources";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { TextReveal, HorizontalWork, MaskedReveal } from "@/components";
 import styles from "./Home.module.scss";
 
 const quickStats = [
   { label: 'Certifications', value: '27+' },
   { label: 'Coding Since', value: 'Feb 2023' },
-  { label: 'Hackathons', value: '3' },
+  { label: 'Hackathons', value: '10' },
   { label: 'CS50x Score', value: '9/9' },
 ];
 
 const techStack = [
   {
     category: 'Languages',
-    items: ['Python', 'JavaScript', 'TypeScript', 'C', 'HTML5', 'CSS3'],
+    items: ['Python', 'JavaScript', 'TypeScript', 'C', 'HTML5', 'CSS3', 'C++'],
   },
   {
     category: 'Frameworks',
-    items: ['Next.js', 'React.js', 'Node.js', 'Tailwind CSS', 'FastAPI'],
+    items: ['Next.js', 'React.js', 'Node.js', 'Tailwind CSS', 'FastAPI', 'Express', 'Streamlit'],
   },
   {
     category: 'AI Engineering',
-    items: ['OpenAI SDK', 'LiteLLM', 'LangChain', 'RAG', 'Vector DBs'],
+    items: ['OpenAI SDK', 'LiteLLM', 'LangChain', 'RAG', 'Vector DBs', 'OpenRouter', 'Agentic AI'],
   },
   {
-    category: 'Tools',
-    items: ['Git', 'Docker', 'Postman', 'Vercel', 'Linux'],
+    category: 'Backend & DBs',
+    items: ['PostgreSQL', 'MongoDB', 'Firebase', 'Supabase', 'REST APIs'],
+  },
+  {
+    category: 'Tools & Design',
+    items: ['Git', 'Docker', 'Postman', 'Vercel', 'Linux', 'Framer Motion', 'shadcn/ui'],
   },
 ];
 
@@ -38,8 +43,23 @@ const quote = {
 };
 
 export default function Home() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  const heroScale = useTransform(smoothProgress, [0, 0.1], [1, 0.85]);
+  const heroOpacity = useTransform(smoothProgress, [0, 0.1], [1, 0]);
+
   return (
-    <Column maxWidth="l" gap="xl" horizontal="center" style={{ width: '100%' }}>
+    <Column fillWidth horizontal="center" ref={containerRef} style={{ background: '#000000' }} gap="80">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -54,9 +74,23 @@ export default function Home() {
         }}
       />
       
-      {/* HERO SECTION */}
-      <section className={styles.hero}>
-        <RevealFx translateY="8">
+      {/* CINEMATIC HERO SECTION */}
+      <motion.section 
+        className={styles.hero}
+        style={{ 
+          scale: heroScale, 
+          opacity: heroOpacity, 
+          position: 'sticky', 
+          top: 0, 
+          zIndex: 10,
+          width: '100%',
+          margin: '0 auto',
+          background: 'transparent',
+          paddingTop: '20vh',
+          paddingBottom: '10vh'
+        }}
+      >
+        <div style={{ transform: 'translateY(8px)' }}>
           {home.featured && (
             (home.featured as any).href ? (
               <a href={(home.featured as any).href} className={styles.featuredPill}>
@@ -68,34 +102,51 @@ export default function Home() {
               </div>
             )
           )}
-        </RevealFx>
+        </div>
         
-        <RevealFx translateY="12" delay={0.1}>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >
           <h1 className={styles.headline}>
             {home.headline}
           </h1>
-        </RevealFx>
+        </motion.div>
         
-        <RevealFx translateY="16" delay={0.2}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+        >
           <p className={styles.subline}>
             {home.subline}
           </p>
-        </RevealFx>
+        </motion.div>
 
-        <RevealFx translateY="20" delay={0.3}>
-          <div className={styles.ctaGroup}>
-            <a href={about.path} className={styles.primaryBtn}>
-              About Me
-            </a>
-            <a href="/ayesha's-resume.pdf" download className={styles.secondaryBtn}>
-              Download Resume
-            </a>
-          </div>
-        </RevealFx>
-      </section>
+        <motion.div 
+          className={styles.ctaGroup}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.8 }}
+        >
+          <a href={about.path} className={styles.primaryBtn}>
+            About Me
+          </a>
+          <a href="/ayesha's-resume.pdf" download className={styles.secondaryBtn}>
+            Download Resume
+          </a>
+        </motion.div>
+      </motion.section>
 
       {/* STATS GRID */}
-      <RevealFx translateY="24" delay={0.4} fillWidth>
+      <motion.div 
+        style={{ width: '100%', maxWidth: 'var(--static-max-width-l)', padding: '0 var(--static-space-24)', zIndex: 5, position: 'relative' }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <div className={styles.statsGrid}>
           {quickStats.map((stat) => (
             <div key={stat.label} className={styles.statCard}>
@@ -104,56 +155,50 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </RevealFx>
+      </motion.div>
+
+      {/* SCROLL REVEAL SECTION */}
+      <section style={{ height: '100vh', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 5, position: 'relative' }}>
+        <TextReveal 
+          text="I build intelligent interfaces that combine cutting-edge AI with modern engineering standards to deliver exceptional user experiences."
+        />
+      </section>
+
+      {/* HORIZONTAL WORK TRACK */}
+      <section style={{ width: '100%', overflow: 'visible', zIndex: 20, position: 'relative' }}>
+        <HorizontalWork />
+      </section>
 
       {/* TECH STACK */}
-      <Column fillWidth paddingY="64">
-        <Heading variant="display-strong-s" align="center" style={{ marginBottom: '3rem' }}>
-          Technical Arsenal
-        </Heading>
-        <div className={styles.techGrid}>
-          {techStack.map((cat) => (
-            <div key={cat.category} className={styles.techCategory}>
-              <div className={styles.catTitle}>{cat.category}</div>
-              <div className={styles.tagContainer}>
-                {cat.items.map((item) => (
-                  <span key={item} className={styles.tag}>{item}</span>
-                ))}
+      <MaskedReveal>
+        <Column fillWidth maxWidth="l" paddingY="48" paddingX="24">
+          <Heading variant="display-strong-s" align="center" style={{ marginBottom: '3rem' }}>
+            Technical Arsenal
+          </Heading>
+          <div className={styles.techGrid}>
+            {techStack.map((cat) => (
+              <div key={cat.category} className={styles.techCategory}>
+                <div className={styles.catTitle}>{cat.category}</div>
+                <div className={styles.tagContainer}>
+                  {cat.items.map((item) => (
+                    <span key={item} className={styles.tag}>{item}</span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </Column>
-
-      {/* RECENT PROJECTS */}
-      <Column fillWidth paddingBottom="64">
-        <Flex fillWidth vertical="center" marginBottom="32" style={{ justifyContent: 'space-between' }}>
-          <Heading variant="display-strong-s">Recent Work</Heading>
-          <Button href={work.path} variant="tertiary" arrowIcon>View All</Button>
-        </Flex>
-        
-        <div className={styles.projectPreviewGrid}>
-          {work.projects.slice(0, 3).map((p) => (
-            <a key={p.slug} href={work.path} className={styles.projectCard}>
-              <div className={styles.projectTitle}>{p.title}</div>
-              <div className={styles.projectSummary}>{p.summary}</div>
-              <Flex gap="8" wrap>
-                {p.tech && p.tech.slice(0, 3).map((t) => (
-                  <Badge key={t}>{t}</Badge>
-                ))}
-              </Flex>
-            </a>
-          ))}
-        </div>
-      </Column>
+            ))}
+          </div>
+        </Column>
+      </MaskedReveal>
 
       {/* QUOTE */}
-      <div className={styles.quoteContainer}>
-        <Text variant="heading-default-m">&quot;{quote.text}&quot;</Text>
-        <Text variant="label-default-s" style={{ marginTop: '1rem', display: 'block', opacity: 0.6 }}>
-          — {quote.author}
-        </Text>
-      </div>
+      <MaskedReveal>
+        <div className={styles.quoteContainer} style={{ width: '100%', maxWidth: 'var(--static-max-width-s)', margin: '4rem auto 8rem' }}>
+          <Text variant="heading-default-m">&quot;{quote.text}&quot;</Text>
+          <Text variant="label-default-s" style={{ marginTop: '1rem', display: 'block', opacity: 0.6 }}>
+            — {quote.author}
+          </Text>
+        </div>
+      </MaskedReveal>
 
     </Column>
   );

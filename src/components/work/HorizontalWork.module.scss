@@ -1,0 +1,147 @@
+.container {
+  position: relative;
+  height: 600vh;
+  background: #000000;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 5vh 0; /* Reduced from 20vh */
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: flex-start;
+  z-index: 50;
+  background: #000000;
+}
+
+.track {
+  display: flex;
+  gap: 10vw;
+  padding: 0 15vw;
+  width: fit-content;
+  will-change: transform;
+  position: relative;
+  z-index: 100;
+}
+
+.titleWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+  text-align: center;
+}
+
+.cardWrapper {
+  flex-shrink: 0;
+  width: 600px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  background: #0a0a0a; 
+  border: 1px solid #1a1a1a;
+  border-radius: var(--radius-l);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+  
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: #111111;
+    transform: scale(1.02) translateY(-8px);
+    box-shadow: 
+      0 0 50px rgba(255, 255, 255, 0.03),
+      0 30px 60px rgba(0, 0, 0, 0.6);
+
+    .title {
+      background: linear-gradient(135deg, #ffffff 0%, var(--brand-solid-strong) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+.number {
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  color: var(--brand-solid-strong);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-size: 3rem !important;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  transition: all 0.4s ease;
+}
+
+.summary {
+  font-size: 1.1rem !important;
+  max-width: 400px;
+  line-height: 1.6;
+  color: #aaaaaa; /* Medium grey text */
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: auto;
+    width: 100%;
+    margin-left: 0;
+  }
+  .stickyContainer {
+    position: relative;
+    height: auto;
+    overflow: visible;
+    padding: 4rem 0;
+  }
+  .track {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 3rem;
+    transform: none !important;
+  }
+  .cardWrapper {
+    width: 100%;
+    height: auto;
+  }
+  .card {
+    padding: 2rem;
+    min-height: 400px;
+  }
+}

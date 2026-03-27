@@ -1,0 +1,119 @@
+.pageContainer {
+  min-height: 100vh;
+  background-color: var(--page-background);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rem 0 6rem;
+  gap: 2.5rem;
+  
+  /* Subtle Spotlight Glow behind text */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(var(--brand-rgb), 0.1) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+.backBtn {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--neutral-on-background-strong);
+  text-wrap: balance;
+  
+  background: linear-gradient(135deg, var(--neutral-on-background-strong) 30%, var(--neutral-on-background-medium) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.summary {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  line-height: 1.5;
+  color: var(--neutral-on-background-medium);
+  max-width: 800px;
+  font-weight: 400;
+}
+
+.actionGroup {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.contentSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0 8rem;
+  background: var(--surface-subtle);
+  border-top: 1px solid var(--border-neutral-weak);
+}
+
+.metaInfo {
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border-neutral-weak);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mdxContent {
+  width: 100%;
+  
+  /* Styling for internal markdown elements */
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 3rem 0 1.5rem;
+    color: var(--neutral-on-background-strong);
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--neutral-on-background-medium);
+    margin-bottom: 1.5rem;
+  }
+  
+  ul {
+    margin-bottom: 2rem;
+    list-style: none;
+    padding: 0;
+    
+    li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+      color: var(--neutral-on-background-medium);
+      
+      &::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--brand-solid-strong);
+      }
+    }
+  }
+}
