@@ -1,5 +1,6 @@
-import { Column, Flex, Heading, Meta, Schema, Text, Media, Icon } from "@once-ui-system/core";
+import { Column, Flex, Heading, Meta, Schema, Text, Icon } from "@once-ui-system/core";
 import { baseURL, certifications, person } from "@/resources";
+import Image from 'next/image';
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -51,29 +52,31 @@ export default function Certifications() {
                     direction="column"
                     padding="s"
                     background="surface"
-                    style={{ transition: 'transform 0.2s', cursor: 'pointer' }}
+                    style={{ transition: 'all 0.3s ease', cursor: 'pointer', height: '100%' }}
                     className="hover-scale"
                   >
-                    {image.thumbnail ? (
-                      <Media
-                        radius="m"
-                        src={image.thumbnail}
-                        alt={image.alt}
-                        style={{ width: '100%', height: 'auto', objectFit: 'cover', aspectRatio: '4/3' }}
-                      />
-                    ) : (
-                      <Flex
-                        fillWidth
-                        aspectRatio="4/3"
-                        background="neutral-weak"
-                        radius="m"
-                        vertical="center"
-                        horizontal="center"
-                      >
-                        <Icon name="certificate" size="xl" onBackground="neutral-medium" />
-                      </Flex>
-                    )}
-                    <Text variant="body-default-s" align="center" paddingTop="xs">
+                    <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', borderRadius: 'var(--radius-m)', overflow: 'hidden', background: '#000' }}>
+                      {image.thumbnail ? (
+                        <Image
+                          src={image.thumbnail}
+                          alt={image.alt}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                          unoptimized
+                        />
+                      ) : (
+                        <Flex
+                          fillWidth
+                          fillHeight
+                          background="neutral-weak"
+                          vertical="center"
+                          horizontal="center"
+                        >
+                          <Icon name="certificate" size="xl" onBackground="neutral-medium" />
+                        </Flex>
+                      )}
+                    </div>
+                    <Text variant="body-default-s" align="center" paddingTop="xs" style={{ marginTop: 'auto' }}>
                       {image.alt}
                     </Text>
                   </Flex>

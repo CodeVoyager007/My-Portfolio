@@ -1,7 +1,7 @@
 .postCard {
     text-decoration: none;
     display: block;
-    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     height: 100%;
     position: relative;
     background: rgba(255, 255, 255, 0.02);
@@ -14,21 +14,28 @@
         border-color: var(--brand-solid-medium);
         transform: translateY(-8px);
         box-shadow: 
-            0 20px 40px rgba(0, 0, 0, 0.4),
-            0 0 20px rgba(var(--brand-rgb), 0.05);
+            0 24px 48px rgba(0, 0, 0, 0.4),
+            0 0 32px rgba(var(--brand-rgb), 0.05);
 
         .postImage {
-            transform: scale(1.05);
-        }
-
-        .placeholderImage {
-            background: linear-gradient(135deg, var(--brand-solid-weak) 0%, transparent 100%);
+            transform: scale(1.08);
         }
 
         .title {
             color: var(--brand-solid-strong);
         }
+
+        .imageContainer::after {
+            opacity: 0;
+        }
     }
+}
+
+.innerContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
 .imageContainer {
@@ -36,15 +43,24 @@
     width: 100%;
     aspect-ratio: 16/9;
     overflow: hidden;
-    background: var(--neutral-alpha-weak);
+    background: #000;
     display: flex;
+
+    // Overlay to make images sit better
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: #000;
+        opacity: 0.2; // Subtle darkness by default
+        transition: opacity 0.6s ease;
+        pointer-events: none;
+    }
 }
 
 .postImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    object-fit: cover !important; // Ensures "perfect fit" without stretching
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
 .placeholderImage {
@@ -87,23 +103,22 @@
 }
 
 .columnLayout {
-    flex-direction: column;
-
-    & > div {
-        flex-direction: row !important;
+    .innerContainer {
+        flex-direction: row;
         
         @media (max-width: 768px) {
-            flex-direction: column !important;
+            flex-direction: column;
         }
     }
 
     .imageContainer {
-        flex: 0 0 40% !important;
-        aspect-ratio: 4/3 !important;
+        flex: 0 0 40%;
+        height: 100%;
+        aspect-ratio: auto; // Let it fill the height of the row
         
         @media (max-width: 768px) {
-            flex: 0 0 auto !important;
-            aspect-ratio: 16/9 !important;
+            flex: 0 0 auto;
+            aspect-ratio: 16/9;
         }
     }
 }

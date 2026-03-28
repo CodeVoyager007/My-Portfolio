@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { Column, Flex, Text, Tag, RevealFx } from "@once-ui-system/core";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import styles from './Post.module.scss';
 
 interface PostProps {
@@ -32,14 +34,24 @@ export const Post: React.FC<PostProps> = ({ post, direction = "row" }) => {
                 rel="noopener noreferrer"
                 className={`${styles.postCard} ${direction === "column" ? styles.columnLayout : ''}`}
             >
-                <div style={{ display: 'flex', flexDirection: 'inherit', width: '100%', height: '100%' }}>
+                <div className={styles.innerContainer}>
                     <div className={styles.imageContainer}>
                         {post.image ? (
-                            <img
-                                src={post.image}
-                                alt={post.title}
-                                className={styles.postImage}
-                            />
+                            <motion.div
+                                initial={{ opacity: 0, scale: 1.1 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                                style={{ width: '100%', height: '100%', position: 'relative' }}
+                            >
+                                <Image
+                                    src={post.image}
+                                    alt={post.title}
+                                    fill
+                                    className={styles.postImage}
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    unoptimized // Since these are external social media images, we avoid Next.js optimization limits
+                                />
+                            </motion.div>
                         ) : (
                             <div className={styles.placeholderImage}>
                                 <Text variant="label-strong-xl" style={{ opacity: 0.1, fontSize: '4rem' }}>
