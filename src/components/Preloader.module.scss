@@ -1,0 +1,102 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #050505;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+// A soft, moving ambient glow for depth
+.ambientGlow {
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.nameWrapper {
+  display: flex;
+  gap: 0.2em;
+  margin-bottom: 3rem;
+}
+
+.charContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+.char {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  display: inline-block;
+  // A subtle "shimmer" effect on the text
+  background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.4), #fff);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.divider {
+  width: 1px;
+  height: 0px; // Will be animated
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
+  margin: 2rem 0;
+}
+
+.progressWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0.6;
+}
+
+.percentage {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
+}
+
+.barContainer {
+  width: 60px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+}

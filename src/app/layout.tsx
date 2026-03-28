@@ -5,7 +5,7 @@ import './globals.css';
 import classNames from "classnames";
 
 import { Background, Column, Flex, Meta, opacity, SpacingToken } from "@once-ui-system/core";
-import { Footer, Header, Providers, Cinematic } from '@/components';
+import { Footer, Header, Providers, Cinematic, Preloader } from '@/components';
 import { baseURL, effects, fonts, style, dataStyle, home } from '@/resources';
 
 export const viewport = {
@@ -108,6 +108,7 @@ export default async function RootLayout({
         />
       </head>
       <Providers>
+        <Preloader />
         <Column as="body" background="page" fillWidth style={{minHeight: "100vh", overflowX: 'visible'}} margin="0" padding="0" horizontal="center">
           <Cinematic />
           <Background

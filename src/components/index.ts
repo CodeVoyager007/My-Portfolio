@@ -11,3 +11,4 @@ export { MaskedReveal } from "@/components/MaskedReveal";
 export { Cinematic } from "@/components/Cinematic";
 export { default as Magnetic } from "@/components/Magnetic";
 export { HorizontalWork } from "@/components/work/HorizontalWork";
+export { Preloader } from "@/components/Preloader";
