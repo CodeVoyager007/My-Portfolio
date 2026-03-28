@@ -4,7 +4,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "AI Enthusiast & Developer",
+  role: "AI Developer & Full-Stack Engineer",
   avatar: "/images/avatar.png",
   email: "ayeshamughal2162@gmail.com",
   location: "Asia/Karachi",
@@ -16,8 +16,7 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}&apos;s Newsletter</>,
   description: (
     <>
-      I write about AI, modern development practices, and share insights about my journey in tech. 
-      Follow along as I explore the intersection of logic and creativity.
+      I share practical insights on AI development, modern web engineering, and my ongoing projects in tech.
     </>
   ),
 };
@@ -59,17 +58,17 @@ const home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building experiences at the intersection of logic and creativity</>,
+  title: `${person.name} | AI & Web Developer`,
+  description: `Portfolio of ${person.name}, focusing on AI development and modern web applications.`,
+  headline: <>Developing functional, AI-driven web applications</>,
   featured: {
     display: true,
-    title: <>Recent focus: <strong className="ml-4">Agentic AI</strong></>,
+    title: <>Current Focus: <strong className="ml-4">Agentic AI</strong></>,
   },
   subline: (
     <>
-      I&apos;m Ayesha, a <b>{new Date().getFullYear() - 2009}-year-old</b> developer passionate about AI and innovative technology.
-              <br /> With 27+ certifications, I&apos;m constantly learning and building new experiences.
+      I&apos;m Ayesha, a developer specializing in AI and modern web technologies. 
+      With 27+ certifications and hands-on project experience, I focus on building efficient, scalable digital solutions.
     </>
   ),
 };
@@ -78,7 +77,7 @@ const about = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Background and experience of ${person.name}, AI Developer based in ${person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -92,19 +91,19 @@ const about = {
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "About Me",
     description: (
       <>
-        A passionate and persistent learner standing at the intersection of logic and creativity. 
-        Currently delving into the intricacies of Agentic AI while maintaining a strong foundation 
-        in modern development practices. With a flair for interaction, minimalism, and dark design, 
-        I don&apos;t just build code — I build experiences.
+        I am a developer focused on building practical AI systems and modern web applications. 
+        Currently, I am specializing in Agentic AI and tool-use orchestration, while maintaining 
+        a strong foundation in full-stack development. I prioritize clean design, performance, 
+        and user-centered interfaces in everything I build.
       </>
     ),
   },
   work: {
     display: true,
-    title: "Work Experience",
+    title: "Experience",
     experiences: [
       {
         company: "GAO Tech",
@@ -112,12 +111,10 @@ const about = {
         role: "Assistant Squad Leader",
         achievements: [
           <>
-            Started as an intern and got promoted to Assistant Squad Leader within 21 days,
-            demonstrating leadership and technical capabilities.
+            Promoted to Assistant Squad Leader within 21 days for demonstrating strong technical and leadership skills.
           </>,
           <>
-            Contributed to various projects during the 3-month internship, gaining hands-on
-            experience in real-world development scenarios.
+            Collaborated on multiple development projects during a 3-month internship, gaining practical experience in team-based software delivery.
           </>,
         ],
         images: [],
@@ -125,11 +122,11 @@ const about = {
       {
         company: "In Plain English",
         timeframe: "July 2025 - Present",
-        role: "Tech Blog Writer",
+        role: "Technical Writer",
         achievements: [
-          <>Writing in-depth, accessible tech blogs for a global audience.</>,
-          <>Contributed articles on Python, JavaScript, and AI topics.</>,
-          <>Joined the team as a writer on July 14, 2025.</>,
+          <>Publishing technical guides and articles for a global developer community.</>,
+          <>Covering topics across Python, JavaScript, and AI implementation.</>,
+          <>Regularly contributing to one of the largest tech publications on Medium.</>,
         ],
         images: [],
       }
@@ -140,90 +137,88 @@ const about = {
     title: "Education & Certifications",
     institutions: [
       {
-        name: "Higher Secondary Education (Completed)",
-        description: <>Completed HSC Part II (Pre-Engineering) in 2025 | Strong academic performance across both years</>,
+        name: "Higher Secondary Education",
+        description: <>Completed HSC Part II (Pre-Engineering) in 2025 with strong academic standing.</>,
       },
       { 
         name: "Secondary School Certificate",
-        description: <>Completed SSC with Higher A Grade | Accelerated education - completed at age 13</>,
+        description: <>Completed SSC with a Higher A Grade, graduating ahead of schedule at age 13.</>,
       },
       {
         name: "GIAIC",
-        description: <>Currently in Quarter 4 of AI, Web3 & Metaverse Development Course (Started Feb 2024)</>,
+        description: <>Specializing in AI, Web3, and Metaverse Development. Currently in Quarter 4 (Since Feb 2024).</>,
       },
       {
         name: "Harvard CS50",
         description: <>
           - CS50&apos;s Introduction to AI with Python Certification<br/>
-          - CS50x Puzzle Day Certificate with perfect 9/9 score<br/>
-          - Demonstrated advanced problem-solving capabilities
+          - CS50x Puzzle Day: Achieved a perfect 9/9 score<br/>
+          - Focused on advanced problem-solving and algorithmic thinking
         </>,
       },
       {
         name: "Professional Development",
         description: <>
-          - GAOTek: 3-month internship with promotion to Assistant Squad Leader<br/>
           - freeCodeCamp: Responsive Web Design Certification<br/>
-          - Great Learning: JavaScript and Graphic Design with Photoshop Certifications
+          - Great Learning: JavaScript and Graphic Design Certifications
         </>,
       },
       {
-        name: "Additional Achievements",
+        name: "Academic Achievements",
         description: <>
-          - School&apos;s primary speaker for events and ceremonies<br/>
-          - Multiple academic competition participations<br/>
-          - Perfect attendance record with consistent academic excellence
+          - Selected as the primary speaker for various school events and ceremonies.<br/>
+          - Consistent record of high academic performance and competition participation.
         </>,
       }
     ],
   },
   highlights: {
     display: true,
-    title: "Highlights",
+    title: "Focus Areas",
     sections: [
       {
-        title: "What I'm focusing on",
+        title: "Current Focus",
         description: <>
-          Building with Agentic AI patterns, tool-use orchestration, and production-grade evaluations. Recently exploring OpenRouter, LiteLLM, and streaming UIs.
+          Implementing Agentic AI patterns, tool-use orchestration, and LLM evaluation frameworks. Working with OpenRouter, LiteLLM, and real-time streaming interfaces.
         </>
       },
       {
-        title: "How I work",
+        title: "Development Philosophy",
         description: <>
-          Bias toward simple interfaces, fast feedback loops, and writing-first problem solving. Preferred stack: Next.js, TypeScript, Framer Motion.
+          I value simple interfaces, fast feedback loops, and clear documentation. My preferred tech stack includes Next.js, TypeScript, and Framer Motion.
         </>
       },
       {
-        title: "Toolbox",
+        title: "Tech Stack",
         description: <>
-          Daily drivers include VS Code, GitHub, Postman, Vercel, and Canva. Comfortable shipping on short cycles and iterating with user feedback.
+          Proficient with VS Code, GitHub, Postman, and Vercel. Experienced in agile development and iterative shipping cycles.
         </>
       },
       {
-        title: "Outside of code",
+        title: "Interests",
         description: <>
-          I enjoy speaking, puzzle challenges (like CS50x), and designing minimal, dark-themed UI concepts.
+          Beyond coding, I enjoy public speaking, complex puzzle challenges, and designing minimal, dark-themed user interfaces.
         </>
       }
     ]
   },
   technical: {
     display: true,
-    title: "Technical skills",
+    title: "Tech Stack",
     skills: [
       {
-        title: "Programming Languages",
-        description: <>Proficient in HTML, CSS, JavaScript, TypeScript, Python, C/C++</>,
+        title: "Languages",
+        description: <>Proficient in JavaScript, TypeScript, Python, C/C++, HTML5, and CSS3.</>,
         images: [],
       },
       {
         title: "Frameworks & Tools",
-        description: <>Next.js, Node.js, Tailwind CSS, Framer Motion, Streamlit, shadcn, Git & GitHub</>,
+        description: <>Next.js, Node.js, Tailwind CSS, Framer Motion, Streamlit, and Git.</>,
         images: [],
       },
       {
-        title: "AI & Advanced Tech",
-        description: <>Currently exploring Agentic AI, LiteLLM, OpenRouter, Swarm & Agents SDK, and Evaluator-Optimizer Patterns</>,
+        title: "AI & Future Tech",
+        description: <>Specializing in Agentic AI, LLM Orchestration, and Evaluator-Optimizer patterns.</>,
         images: [],
       },
     ],
@@ -235,7 +230,7 @@ const certifications = {
   path: "/certifications",
   label: "Certifications",
   title: "Certifications",
-  description: "A comprehensive collection of my professional certifications, awards, and achievements in technology and development.",
+  description: "A record of my professional certifications and technical achievements.",
   images: [
     {
       src: "/certificates/RPN-Certificate.pdf",
@@ -316,7 +311,7 @@ const blog = {
   path: "/blog",
   label: "Blog",
   title: `Blog – ${person.name}`,
-  description: "Thoughts on development, AI, and technology",
+  description: "Writing about AI development and modern engineering.",
   external: [
     {
       platform: "Hashnode",
@@ -340,12 +335,12 @@ const work = {
     path: "/work",
     label: "Work",
     title: "Projects",
-    description: "My latest work",
+    description: "Selection of my recent projects",
     projects: [
       {
         slug: "serveease-next",
         title: "ServeEase",
-        summary: "A high-end hospitality management platform designed to digitize the fine dining experience with real-time KDS and predictive analytics.",
+        summary: "A hospitality management platform for fine dining, featuring real-time KDS and predictive analytics.",
         tech: ["Next.js", "React", "Tailwind CSS", "SaaS"],
         link: "https://serveease-next.vercel.app/",
         repo: "https://github.com/CodeVoyager007/serveease-next",
@@ -353,8 +348,8 @@ const work = {
       },
       {
         slug: "audionic-soundscape-shop",
-        title: "Audionic Soundscape Shop",
-        summary: "A premium e-commerce storefront for audio equipment, featuring a 'Neo-Tech' aesthetic, high-performance interactions, and robust type-safety.",
+        title: "Audionic Shop",
+        summary: "An e-commerce storefront for audio equipment with high-performance interactions and type-safety.",
         tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn-ui"],
         link: "https://audionic-soundscape-shop.vercel.app/",
         repo: "https://github.com/CodeVoyager007/audionic-soundscape-shop",
@@ -362,8 +357,8 @@ const work = {
       },
       {
         slug: "momentum-ai-todo-app",
-        title: "Momentum AI Todo App",
-        summary: "An intelligent todo application that helps you stay organized and focused using AI-driven task management.",
+        title: "Momentum AI",
+        summary: "A task management application utilizing AI agents for automated task organization.",
         tech: ["Next.js", "AI Agents", "LangChain", "Tailwind CSS"],
         link: "https://momentum-ai-todo-app.vercel.app/",
         repo: "https://github.com/CodeVoyager007/hackathon-2/tree/main/phase-3",
@@ -371,8 +366,8 @@ const work = {
       },
       {
         slug: "humanoid-robotics-course",
-        title: "Physical AI Humanoid Robotics Course",
-        summary: "A comprehensive educational platform for learning about physical AI and humanoid robotics.",
+        title: "Humanoid Robotics",
+        summary: "An educational platform focused on physical AI and humanoid robotics learning materials.",
         tech: ["Next.js", "React", "Tailwind CSS"],
         link: "https://physical-ai-humanoid-robotics-cours-six.vercel.app/",
         repo: "https://github.com/CodeVoyager007/Physical-AI-Humanoid-Robotics-Course",
@@ -380,8 +375,8 @@ const work = {
       },
       {
         slug: "sm-marketing-real-estate",
-        title: "SM Marketing Real Estate",
-        summary: "A modern real estate marketing platform featuring property listings and interactive elements.",
+        title: "SM Marketing",
+        summary: "A modern real estate platform with property listings and interactive lead management.",
         tech: ["Next.js", "React", "Tailwind CSS"],
         link: "https://sm-markeing-real-estate.vercel.app/",
         repo: "https://github.com/CodeVoyager007/SM-Markeing-real-estate",
@@ -390,7 +385,7 @@ const work = {
       {
         slug: "study-forge-ai",
         title: "StudyForge AI",
-        summary: "An intelligent study platform that transforms topics into personalized study materials including MCQs, flashcards, and summaries using advanced AI.",
+        summary: "An AI-powered study tool that generates personalized flashcards and summaries from raw topics.",
         tech: ["React", "TypeScript", "Supabase", "AI Study Tools"],
         link: "https://study-forge-ai.vercel.app/",
         repo: "https://github.com/CodeVoyager007/study-forge-ai",
@@ -399,7 +394,7 @@ const work = {
       {
         slug: "prompt-vault",
         title: "PromptVault",
-        summary: "A community-driven marketplace for discovering and sharing high-quality AI prompts for coding, writing, and business automation.",
+        summary: "A marketplace for high-quality AI prompts focused on coding and business automation.",
         tech: ["Next.js", "Supabase", "Prompt Engineering", "Framer Motion"],
         link: "https://prompt-vaulet-get-200-plus-prompts.vercel.app/",
         repo: "https://github.com/CodeVoyager007/prompt-vault",
@@ -408,7 +403,7 @@ const work = {
       {
         slug: "luxe-interiors",
         title: "Luxe Interiors",
-        summary: "A premium interior design portfolio website featuring modern aesthetics, smooth transitions, and a curated gallery of living spaces.",
+        summary: "A premium interior design portfolio featuring smooth transitions and curated living spaces.",
         tech: ["React", "Framer Motion", "Styled Components", "Vite"],
         link: "https://interior-design-website-indol-ten.vercel.app/",
         repo: "https://github.com/CodeVoyager007/interior-design-website",
@@ -416,8 +411,8 @@ const work = {
       },
       {
         slug: "sugar-bliss-bakery",
-        title: "Sugar Bliss Bakery",
-        summary: "A delightful e-commerce frontend for a boutique bakery, featuring product galleries, special order forms, and nutritional information display.",
+        title: "Sugar Bliss",
+        summary: "An e-commerce frontend for a bakery featuring product galleries and order forms.",
         tech: ["React", "Tailwind CSS", "Vercel"],
         link: "https://bakery-website-by-ayesha-mughal.vercel.app/",
         repo: "https://github.com/CodeVoyager007/bakery-website",
@@ -425,8 +420,8 @@ const work = {
       },
       {
         slug: "course-search-engine",
-        title: "Course Search Engine",
-        summary: "A comprehensive search engine for programming courses aggregation, featuring filtering, search, and detailed metadata for self-learners.",
+        title: "Course Finder",
+        summary: "A search engine for programming courses with advanced filtering and metadata aggregation.",
         tech: ["Next.js", "API Integration", "Tailwind CSS"],
         link: "https://courses-search-engine-by-ayesha-mughal.vercel.app/",
         repo: "https://github.com/CodeVoyager007/courses-search-engine",
@@ -434,8 +429,8 @@ const work = {
       },
       {
         slug: "github-profile-viewer",
-        title: "GitHub Profile Viewer",
-        summary: "An elegant analytics tool that visualizes GitHub user data, repositories, and activity using the GitHub public API.",
+        title: "Profile Viewer",
+        summary: "A data visualization tool for analyzing GitHub profiles and repository activity.",
         tech: ["React", "GitHub API", "Chart.js", "CSS Modules"],
         link: "https://github-profile-search-app-sage.vercel.app/",
         repo: "https://github.com/CodeVoyager007/github-profile-search",
@@ -447,10 +442,8 @@ const work = {
 const gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  title: `Gallery – ${person.name}`,
+  description: `Photos and visual work by ${person.name}`,
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",
@@ -517,148 +510,96 @@ const journey = {
   path: "/journey",
   label: "Journey",
   title: `Journey – ${person.name}`,
-  description: "A timeline of my learning and achievements.",
+  description: "Key milestones in my development career.",
   milestones: [
     {
       date: "March 2026",
-      title: "Viral Reach & AI Excellence",
-      description: "A transformative month marked by significant audience growth and recognition in the AI prompting space.",
+      title: "Audience Growth & AI Recognition",
+      description: "Significant expansion in technical reach and performance in AI competitions.",
       achievements: [
-        "Reached a major milestone of 44k+ views on Medium articles",
-        "Won 5th place in the Ramadan Prompting Nights challenge",
-        "Completed 'Personal AI Employee Hackathon 0: Building Autonomous FTEs'",
-        "Finished '🏭 The CRM Digital FTE Factory Final Hackathon 5'"
+        "Reached 44k+ views on technical Medium articles.",
+        "Won 5th place in the Ramadan Prompting Nights challenge.",
+        "Completed hackathons on building autonomous AI employees and digital FTE factories."
       ],
-      skills: ["Medium Writing", "Prompt Engineering", "Autonomous Agents", "Digital FTEs"],
+      skills: ["Technical Writing", "Prompt Engineering", "Autonomous Agents"],
       type: "achievement"
     },
     {
       date: `January ${new Date().getFullYear()}`,
-      title: "GIAIC Hackathon: Evolution of Todo Applications",
-      description: "A comprehensive 5-phase project demonstrating the evolution of task management software, from console to cloud-scale Kubernetes deployment.",
+      title: "Full-Stack AI Evolution",
+      description: "Developed an end-to-end task management ecosystem using AI agents and Kubernetes.",
       achievements: [
-        "Phase 1 & 2: Built robust console-based and modern web-based applications",
-        "Phase 3: Developed an autonomous AI agent to manage tasks (Create, Edit, Delete)",
-        "Phase 4: Containerized the application with Docker and deployed on local Kubernetes",
-        "Phase 5: Orchestrated full-scale cloud deployment on Kubernetes"
+        "Built a multi-phase project from console apps to cloud-scale Kubernetes deployments.",
+        "Integrated autonomous AI agents for full CRUD operations.",
+        "Implemented containerization with Docker and orchestration with Kubernetes."
       ],
-      skills: ["Next.js", "AI Agents", "Docker", "Kubernetes", "Cloud Deployment"],
+      skills: ["Next.js", "AI Agents", "Docker", "Kubernetes"],
       type: "achievement"
     },
     {
       date: "December 2025",
-      title: "GIAIC Hackathon: Spec-Driven RAG Chatbot",
-      description: "Built a technical documentation platform and intelligent chatbot using a spec-driven methodology.",
+      title: "RAG & Spec-Driven Development",
+      description: "Focused on building reliable AI systems using Retrieval-Augmented Generation.",
       achievements: [
-        "Developed a comprehensive technical book using Docusaurus",
-        "Implemented a high-performance RAG (Retrieval-Augmented Generation) chatbot",
-        "Mastered spec-driven development for reliable and predictable AI behavior"
+        "Built a technical documentation platform using Docusaurus.",
+        "Implemented a RAG chatbot for high-performance information retrieval.",
+        "Applied spec-driven development to ensure predictable AI behavior."
       ],
-      skills: ["Docusaurus", "RAG", "LLMs", "Spec-Driven Development"],
+      skills: ["Docusaurus", "RAG", "LLMs", "Development Standards"],
       type: "achievement"
     },
     {
       date: "2024",
-      title: "Startup Challenge Winner at GIAIC",
+      title: "Startup Challenge Winner",
       description: <>
-        Won the Startup Challenge at Governor Initiative for AI and Computing (GIAIC). 
-        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7403769513621839872/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'inherit' }}>
-          View Proof
+        Won first place in the Startup Challenge at GIAIC for innovative problem-solving.
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7403769513621839872/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'inherit', marginLeft: '8px' }}>
+          View Post
         </a>
       </>,
       achievements: [
-        "First place winner in the Startup Challenge",
-        "Demonstrated innovative problem-solving and business acumen",
-        "Recognized for potential impact in the tech industry"
+        "Awarded first place for a technical startup concept.",
+        "Presented innovative solutions to a panel of industry experts.",
+        "Recognized for entrepreneurial potential in tech."
       ],
-      skills: ["Entrepreneurship", "Innovation", "Pitching", "Problem Solving"],
+      skills: ["Product Strategy", "Pitching", "Problem Solving"],
       type: "achievement"
     },
     {
       date: "2024 - Present",
-      title: "GIAIC",
-      description: "Currently in Quarter 4 of AI, Web3 & Metaverse Development Course , studying Prompt and context engineering and LLM development",
+      title: "GIAIC Specialization",
+      description: "Advanced study in AI, Web3, and Metaverse development.",
       achievements: [
-        "Progressing through AI, Web3 & Metaverse Development Course",
-        "Quarter 4 completion in progress",
-        "Learning advanced AI and Web3 technologies",
-        "Studying Prompt and context engineering and LLM development"
+        "Focusing on Prompt Engineering and LLM development.",
+        "Building practical applications with Web3 and Blockchain technologies.",
+        "Developing expertise in Agentic AI systems."
       ],
-      skills: ["AI", "Web3", "Metaverse Development", "Blockchain", "Prompt and context engineering", "LLM development", "Agentic AI"],
+      skills: ["AI Development", "Web3", "Blockchain", "Prompt Engineering"],
       type: "learning"
     },
     {
       date: "2023 - 2025",
-      title: "Higher Secondary Education (Completed)",
-      description: "Completed HSC Part II in Computer Science with strong academic performance in 2025.",
+      title: "Academic Background",
+      description: "Completed Higher Secondary Education with a focus on Computer Science.",
       achievements: [
-        "Strong academic performance in HSC Part I & II",
-        "Specialized in Computer Science track",
-        "Focusing on programming and computer fundamentals",
-        "HSC Part II Completed"
+        "Maintained high academic standing in the Computer Science track.",
+        "Focused on foundational programming and mathematics.",
+        "Graduated HSC Part II in 2025."
       ],
-      skills: ["Computer Science", "Programming", "Mathematics", "Physics"],
+      skills: ["Computer Science", "Mathematics", "Programming Foundations"],
       type: "Finished"
     },
     {
       date: "July 2025 - Present",
-      title: "In Plain English – Tech Blog Writer",
-      description: "Joined In Plain English as a writer about tech blogs, contributing articles on Python, JavaScript, and AI topics for a global audience.",
+      title: "Technical Writing",
+      description: "Joined 'In Plain English' as a regular contributor on Python and AI topics.",
       achievements: [
-        "Joined the team as a writer on July 14, 2025",
-        "Writing in-depth, accessible tech blogs for a global audience",
-        "Contributed articles on Python, JavaScript, and AI topics"
+        "Writing technical deep-dives for a global audience.",
+        "Explaining complex AI and JavaScript concepts simply.",
+        "Building a following through high-quality technical documentation."
       ],
-      skills: ["Writing", "Technical Communication", "Python", "JavaScript", "AI"],
+      skills: ["Writing", "Communication", "Python", "JavaScript"],
       type: "work"
-    },
-    {
-      date: "2024",
-      title: "Harvard CS50",
-      description: "Completed multiple CS50 certifications and achievements",
-      achievements: [
-        "CS50's Introduction to AI with Python Certification",
-        "CS50x Puzzle Day Certificate with perfect 9/9 score",
-        "Demonstrated advanced problem-solving capabilities"
-      ],
-      skills: ["Python", "AI", "Problem Solving"],
-      type: "achievement"
-    },
-    {
-      date: "2024",
-      title: "Professional Development",
-      description: "Gained professional experience and certifications",
-      achievements: [
-        "GAOTek: 3-month internship with promotion to Assistant Squad Leader",
-        "freeCodeCamp: Responsive Web Design Certification",
-        "Great Learning: JavaScript and Graphic Design with Photoshop Certifications"
-      ],
-      skills: ["Leadership", "Web Design", "JavaScript", "Graphic Design"],
-      type: "foundation"
-    },
-    {
-      date: "2022",
-      title: "Secondary School Certificate",
-      description: "Completed SSC with Higher A Grade in Bio Science | Accelerated education - completed at age 13",
-      achievements: [
-        "Completed SSC with Higher A Grade",
-        "Specialized in Bio Science",
-        "Accelerated education - completed at age 13"
-      ],
-      skills: ["Biology", "Chemistry", "Academic Excellence", "Time Management"],
-      type: "achievement"
-    },
-    {
-      date: "2022-2023",
-      title: "Additional Achievements",
-      description: "Recognition for academic and extracurricular excellence",
-      achievements: [
-        "School's primary speaker for events and ceremonies",
-        "Multiple academic competition participations",
-        "Perfect attendance record with consistent academic excellence"
-      ],
-      skills: ["Public Speaking", "Leadership", "Academic Excellence"],
-      type: "achievement"
     }
   ]
 };
