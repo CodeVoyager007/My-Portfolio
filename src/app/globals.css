@@ -301,6 +301,23 @@ body::before {
   }
 }
 
+.s-flex-hide {
+  display: flex !important;
+}
+
+.s-flex-show {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .s-flex-hide {
+    display: none !important;
+  }
+  .s-flex-show {
+    display: flex !important;
+  }
+}
+
 /* Responsive text alignment */
 @media (max-width: 768px) {
   .mobile-center {

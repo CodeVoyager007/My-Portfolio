@@ -12,6 +12,7 @@ export const HorizontalWork = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [translateX, setTranslateX] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -25,17 +26,15 @@ export const HorizontalWork = () => {
 
   useEffect(() => {
     const updateScroll = () => {
+      setIsMobile(window.innerWidth <= 768);
       if (scrollRef.current) {
         const totalWidth = scrollRef.current.scrollWidth;
         const viewportWidth = window.innerWidth;
-        // Move the track by its total width minus the viewport width
-        // Add a safety buffer
         setTranslateX(totalWidth - viewportWidth + (viewportWidth * 0.1));
       }
     };
 
     updateScroll();
-    // Re-calculate after images/content might have loaded
     const timer = setTimeout(updateScroll, 1000);
     window.addEventListener('resize', updateScroll);
     return () => {
@@ -44,7 +43,7 @@ export const HorizontalWork = () => {
     }
   }, []);
 
-  const x = useTransform(smoothProgress, [0, 1], [0, -translateX]);
+  const x = useTransform(smoothProgress, [0, 1], [0, isMobile ? 0 : -translateX]);
 
   return (
     <section ref={targetRef} className={styles.container}>

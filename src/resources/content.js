@@ -58,8 +58,8 @@ const home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name} | AI & Web Developer`,
-  description: `Portfolio of ${person.name}, focusing on AI development and modern web applications.`,
+  title: "Ayesha Mughal — AI Developer & Technical Writer from Karachi, Pakistan",
+  description: "Ayesha Mughal is a 16-year-old AI developer and technical writer from Karachi, Pakistan. Building agentic AI systems, full-stack apps, and writing in public. 27+ certifications, 225K+ Medium views.",
   headline: <>Developing functional, AI-driven web applications</>,
   featured: {
     display: true,

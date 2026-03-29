@@ -18,16 +18,29 @@
 }
 
 .hero {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  margin: 0 auto;
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Changed to left */
   text-align: left; /* Changed to left */
-  padding: 15rem 0 12rem;
+  padding-top: 20vh;
+  padding-bottom: 10vh;
   gap: 4rem;
   max-width: 900px;
-  margin: 0; /* Align to the left of the container */
-  
+
+  @media (max-width: 768px) {
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+  }
+
   /* Subtle Spotlight Glow behind text - moved to the left */
   &::before {
     content: '';
@@ -41,6 +54,12 @@
     filter: blur(60px);
     z-index: -1;
     pointer-events: none;
+    
+    @media (max-width: 768px) {
+      width: 100%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+    }
   }
 }
 
@@ -77,6 +96,10 @@
   background: linear-gradient(135deg, var(--neutral-on-background-strong) 30%, var(--neutral-on-background-medium) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media (max-width: 480px) {
+    font-size: 2.5rem;
+  }
 }
 
 .subline {
@@ -93,6 +116,11 @@
   margin-top: 1.5rem;
   flex-wrap: wrap;
   justify-content: flex-start; /* Changed to left */
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .primaryBtn {
@@ -140,6 +168,17 @@
   width: 100%;
   margin-top: 8rem;
   margin-bottom: 8rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .statCard {
@@ -182,6 +221,11 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 4rem;
   width: 100%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 .techCategory {
@@ -275,4 +319,10 @@
   border-radius: var(--radius-l);
   font-style: italic;
   border-left: 4px solid var(--brand-solid-strong);
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+  }
 }

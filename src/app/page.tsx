@@ -79,15 +79,7 @@ export default function Home() {
         className={styles.hero}
         style={{ 
           scale: heroScale, 
-          opacity: heroOpacity, 
-          position: 'sticky', 
-          top: 0, 
-          zIndex: 10,
-          width: '100%',
-          margin: '0 auto',
-          background: 'transparent',
-          paddingTop: '20vh',
-          paddingBottom: '10vh'
+          opacity: heroOpacity,
         }}
       >
         <div style={{ transform: 'translateY(8px)' }}>
