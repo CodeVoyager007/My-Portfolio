@@ -24,6 +24,9 @@ export async function generateMetadata() {
 
   return {
     ...meta,
+    verification: {
+      google: 'ZSB-njjy5eNVmjKen45MRBNpcgFzWS9ZhoDMwRh3rcQ',
+    },
     icons: {
       icon: '/images/avatar.png',
     },
