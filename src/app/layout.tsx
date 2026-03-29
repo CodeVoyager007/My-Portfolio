@@ -24,9 +24,6 @@ export async function generateMetadata() {
 
   return {
     ...meta,
-    verification: {
-      google: 'ZSB-njjy5eNVmjKen45MRBNpcgFzWS9ZhoDMwRh3rcQ',
-    },
     icons: {
       icon: '/images/avatar.png',
     },
@@ -52,6 +49,7 @@ export default async function RootLayout({
       )}
     >
       <head>
+        <meta name="google-site-verification" content="ZSB-njjy5eNVmjKen45MRBNpcgFzWS9ZhoDMwRh3rcQ" />
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
