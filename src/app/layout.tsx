@@ -51,6 +51,41 @@ export default async function RootLayout({
       <head>
         <meta name="google-site-verification" content="ZSB-njjy5eNVmjKen45MRBNpcgFzWS9ZhoDMwRh3rcQ" />
         <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Ayesha Mughal",
+              "url": "https://ayesha-mughals-portfolio.vercel.app",
+              "image": "https://ayesha-mughals-portfolio.vercel.app/images/avatar.png",
+              "jobTitle": "AI Developer & Technical Writer",
+              "description": "Ayesha Mughal is a 16-year-old AI developer, technical writer, and student from Karachi, Pakistan. Building in public — Claude Code, agentic AI, ai automation, and full-stack development.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Karachi",
+                "addressCountry": "PK"
+              },
+              "sameAs": [
+                "https://medium.com/@ayeshamughal21",
+                "https://www.linkedin.com/in/ayeshaintech/",
+                "https://hashnode.com/@mughalsyntax",
+                "https://github.com/CodeVoyager007",
+                "https://x.com/Ayesha_Mughal21"
+              ],
+              "knowsAbout": [
+                "Claude Code",
+                "Agentic AI",
+                "Full-Stack Web Development",
+                "Technical Writing",
+                "Python",
+                "Next.js",
+                "AI Automation"
+              ]
+            })
+          }}
+        />
+        <script
           id="theme-init"
           dangerouslySetInnerHTML={{
             __html: `
