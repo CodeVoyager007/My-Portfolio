@@ -513,6 +513,61 @@ const journey = {
   description: "Key milestones in my development career.",
   milestones: [
     {
+      date: "May 2026",
+      title: "Personal Brand Unification",
+      description: "Audited and rebuilt my entire personal brand from scratch — unified across LinkedIn, Medium, GitHub, and portfolio under a single Cinematic Noir system. Rewrote LinkedIn headline, about section, and curated featured posts for maximum impact.",
+      achievements: [
+        "Defined Cinematic Noir as master brand system — True Black #000000, white/silver accents",
+        "Redesigned LinkedIn banner, updated headline and about section",
+        "Updated profile photo consistently across all platforms",
+        "New tagline: \"I Engineer It. Then I Explain It.\"",
+        "Portfolio, Medium, and LinkedIn now fully cohesive"
+      ],
+      skills: ["Personal Branding", "Content Strategy", "Design Systems", "LinkedIn Optimization"],
+      type: "achievement"
+    },
+    {
+      date: "April 2026",
+      title: "AI Seekho National Hackathon",
+      description: "Built and submitted Tareekh-ky-Jhonky (تاریخ کے جھونکے) — a Pakistani heritage AI scanner — for Google's national AI Seekho 2026 competition. Deployed a full production app in Phase 1, now heading into a physical hackathon with a PKR 2.5M prize pool.",
+      achievements: [
+        "Built heritage scanner app using Gemini 1.5 Pro, Google ADK, and RAG pipelines",
+        "Features include Heritage Scanner, Passport Stamps, Site Guides, Audio Walks, and Inscription Translator",
+        "Designed Santorini-inspired UI with Cinematic Noir undertones",
+        "Successfully deployed on Google Cloud Run",
+        "Phase 2: physical hackathon across Karachi, Lahore, and Islamabad"
+      ],
+      skills: ["Gemini API", "Google ADK", "RAG", "Google Cloud Run", "Next.js", "Agentic AI", "Hackathon"],
+      type: "achievement"
+    },
+    {
+      date: "April 2026",
+      title: "Stanford Code in Place 2026",
+      description: "Accepted into Stanford University's Code in Place 2026 — CS106A, the same introductory CS course Stanford undergraduates take, opened to the world for free. Placed into the Experienced Student track and completed all of Week 1 in a single session.",
+      achievements: [
+        "Accepted into Stanford Code in Place 2026 out of thousands of global applicants",
+        "Placed into Experienced Student track — full course access and certificate",
+        "Completed Week 1 entirely in one session",
+        "Previously scored 9/9 on CS50X and completed CS50 AI with Python"
+      ],
+      skills: ["Python", "CS50", "Stanford", "Problem Solving", "Algorithms"],
+      type: "learning"
+    },
+    {
+      date: "April 2026",
+      title: "Audience Milestone & Viral Growth",
+      description: "Crossed 1,000 followers on Medium and hit 1.3 million views in just 21 days — driven entirely by organic writing on AI systems and agentic engineering. No ads, no viral hacks. Just consistent, technical storytelling.",
+      achievements: [
+        "Hit 1K followers milestone on Medium (April 21, 2026)",
+        "1.3M views, 23K reads, 80K presentations in 21 days",
+        "+202 followers and +146 subscribers in a single month",
+        "Published across AI in Plain English with pieces on agentic systems and production AI",
+        "Built and published a 7-slide LinkedIn carousel documenting the milestone"
+      ],
+      skills: ["Technical Writing", "Content Strategy", "Agentic AI", "Audience Growth", "Medium", "Build in Public"],
+      type: "achievement"
+    },
+    {
       date: "March 2026",
       title: "Audience Growth & AI Recognition",
       description: "Significant expansion in technical reach and performance in AI competitions.",
