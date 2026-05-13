@@ -61,7 +61,7 @@ export function Posts({ range, direction = "row", columns = "1" }: PostsProps) {
 
   if (loading) {
     return (
-      <Grid columns={gridColumns as any} gap="l">
+      <Grid columns={gridColumns as any} gap="l" className={styles.mobileResponsiveGrid}>
         {Array.from({ length: loadingCount }).map((_, index) => (
           <LoadingPost key={index} direction={direction} />
         ))}
@@ -83,7 +83,7 @@ export function Posts({ range, direction = "row", columns = "1" }: PostsProps) {
 
   return (
     <Column gap="xl" fillWidth>
-      <Grid columns={gridColumns as any} gap="l" className={direction === "column" ? styles.columnLayout : ""}>
+      <Grid columns={gridColumns as any} gap="l" className={`${direction === "column" ? styles.columnLayout : ""} ${styles.mobileResponsiveGrid}`}>
         {displayedPosts.map((post, index) => (
           <motion.div
             key={post.link}

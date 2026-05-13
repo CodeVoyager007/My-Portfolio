@@ -435,6 +435,22 @@ body::before {
   }
 }
 
+.page-top-padding {
+  padding-top: 128px;
+  
+  @media (max-width: 1024px) {
+    padding-top: 96px;
+  }
+  
+  @media (max-width: 768px) {
+    padding-top: 64px;
+  }
+  
+  @media (max-width: 480px) {
+    padding-top: 48px;
+  }
+}
+
 .hover-scale:hover {
   transform: scale(1.02);
 }

@@ -66,7 +66,7 @@ export default function About() {
   ];
 
   return (
-    <Column maxWidth="m" paddingTop="128">
+    <Column maxWidth="m" className="page-top-padding">
       <Schema
         as="webPage"
         baseURL={baseURL}

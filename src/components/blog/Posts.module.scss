@@ -145,6 +145,12 @@
     }
 }
 
+.mobileResponsiveGrid {
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 .source {
   margin-top: 0.5rem;
   opacity: 0.8;

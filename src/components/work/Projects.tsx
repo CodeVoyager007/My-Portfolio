@@ -79,7 +79,7 @@ export function Projects() {
     <Flex
       fillWidth
       direction="column"
-      paddingY="xl"
+      className="page-top-padding"
       gap="l"
     >
       <Flex

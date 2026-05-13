@@ -10,9 +10,9 @@ export const metadata = {
 
 export default function Blog() {
   return (
-    <Column fillWidth horizontal="center" gap="0">
+    <Column fillWidth horizontal="center" gap="0" className="page-top-padding">
       <MaskedReveal>
-        <Column horizontal="center" gap="16" paddingY="80" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 70%)' }} fillWidth>
+        <Column horizontal="center" gap="16" paddingY="48" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 70%)' }} fillWidth>
           <Flex direction="column" gap="12" horizontal="center">
             <Text variant="label-strong-s" onBackground="neutral-weak" style={{ letterSpacing: '0.3em', textTransform: 'uppercase' }}>
               Chronicles of Code
@@ -27,7 +27,7 @@ export default function Blog() {
         </Column>
       </MaskedReveal>
 
-      <Column fillWidth maxWidth="l" paddingX="m" gap="64" paddingBottom="160">
+      <Column fillWidth maxWidth="l" paddingX="m" gap="64" paddingBottom="80">
         {/* Latest Featured Post */}
         <Column gap="24">
           <Flex horizontal="space-between" vertical="end">

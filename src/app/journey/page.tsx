@@ -14,7 +14,7 @@ export async function generateMetadata() {
 
 export default function Journey() {
   return (
-    <Column maxWidth="l">
+    <Column maxWidth="l" className="page-top-padding">
       <Schema
         as="webPage"
         baseURL={baseURL}
