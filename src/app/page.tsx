@@ -8,6 +8,7 @@ import { TextReveal, HorizontalWork, MaskedReveal } from "@/components";
 import styles from "./Home.module.scss";
 
 const quickStats = [
+  { label: 'Medium Views', value: '1M+' },
   { label: 'Certifications', value: '27+' },
   { label: 'Coding Since', value: 'Feb 2023' },
   { label: 'Hackathons', value: '10' },
@@ -38,8 +39,8 @@ const techStack = [
 ];
 
 const quote = {
-  author: 'Mark Zuckerberg',
-  text: 'The biggest risk is not taking any risk.',
+  author: 'Ayesha Mughal',
+  text: 'I Engineer It. Then I Explain It.',
 };
 
 export default function Home() {

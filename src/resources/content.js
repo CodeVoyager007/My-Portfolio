@@ -59,16 +59,17 @@ const home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: "Ayesha Mughal — AI Developer & Technical Writer from Karachi, Pakistan",
-  description: "Ayesha Mughal is a 16-year-old AI developer and technical writer from Karachi, Pakistan. Building agentic AI systems, full-stack apps, and writing in public. 27+ certifications, 225K+ Medium views.",
-  headline: <>Developing functional, AI-driven web applications</>,
+  description: "Ayesha Mughal is a 16-year-old AI developer and technical writer from Karachi, Pakistan. Building agentic AI systems, full-stack apps, and writing in public. 27+ certifications, 1M+ Medium views.",
+  headline: <>I Engineer It. Then I Explain It.</>,
   featured: {
     display: true,
     title: <>Current Focus: <strong className="ml-4">Agentic AI</strong></>,
   },
   subline: (
     <>
-      I&apos;m Ayesha, a developer specializing in AI and modern web technologies. 
-      With 27+ certifications and hands-on project experience, I focus on building efficient, scalable digital solutions.
+      I&apos;m Ayesha — a 16-year-old AI developer and technical writer from Karachi. 
+      I build agentic systems, full-stack AI apps, and write about them for 1M+ Viewers. 
+      GIAIC Rising Star in AI. CS50X 9/9.
     </>
   ),
 };
@@ -527,7 +528,7 @@ const journey = {
       type: "achievement"
     },
     {
-      date: "April 2026",
+      date: "May 2026",
       title: "AI Seekho National Hackathon",
       description: "Built and submitted Tareekh-ky-Jhonky (تاریخ کے جھونکے) — a Pakistani heritage AI scanner — for Google's national AI Seekho 2026 competition. Deployed a full production app in Phase 1, now heading into a physical hackathon with a PKR 2.5M prize pool.",
       achievements: [
