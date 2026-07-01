@@ -64,6 +64,12 @@ export default function Certifications() {
                           style={{ objectFit: 'cover' }}
                           unoptimized
                         />
+                      ) : image.src.endsWith('.pdf') ? (
+                        <iframe
+                          src={`${image.src}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+                          style={{ width: '100%', height: '100%', border: 'none', pointerEvents: 'none' }}
+                          title={image.alt}
+                        />
                       ) : (
                         <Flex
                           fillWidth
@@ -75,6 +81,27 @@ export default function Certifications() {
                           <Icon name="certificate" size="xl" onBackground="neutral-medium" />
                         </Flex>
                       )}
+                      
+                      {/* Hover Overlay */}
+                      <Flex
+                        position="absolute"
+                        fillWidth
+                        fillHeight
+                        background="neutral-alpha-strong"
+                        vertical="center"
+                        horizontal="center"
+                        style={{
+                          opacity: 0,
+                          transition: 'opacity 0.3s ease',
+                          backdropFilter: 'blur(4px)',
+                        }}
+                        className="view-overlay"
+                      >
+                        <Flex vertical="center" gap="8" style={{ color: '#ffffff' }}>
+                          <Icon name="openLink" size="m" />
+                          <Text variant="label-strong-s">View Document</Text>
+                        </Flex>
+                      </Flex>
                     </div>
                     <Text variant="body-default-s" align="center" paddingTop="xs" style={{ marginTop: 'auto' }}>
                       {image.alt}

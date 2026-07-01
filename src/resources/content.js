@@ -284,7 +284,7 @@ const certifications = {
     {
       src: "/certificates/puzzel day.png",
       thumbnail: "/certificates/puzzel day.png",
-      alt: "CS50x Puzzle Day 2024",
+      alt: "CS50x Puzzle Day 2026",
       width: 200,
       height: 140,
     },

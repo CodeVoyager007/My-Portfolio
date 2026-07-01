@@ -454,3 +454,7 @@ body::before {
 .hover-scale:hover {
   transform: scale(1.02);
 }
+
+.hover-scale:hover .view-overlay {
+  opacity: 1 !important;
+}
