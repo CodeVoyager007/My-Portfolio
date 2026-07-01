@@ -68,8 +68,8 @@ export const Header = () => {
         horizontal="center"
         data-border="rounded"
       >
-        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s" className={styles.locationContainer}>
-          {display.location && <Flex hide="s">{person.location}</Flex>}
+        <Flex hide="s" paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s" className={styles.locationContainer}>
+          {display.location && <Flex>{person.location}</Flex>}
         </Flex>
         <Flex fillWidth horizontal="center" className={styles.navWrapper}>
           <Flex
@@ -203,7 +203,7 @@ export const Header = () => {
             </Flex>
           </Flex>
         </Flex>
-        <Flex fillWidth horizontal="end" vertical="center" className={styles.hideMobile}>
+        <Flex hide="s" fillWidth horizontal="end" vertical="center" className={styles.hideMobile}>
           <Flex
             paddingRight="12"
             horizontal="end"
@@ -211,7 +211,7 @@ export const Header = () => {
             textVariant="body-default-s"
             gap="20"
           >
-            <Flex hide="s">{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
+            <Flex>{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
           </Flex>
         </Flex>
       </Flex>

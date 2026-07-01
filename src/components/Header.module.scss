@@ -58,12 +58,6 @@
         visibility: visible !important;
         opacity: 1 !important;
     }
-    
-    // Make sure the navigation container is properly sized
-    .position > * {
-        display: flex !important;
-        visibility: visible !important;
-    }
 }
 .locationContainer {
     @media (max-width: 768px) {
