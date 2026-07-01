@@ -56,31 +56,13 @@ export default function Certifications() {
                     className="hover-scale"
                   >
                     <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', borderRadius: 'var(--radius-m)', overflow: 'hidden', background: '#000' }}>
-                      {image.thumbnail ? (
-                        <Image
-                          src={image.thumbnail}
-                          alt={image.alt}
-                          fill
-                          style={{ objectFit: 'cover' }}
-                          unoptimized
-                        />
-                      ) : image.src.endsWith('.pdf') ? (
-                        <iframe
-                          src={`${image.src}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-                          style={{ width: '100%', height: '100%', border: 'none', pointerEvents: 'none' }}
-                          title={image.alt}
-                        />
-                      ) : (
-                        <Flex
-                          fillWidth
-                          fillHeight
-                          background="neutral-weak"
-                          vertical="center"
-                          horizontal="center"
-                        >
-                          <Icon name="certificate" size="xl" onBackground="neutral-medium" />
-                        </Flex>
-                      )}
+                      <Image
+                        src="/images/certificate_cover.svg"
+                        alt={image.alt}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        unoptimized
+                      />
                       
                       {/* Hover Overlay */}
                       <Flex
