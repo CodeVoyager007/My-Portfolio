@@ -241,70 +241,122 @@ const certifications = {
     },
     {
       src: "/certificates/CS50AI.pdf",
+      thumbnail: "/certificates/CS50AI.jpg",
       alt: "Harvard CS50 Introduction to AI with Python",
       width: 200,
       height: 140,
     },
     {
       src: "/certificates/freecodecamp.png",
+      thumbnail: "/certificates/freecodecamp.png",
       alt: "freeCodeCamp Responsive Web Design",
       width: 200,
       height: 140,
     },
     {
       src: "/certificates/javascript.jpg",
+      thumbnail: "/certificates/javascript.jpg",
       alt: "Great Learning JavaScript",
       width: 200,
       height: 140,
     },
     {
       src: "/certificates/CERTIFICATE OF WEB DEVELOPMENT from internship.pdf",
+      thumbnail: "/certificates/CERTIFICATE OF WEB DEVELOPMENT from internship.jpg",
       alt: "Web Development Certificate",
       width: 200,
       height: 140,
     },
     {
       src: "/certificates/CERTIFICATE OF INTERNSHIP.pdf",
+      thumbnail: "/certificates/CERTIFICATE OF INTERNSHIP.jpg",
       alt: "Certificate of Internship",
       width: 200,
       height: 140,
     },
     {
       src: "/certificates/CERTIFICATE OF DIGITAL MARKETING from internship.pdf",
+      thumbnail: "/certificates/CERTIFICATE OF DIGITAL MARKETING from internship.jpg",
       alt: "Certificate of Digital Marketing",
       width: 200,
       height: 140,
     },
     {
       src: "/certificates/puzzel day.png",
+      thumbnail: "/certificates/puzzel day.png",
       alt: "CS50x Puzzle Day 2024",
       width: 200,
       height: 140,
     },
     {
       src: "/certificates/CS50x Puzzle Day 2024 (1).pdf",
+      thumbnail: "/certificates/CS50x Puzzle Day 2024 (1).jpg",
       alt: "CS50x Puzzle Day 2024 Official Certificate",
       width: 200,
       height: 140,
     },
     {
       src: "/certificates/kodeative.png",
+      thumbnail: "/certificates/kodeative.png",
       alt: "Kodeative Achievement",
       width: 200,
       height: 140,
     },
     {
       src: "/certificates/graphic-gl.pdf",
+      thumbnail: "/certificates/graphic-gl.jpg",
       alt: "Graphic Design - Great Learning",
       width: 200,
       height: 140,
     },
     {
       src: "/certificates/hp.pdf",
+      thumbnail: "/certificates/hp.jpg",
       alt: "HP Certificate",
       width: 200,
       height: 140,
     },
+    {
+      src: "/certificates/intro to llms.png",
+      thumbnail: "/certificates/intro to llms.png",
+      alt: "Google Cloud - Introduction to Large Language Models",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/intro to genai.png",
+      thumbnail: "/certificates/intro to genai.png",
+      alt: "Google Cloud - Introduction to Generative AI",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/into to ai agents.png",
+      thumbnail: "/certificates/into to ai agents.png",
+      alt: "Google Cloud - Introduction to AI Agents",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/build_a_web_on_google_cloud.png",
+      thumbnail: "/certificates/build_a_web_on_google_cloud.png",
+      alt: "Google Cloud - Build a Web App on Google Cloud",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/ADK.png",
+      thumbnail: "/certificates/ADK.png",
+      alt: "Google Cloud - Google Agent Development Kit (ADK)",
+      width: 200,
+      height: 140,
+    },
+    {
+      src: "/certificates/Certificate Progress - Code in Place 2026.pdf",
+      alt: "Stanford Code in Place 2026 - Certificate of Progress",
+      width: 200,
+      height: 140,
+    }
   ],
 };
 
@@ -314,11 +366,6 @@ const blog = {
   title: `Blog – ${person.name}`,
   description: "Writing about AI development and modern engineering.",
   external: [
-    {
-      platform: "Hashnode",
-      url: "https://hashnode.com/@mughalsyntax",
-      description: "Technical articles and development insights"
-    },
     {
       platform: "Medium",
       url: "https://medium.com/@ayeshamughal21",
@@ -513,6 +560,31 @@ const journey = {
   title: `Journey – ${person.name}`,
   description: "Key milestones in my development career.",
   milestones: [
+    {
+      date: "June 2026",
+      title: "Stanford Code in Place 2026 Graduation",
+      description: "Successfully completed Stanford University's Code in Place 2026 (CS106A), earning the Certificate of Progress with distinction. Built projects and collaborated with a global cohort.",
+      achievements: [
+        "Completed the full Stanford CS106A Python curriculum",
+        "Earned the official Certificate of Progress",
+        "Built interactive applications and refined algorithmic problem-solving skills"
+      ],
+      skills: ["Python", "Stanford", "Software Engineering", "Algorithms"],
+      type: "achievement"
+    },
+    {
+      date: "June 2026",
+      title: "Google Cloud & Generative AI Badges",
+      description: "Earned a series of professional badges from Google Cloud focusing on Generative AI, Large Language Models, and Agentic workflows. Built and deployed web applications on Google Cloud.",
+      achievements: [
+        "Completed pathways for 'Introduction to Large Language Models' and 'Introduction to Generative AI'",
+        "Earned 'Introduction to AI Agents' badge, exploring tool-use and LLM orchestration",
+        "Completed 'Build a Web App on Google Cloud' quest",
+        "Gained hands-on experience with the Google Agent Development Kit (ADK)"
+      ],
+      skills: ["Google Cloud", "Generative AI", "LLMs", "AI Agents", "Google ADK"],
+      type: "learning"
+    },
     {
       date: "May 2026",
       title: "Personal Brand Unification",

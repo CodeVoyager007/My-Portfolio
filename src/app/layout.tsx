@@ -191,7 +191,7 @@ export default async function RootLayout({
           <Flex fillWidth minHeight="16" hide="s"/>
             <Header />
             <main id="main-content" className="main-content-layout" style={{ width: '100%', flex: 1, position: 'relative' }}>
-                <Flex fillWidth direction="column" horizontal="center" paddingX="l">
+                <Flex fillWidth direction="column" horizontal="center">
                   <Flex fillWidth maxWidth="l" direction="column">
                     {children}
                   </Flex>

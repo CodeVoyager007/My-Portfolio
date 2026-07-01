@@ -66,6 +66,9 @@ export const Post: React.FC<PostProps> = ({ post, direction = "row" }) => {
                             <Text className={styles.date}>
                                 {formattedDate}
                             </Text>
+                            <Text className={styles.readTime}>
+                                • {Math.max(3, Math.ceil(post.description.split(/\s+/).length / 30))} min read
+                            </Text>
                         </Flex>
                         <Text variant="heading-strong-l" className={styles.title}>
                             {post.title}
@@ -73,6 +76,10 @@ export const Post: React.FC<PostProps> = ({ post, direction = "row" }) => {
                         <Text className={styles.description}>
                             {post.description}
                         </Text>
+                        <Flex vertical="center" gap="4" className={styles.readMore} style={{ marginTop: 'auto' }}>
+                            <Text variant="label-strong-s">Read Article</Text>
+                            <span className={styles.arrow}>→</span>
+                        </Flex>
                     </Column>
                 </div>
             </a>

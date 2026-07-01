@@ -122,3 +122,30 @@
         }
     }
 }
+
+.readTime {
+    font-size: 0.75rem;
+    color: var(--neutral-on-background-weak);
+    font-weight: 500;
+}
+
+.readMore {
+    margin-top: auto;
+    color: var(--neutral-on-background-medium);
+    transition: color 0.3s ease;
+    
+    .arrow {
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+}
+
+.postCard:hover {
+    .readMore {
+        color: var(--brand-solid-strong);
+        
+        .arrow {
+            transform: translateX(6px);
+        }
+    }
+}
