@@ -1,5 +1,5 @@
 import { Column, Heading, Text, Flex } from "@once-ui-system/core";
-import { Posts } from "@/components/blog/Posts";
+import { BlogContent } from "@/components/blog/BlogContent";
 import { MaskedReveal } from "@/components";
 import React from 'react';
 
@@ -27,23 +27,7 @@ export default function Blog() {
         </Column>
       </MaskedReveal>
 
-      <Column fillWidth maxWidth="l" paddingX="m" gap="64" paddingBottom="80">
-        {/* Latest Featured Post */}
-        <Column gap="24">
-          <Flex horizontal="space-between" vertical="end">
-            <Heading variant="display-strong-xs">Latest Release</Heading>
-          </Flex>
-          <Posts range={[1, 1]} direction="column" />
-        </Column>
-
-        {/* Previous Posts Grid */}
-        <Column gap="24">
-          <Flex horizontal="space-between" vertical="end" borderBottom="neutral-alpha-weak" paddingBottom="16">
-            <Heading variant="display-strong-xs">Previous Articles</Heading>
-          </Flex>
-          <Posts range={[2]} columns="2" />
-        </Column>
-      </Column>
+      <BlogContent />
     </Column>
   );
 }

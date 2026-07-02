@@ -50,7 +50,7 @@ export const HorizontalWork = () => {
       <div className={styles.stickyContainer}>
         <div className={styles.titleWrapper}>
            <Heading variant="display-strong-l" style={{ opacity: 0.03, fontSize: '15vw', whiteSpace: 'nowrap', color: '#ffffff' }}>
-              PROJECTS — PROJECTS —
+              PROJECTS - PROJECTS -
            </Heading>
         </div>
         

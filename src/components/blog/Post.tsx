@@ -17,9 +17,10 @@ interface PostProps {
     };
     direction?: "row" | "column";
     hasImage: boolean;
+    isHero?: boolean;
 }
 
-export const Post: React.FC<PostProps> = ({ post, direction = "row" }) => {
+export const Post: React.FC<PostProps> = ({ post, direction = "row", isHero = false }) => {
     const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'short',
@@ -62,6 +63,9 @@ export const Post: React.FC<PostProps> = ({ post, direction = "row" }) => {
                     </div>
                     <Column gap="16" padding="32" className={styles.content}>
                         <Flex vertical="center" gap="8">
+                            {isHero && (
+                                <span className={styles.pulseDot} title="Latest Post" />
+                            )}
                             <Tag label={post.platform} variant="neutral" />
                             <Text className={styles.date}>
                                 {formattedDate}

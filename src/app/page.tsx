@@ -188,7 +188,7 @@ export default function Home() {
         <div className={styles.quoteContainer} style={{ width: '100%', maxWidth: 'var(--static-max-width-s)', margin: '4rem auto 8rem' }}>
           <Text variant="heading-default-m">&quot;{quote.text}&quot;</Text>
           <Text variant="label-default-s" style={{ marginTop: '1rem', display: 'block', opacity: 0.6 }}>
-            — {quote.author}
+            - {quote.author}
           </Text>
         </div>
       </MaskedReveal>

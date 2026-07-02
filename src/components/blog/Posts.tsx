@@ -10,6 +10,8 @@ interface PostsProps {
   range?: [number, number?];
   direction?: "row" | "column";
   columns?: string | number;
+  category?: string;
+  isHero?: boolean;
 }
 
 const LoadingPost = ({ direction }: { direction: string }) => (
@@ -26,7 +28,7 @@ const LoadingPost = ({ direction }: { direction: string }) => (
   />
 );
 
-export function Posts({ range, direction = "row", columns = "1" }: PostsProps) {
+export function Posts({ range, direction = "row", columns = "1", category = "All", isHero = false }: PostsProps) {
   const [posts, setPosts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -52,9 +54,21 @@ export function Posts({ range, direction = "row", columns = "1" }: PostsProps) {
     fetchPosts();
   }, []);
 
+  const filteredPosts = posts.filter(post => {
+    if (category === "All") return true;
+    const text = (post.title + " " + post.description).toLowerCase();
+    const isAI = text.includes("ai") || text.includes("agent") || text.includes("llm") || text.includes("prompt") || text.includes("gpt") || text.includes("model") || text.includes("gemini");
+    const isWeb = text.includes("web") || text.includes("next.js") || text.includes("react") || text.includes("css") || text.includes("javascript") || text.includes("typescript") || text.includes("api") || text.includes("html") || text.includes("node");
+    
+    if (category === "AI & Agents") return isAI;
+    if (category === "Web Engineering") return isWeb;
+    if (category === "Reflections") return !isAI && !isWeb;
+    return true;
+  });
+
   const displayedPosts = range
-    ? posts.slice(range[0] - 1, range[1] ?? posts.length)
-    : posts;
+    ? filteredPosts.slice(range[0] - 1, range[1] ?? filteredPosts.length)
+    : filteredPosts;
 
   const loadingCount = range ? (range[1] || range[0]) - range[0] + 1 : 3;
   const gridColumns = typeof columns === 'string' ? parseInt(columns, 10) : columns;
@@ -78,7 +92,11 @@ export function Posts({ range, direction = "row", columns = "1" }: PostsProps) {
   }
 
   if (!displayedPosts.length) {
-    return null;
+    return (
+      <Flex fillWidth horizontal="center" paddingY="32">
+        <Text variant="body-default-m" onBackground="neutral-weak">No articles found in this category.</Text>
+      </Flex>
+    );
   }
 
   return (
@@ -89,12 +107,14 @@ export function Posts({ range, direction = "row", columns = "1" }: PostsProps) {
             key={post.link}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.5, delay: index * 0.05 }}
+            layout
           >
             <Post
               post={post}
               direction={direction}
               hasImage={true} 
+              isHero={isHero}
             />
           </motion.div>
         ))}

@@ -6,7 +6,7 @@ import classNames from "classnames";
 
 import { Background, Column, Flex, Meta, opacity, SpacingToken } from "@once-ui-system/core";
 import { Footer, Header, Providers, Cinematic, Preloader } from '@/components';
-import { baseURL, effects, fonts, style, dataStyle, home } from '@/resources';
+import { baseURL, effects, fonts, style, dataStyle, home, person } from '@/resources';
 
 export const viewport = {
   width: 'device-width',
@@ -60,7 +60,8 @@ export default async function RootLayout({
               "url": "https://ayesha-mughals-portfolio.vercel.app",
               "image": "https://ayesha-mughals-portfolio.vercel.app/images/avatar.png",
               "jobTitle": "AI Developer & Technical Writer",
-              "description": "Ayesha Mughal is a 16-year-old AI developer, technical writer, and student from Karachi, Pakistan. Building in public — Claude Code, agentic AI, ai automation, and full-stack development.",
+
+              "description": `Ayesha Mughal is a ${person.age}-year-old AI developer, technical writer, and student from Karachi, Pakistan. Building in public: Claude Code, agentic AI, ai automation, and full-stack development.`,
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Karachi",

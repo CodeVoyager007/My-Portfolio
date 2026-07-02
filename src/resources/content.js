@@ -4,6 +4,16 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
+  get age() {
+    const today = new Date();
+    const birthDate = new Date("2009-06-21");
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  },
   role: "AI Developer & Full-Stack Engineer",
   avatar: "/images/avatar.png",
   email: "ayeshamughal2162@gmail.com",
@@ -58,8 +68,10 @@ const home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: "Ayesha Mughal — AI Developer & Technical Writer from Karachi, Pakistan",
-  description: "Ayesha Mughal is a 16-year-old AI developer and technical writer from Karachi, Pakistan. Building agentic AI systems, full-stack apps, and writing in public. 27+ certifications, 1M+ Medium views.",
+  title: "Ayesha Mughal | AI Developer & Technical Writer from Karachi, Pakistan",
+  get description() {
+    return `Ayesha Mughal is a ${person.age}-year-old AI developer and technical writer from Karachi, Pakistan. Building agentic AI systems, full-stack apps, and writing in public. 27+ certifications, 1M+ Medium views.`;
+  },
   headline: <>I Engineer It. Then I Explain It.</>,
   featured: {
     display: true,
@@ -67,7 +79,7 @@ const home = {
   },
   subline: (
     <>
-      I&apos;m Ayesha — a 16-year-old AI developer and technical writer from Karachi. 
+      I&apos;m Ayesha, a {person.age}-year-old AI developer and technical writer from Karachi. 
       I build agentic systems, full-stack AI apps, and write about them for 1M+ Viewers. 
       GIAIC Rising Star in AI. CS50X 9/9.
     </>
@@ -587,9 +599,9 @@ const journey = {
     {
       date: "May 2026",
       title: "Personal Brand Unification",
-      description: "Audited and rebuilt my entire personal brand from scratch — unified across LinkedIn, Medium, GitHub, and portfolio under a single Cinematic Noir system. Rewrote LinkedIn headline, about section, and curated featured posts for maximum impact.",
+      description: "Audited and rebuilt my entire personal brand from scratch, unified across LinkedIn, Medium, GitHub, and portfolio under a single Cinematic Noir system. Rewrote LinkedIn headline, about section, and curated featured posts for maximum impact.",
       achievements: [
-        "Defined Cinematic Noir as master brand system — True Black #000000, white/silver accents",
+        "Defined Cinematic Noir as master brand system: True Black #000000, white/silver accents",
         "Redesigned LinkedIn banner, updated headline and about section",
         "Updated profile photo consistently across all platforms",
         "New tagline: \"I Engineer It. Then I Explain It.\"",
@@ -601,7 +613,7 @@ const journey = {
     {
       date: "May 2026",
       title: "AI Seekho National Hackathon",
-      description: "Built and submitted Tareekh-ky-Jhonky (تاریخ کے جھونکے) — a Pakistani heritage AI scanner — for Google's national AI Seekho 2026 competition. Deployed a full production app in Phase 1, now heading into a physical hackathon with a PKR 2.5M prize pool.",
+      description: "Built and submitted Tareekh-ky-Jhonky (تاریخ کے جھونکے) - a Pakistani heritage AI scanner - for Google's national AI Seekho 2026 competition. Deployed a full production app in Phase 1, now heading into a physical hackathon with a PKR 2.5M prize pool.",
       achievements: [
         "Built heritage scanner app using Gemini 1.5 Pro, Google ADK, and RAG pipelines",
         "Features include Heritage Scanner, Passport Stamps, Site Guides, Audio Walks, and Inscription Translator",
@@ -615,10 +627,10 @@ const journey = {
     {
       date: "April 2026",
       title: "Stanford Code in Place 2026",
-      description: "Accepted into Stanford University's Code in Place 2026 — CS106A, the same introductory CS course Stanford undergraduates take, opened to the world for free. Placed into the Experienced Student track and completed all of Week 1 in a single session.",
+      description: "Accepted into Stanford University's Code in Place 2026: CS106A, the same introductory CS course Stanford undergraduates take, opened to the world for free. Placed into the Experienced Student track and completed all of Week 1 in a single session.",
       achievements: [
         "Accepted into Stanford Code in Place 2026 out of thousands of global applicants",
-        "Placed into Experienced Student track — full course access and certificate",
+        "Placed into Experienced Student track: full course access and certificate",
         "Completed Week 1 entirely in one session",
         "Previously scored 9/9 on CS50X and completed CS50 AI with Python"
       ],
@@ -628,7 +640,7 @@ const journey = {
     {
       date: "April 2026",
       title: "Audience Milestone & Viral Growth",
-      description: "Crossed 1,000 followers on Medium and hit 1.3 million views in just 21 days — driven entirely by organic writing on AI systems and agentic engineering. No ads, no viral hacks. Just consistent, technical storytelling.",
+      description: "Crossed 1,000 followers on Medium and hit 1.3 million views in just 21 days, driven entirely by organic writing on AI systems and agentic engineering. No ads, no viral hacks. Just consistent, technical storytelling.",
       achievements: [
         "Hit 1K followers milestone on Medium (April 21, 2026)",
         "1.3M views, 23K reads, 80K presentations in 21 days",
