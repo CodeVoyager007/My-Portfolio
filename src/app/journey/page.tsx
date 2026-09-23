@@ -68,7 +68,7 @@ export default function JourneyPage() {
       <SocialIcons />
 
       <main className="section-container" style={{ paddingTop: "140px", paddingBottom: "100px", minHeight: "100vh" }}>
-        {/* Header */}
+
         <div style={{ marginBottom: "60px", textAlign: "center" }}>
           <span style={{ font: "12px var(--font-mono, monospace)", color: "var(--accentColor)", letterSpacing: ".2em", textTransform: "uppercase" }}>
             ORIGIN STORY & MILESTONES
@@ -81,7 +81,6 @@ export default function JourneyPage() {
           </p>
         </div>
 
-        {/* Timeline */}
         <div style={{ display: "flex", flexDirection: "column", gap: "28px", maxWidth: "900px", margin: "auto" }}>
           {milestones.map((m, idx) => (
             <div
@@ -115,7 +114,6 @@ export default function JourneyPage() {
           ))}
         </div>
 
-        {/* Back Link */}
         <div style={{ marginTop: "80px", textAlign: "center" }}>
           <Link href="/" style={{ display: "inline-block", padding: "14px 28px", background: "var(--accentColor)", color: "#fff", fontWeight: "700", textTransform: "uppercase", borderRadius: "4px" }}>
             ← Return to Home

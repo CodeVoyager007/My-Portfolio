@@ -2,7 +2,6 @@
   position: fixed;
   width: 100vw;
   height: var(--vh);
-  /* background-image: linear-gradient(#cbb1ff, #d8c4ff); */
   background-color: #eae5ec;
   z-index: 999999999;
   display: flex;
@@ -153,7 +152,6 @@
   position: absolute;
   width: 100%;
   max-width: var(--Lsize);
-  /* height: 45px; */
   top: 50%;
   transition: 1s;
   left: 50px;

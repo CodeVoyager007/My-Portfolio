@@ -182,7 +182,6 @@
   transform: scale(1.03);
 }
 
-/* See All Works CTA Box */
 .work-box-cta {
   display: flex;
   align-items: center;
@@ -234,7 +233,6 @@
   box-shadow: 0 10px 30px rgba(207, 89, 89, 0.45);
 }
 
-/* Responsive Media Queries */
 @media only screen and (max-width: 1024px) {
   .work-container {
     padding: 0 50px;

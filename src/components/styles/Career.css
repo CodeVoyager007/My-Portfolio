@@ -115,7 +115,6 @@
   box-sizing: border-box;
 }
 
-/* Timeline Vertical Crimson Bar */
 .career-timeline {
   position: absolute;
   top: 0;
@@ -157,7 +156,6 @@
   }
 }
 
-/* Responsive Media Queries */
 @media only screen and (max-width: 1024px) {
   .career-container {
     padding: 0 60px;

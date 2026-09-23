@@ -1,6 +1,6 @@
 "use client";
 
-import "./styles/TechStackNew.css";
+import "./styles/TechStack.css";
 
 interface TechItem {
   name: string;
@@ -47,7 +47,7 @@ const techStack: TechItem[][] = [
   ],
 ];
 
-const TechStackNew = () => {
+const TechStack = () => {
   return (
     <div className="techstack-new">
       <div className="techstack-content">
@@ -79,4 +79,4 @@ const TechStackNew = () => {
   );
 };
 
-export default TechStackNew;
+export default TechStack;

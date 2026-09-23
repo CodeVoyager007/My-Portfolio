@@ -1,4 +1,4 @@
-// Simple text splitter utility to replace GSAP SplitText
+// Lightweight replacement for GSAP's SplitText plugin
 export class TextSplitter {
   chars: Element[] = [];
   words: Element[] = [];
@@ -11,7 +11,6 @@ export class TextSplitter {
     const type = vars?.type || "chars,words,lines";
     const linesClass = vars?.linesClass || "split-line";
 
-    // Get elements
     let elements: Element[] = [];
     if (typeof target === "string") {
       elements = Array.from(document.querySelectorAll(target));
@@ -110,7 +109,6 @@ export class TextSplitter {
         }
 
         if (Math.abs(rect.top - currentTop) > 5) {
-          // New line
           if (currentLine.length > 0) {
             lines.push([...currentLine]);
           }
@@ -125,7 +123,6 @@ export class TextSplitter {
         lines.push(currentLine);
       }
 
-      // Wrap lines
       lines.forEach((line) => {
         if (line.length === 0) return;
         const lineWrapper = document.createElement("span");

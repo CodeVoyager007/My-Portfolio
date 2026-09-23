@@ -16,7 +16,6 @@ const About = () => {
     if (typeof window === "undefined" || !sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Left Column 3D Portrait Entrance
       if (portraitRef.current) {
         gsap.fromTo(
           portraitRef.current,
@@ -45,7 +44,6 @@ const About = () => {
         );
       }
 
-      // Right Column Text Entrance
       if (textRef.current) {
         gsap.fromTo(
           textRef.current,
@@ -78,7 +76,7 @@ const About = () => {
   return (
     <section className="about-section" id="about" ref={sectionRef}>
       <div className="about-container">
-        {/* Left Column: Seamless 3D Floating Cutout Portrait */}
+
         <div className="about-left-slot" ref={portraitRef}>
           <div className="portrait-3d-scene">
             <div className="portrait-glow-outer" aria-hidden="true" />
@@ -96,7 +94,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Right Column: Exact "What I Do" Title Style & Balanced Bio Narrative */}
         <div className="about-right-content" ref={textRef}>
           <div className="about-header">
             <h2 className="title">

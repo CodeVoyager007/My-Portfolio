@@ -1,4 +1,4 @@
-import { TextSplitter } from "../../utils/textSplitter";
+import { TextSplitter } from "./textSplitter";
 import gsap from "gsap";
 import { lenis } from "../Navbar";
 

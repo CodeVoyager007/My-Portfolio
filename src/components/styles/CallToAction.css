@@ -49,7 +49,6 @@
   transform: translateY(-2px);
 }
 
-/* Responsive */
 @media only screen and (max-width: 768px) {
   .cta-section {
     padding: 60px 20px;

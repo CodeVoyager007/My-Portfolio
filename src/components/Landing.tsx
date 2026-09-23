@@ -11,14 +11,14 @@ const Landing = () => {
 
   return (
     <div className="landing-section" id="landingDiv">
-      {/* Center Viewport Multi-Shade Blended Background Glow */}
+
       <div className="hero-bg-glow" aria-hidden="true">
         <div className="character-rim"></div>
         <div className="character-rim-ring"></div>
       </div>
 
       <div className="landing-container">
-        {/* Left Side: Name Block */}
+
         <div className="landing-intro">
           <span className="hero-eyebrow">Hello! I'm</span>
           <div className="hero-name-wrapper">
@@ -30,12 +30,10 @@ const Landing = () => {
           </div>
         </div>
 
-        {/* Center: Interactive Mascot */}
         <div className="hero-mascot-wrapper">
           <HeroMascot />
         </div>
 
-        {/* Right Side: Role Block */}
         <div className="landing-info">
           <span className="hero-eyebrow">An</span>
           <div className="hero-roles-stack">

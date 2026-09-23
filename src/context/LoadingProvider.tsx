@@ -28,7 +28,6 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
   };
 
   useEffect(() => {
-    // Smoothly advance loading progress from 0 to 100%
     let currentPercent = 0;
     const progressInterval = setInterval(() => {
       currentPercent += Math.floor(Math.random() * 20) + 15;
@@ -39,7 +38,7 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
       setLoading(currentPercent);
     }, 60);
 
-    // Safety fallback: ensure loading screen NEVER blocks the page
+    // Hide the loader after 2.5s even if nothing else does
     const safetyTimeout = setTimeout(() => {
       import("../components/utils/initialFX").then((module) => {
         if (module.initialFX) {

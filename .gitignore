@@ -1,37 +1,46 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-.env
 # dependencies
-node_modules
+/node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
 
-# testing
-/coverage
-
 # next.js
 /.next/
 /out/
-
-# production
 /build
+next-env.d.ts
+*.tsbuildinfo
 
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
-.env*.local
+# env files (.env.example is committed on purpose)
 .env
+.env*.local
 
 # vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# testing
+/coverage
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# os / editor
+.DS_Store
+Thumbs.db
+*.pem
+.vscode/
+.idea/
+
+# ai assistant files
+AGENTS.md
+CLAUDE.md
+.claude/
+.cursor/
+.cursorrules
+.windsurfrules
+.github/copilot-instructions.md
+
+# resume source document (public/ayesha-mughal-resume.pdf is what the site serves)
+/resume/

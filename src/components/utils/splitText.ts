@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextSplitter } from "../../utils/textSplitter";
+import { TextSplitter } from "./textSplitter";
 
 interface ParaElement extends HTMLElement {
   anim?: gsap.core.Animation;

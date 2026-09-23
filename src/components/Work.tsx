@@ -78,7 +78,7 @@ const Work = () => {
               <WorkImage image={project.image} alt={project.title} link={project.link} />
             </div>
           ))}
-          {/* See All Works Button */}
+
           <div className="work-box work-box-cta">
             <div className="see-all-works">
               <h3>Want to see more?</h3>

@@ -42,7 +42,7 @@ export default function ContactPage() {
       <SocialIcons />
 
       <main className="contact-page-main">
-        {/* Header */}
+
         <header className="contact-header-editorial">
           <span className="contact-eyebrow">05 / GET IN TOUCH</span>
           <h1 className="contact-title-display">
@@ -55,7 +55,7 @@ export default function ContactPage() {
         </header>
 
         <div className="contact-grid">
-          {/* Left: Direct Channels Card */}
+
           <div className="contact-info-card">
             <div>
               <h2 className="contact-card-heading">Direct Channels</h2>
@@ -130,7 +130,6 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Right: Message Form Card */}
           <div className="contact-form-card">
             {status === "sent" ? (
               <div className="contact-submitted-state">
@@ -214,7 +213,6 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Back Link */}
         <div className="contact-footer-cta">
           <Link
             href="/"

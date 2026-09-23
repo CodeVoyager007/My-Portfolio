@@ -34,17 +34,14 @@ export default function CertificationsPage() {
   const heroCert = allCerts.find((c) => c.image && c.image.length > 0) || allCerts[0];
   const remainingCerts = allCerts.filter((c) => c !== heroCert);
 
-  /* Unique issuer count */
   const uniqueIssuers = new Set(allCerts.map((c) => c.issuer || c.icon)).size;
 
-  /* Category breakdown */
   const iconCounts: Record<string, number> = {};
   allCerts.forEach((c) => {
     const key = c.icon;
     iconCounts[key] = (iconCounts[key] || 0) + 1;
   });
 
-  /* GSAP cursor-tracking floating preview */
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -87,10 +84,8 @@ export default function CertificationsPage() {
     };
   }, [hoveredCert]);
 
-  /* GSAP scroll-triggered entrance animations */
   useEffect(() => {
     const ctx = gsap.context(() => {
-      /* Hero card entrance */
       if (heroRef.current) {
         gsap.fromTo(
           heroRef.current,
@@ -109,7 +104,6 @@ export default function CertificationsPage() {
         );
       }
 
-      /* Summary strip cells stagger */
       if (stripRef.current) {
         const cells = stripRef.current.querySelectorAll(".cert-stat-cell");
         gsap.fromTo(
@@ -130,7 +124,6 @@ export default function CertificationsPage() {
         );
       }
 
-      /* Row items stagger */
       if (listRef.current) {
         const rows = listRef.current.querySelectorAll(".cert-row-item");
         rows.forEach((row, i) => {
@@ -163,7 +156,6 @@ export default function CertificationsPage() {
       <Navbar />
       <SocialIcons />
 
-      {/* Desktop Cursor-Tracking Floating Preview */}
       <div
         ref={previewRef}
         className={`cert-floating-preview ${hoveredCert && hoveredCert.image ? "active" : ""}`}
@@ -187,7 +179,7 @@ export default function CertificationsPage() {
       </div>
 
       <main className="certifications-page-main">
-        {/* Editorial Header */}
+
         <header className="cert-header-editorial">
           <span className="cert-eyebrow">
             04 / CREDENTIALS & CERTIFICATIONS
@@ -202,7 +194,6 @@ export default function CertificationsPage() {
           </p>
         </header>
 
-        {/* Credentials Summary Strip */}
         <div className="cert-summary-strip" ref={stripRef}>
           <div className="cert-stat-cell">
             <span className="cert-stat-value">{allCerts.length}</span>
@@ -226,7 +217,6 @@ export default function CertificationsPage() {
           </div>
         </div>
 
-        {/* Hero Credential Spotlight */}
         <section className="cert-hero-section" ref={heroRef}>
           <span className="cert-hero-tag">CROWN CREDENTIAL</span>
           <div className="cert-hero-card">
@@ -289,7 +279,6 @@ export default function CertificationsPage() {
           </div>
         </section>
 
-        {/* Structural Row List */}
         <section className="cert-list-section" ref={listRef}>
           <div className="cert-list-header">
             <span className="cert-col-idx">NO.</span>
@@ -348,7 +337,6 @@ export default function CertificationsPage() {
                   </div>
                 </div>
 
-                {/* Mobile Inline Image */}
                 {cert.image && cert.image.length > 0 && (
                   <div className="cert-row-mobile-img">
                     <img
@@ -363,7 +351,6 @@ export default function CertificationsPage() {
           </div>
         </section>
 
-        {/* Return Home CTA */}
         <div className="cert-footer-cta">
           <Link
             href="/"

@@ -1,6 +1,3 @@
-/* ==========================================================================
-   HOMEPAGE CONTACT SECTION (Existing)
-   ========================================================================== */
 .contact-section {
   margin: auto;
   padding-bottom: 150px;
@@ -142,9 +139,6 @@ a.contact-social {
   }
 }
 
-/* ==========================================================================
-   STANDALONE CONTACT PAGE (/contact) - EDITORIAL DESIGN SYSTEM
-   ========================================================================== */
 .contact-page-main {
   min-height: 100vh;
   max-width: 1320px;
@@ -423,9 +417,6 @@ a.contact-social {
   text-align: center;
 }
 
-/* ==========================================================================
-   CONTACT PAGE RESPONSIVE MEDIA QUERIES
-   ========================================================================== */
 @media only screen and (max-width: 1024px) {
   .contact-page-main {
     padding: 120px 50px 80px;

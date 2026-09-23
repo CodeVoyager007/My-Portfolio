@@ -9,7 +9,6 @@
   padding: 80px 0;
 }
 
-/* Content */
 .techstack-content {
   position: relative;
   z-index: 2;
@@ -41,7 +40,6 @@
   color: var(--accentColor);
 }
 
-/* Pyramid Container */
 .techstack-pyramid {
   display: flex;
   flex-direction: column;
@@ -49,7 +47,6 @@
   gap: 12px;
 }
 
-/* Each Row */
 .techstack-row {
   display: flex;
   justify-content: center;
@@ -57,7 +54,6 @@
   flex-wrap: wrap;
 }
 
-/* Tech Item */
 .techstack-item {
   display: flex;
   flex-direction: column;
@@ -112,7 +108,6 @@
   color: #fff;
 }
 
-/* Responsive */
 @media screen and (max-width: 1200px) {
   .techstack-content {
     max-width: 900px;

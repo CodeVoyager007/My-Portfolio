@@ -54,7 +54,6 @@ export default function WorkPage() {
       <Navbar />
       <SocialIcons />
 
-      {/* Floating Hover Preview (Desktop) */}
       <div
         ref={previewRef}
         className={`work-floating-preview ${hoveredProject ? "active" : ""}`}
@@ -76,7 +75,7 @@ export default function WorkPage() {
       </div>
 
       <main className="myworks-page-main">
-        {/* Header */}
+
         <header className="myworks-header-editorial">
           <span className="myworks-eyebrow">02 / ARCHITECTURE & SYSTEMS</span>
           <h1 className="myworks-title-display">
@@ -87,7 +86,6 @@ export default function WorkPage() {
           </p>
         </header>
 
-        {/* Option A: Structural Row List */}
         <section className="work-list-section">
           <div className="work-list-header">
             <span className="col-idx">NO.</span>
@@ -141,7 +139,6 @@ export default function WorkPage() {
                   </div>
                 </div>
 
-                {/* Mobile Inline Image Preview */}
                 <div className="work-row-mobile-img">
                   <img src={project.image} alt={project.title} loading="lazy" />
                 </div>
@@ -150,7 +147,6 @@ export default function WorkPage() {
           </div>
         </section>
 
-        {/* Return Home Link */}
         <div className="myworks-footer-cta">
           <Link href="/" className="return-home-btn" data-cursor="disable">
             RETURN TO HOME

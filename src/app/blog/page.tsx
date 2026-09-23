@@ -54,7 +54,7 @@ export default function BlogPage() {
       <SocialIcons />
 
       <main className="myworks-page-main">
-        {/* Header */}
+
         <header className="myworks-header-editorial">
           <span className="myworks-eyebrow">03 / WRITING & AI EDUCATION</span>
           <h1 className="myworks-title-display">
@@ -65,7 +65,6 @@ export default function BlogPage() {
           </p>
         </header>
 
-        {/* Reader Impact Metrics Strip */}
         <div className="blog-metrics-strip">
           <div className="metric-cell">
             <span className="metric-value">{stats.totalViews}</span>
@@ -85,7 +84,6 @@ export default function BlogPage() {
           </div>
         </div>
 
-        {/* Latest Featured Article Spotlight */}
         {latestArticle && (
           <section className="blog-spotlight-section">
             <div className="spotlight-header-tag">LATEST PUBLISHED ARTICLE</div>
@@ -145,7 +143,6 @@ export default function BlogPage() {
           </section>
         )}
 
-        {/* All Articles Structural List */}
         <section className="work-list-section" style={{ marginTop: "60px" }}>
           <div className="work-list-header">
             <span className="col-idx">NO.</span>
@@ -204,7 +201,6 @@ export default function BlogPage() {
                   </div>
                 </div>
 
-                {/* Mobile Inline Image */}
                 {article.coverImage && (
                   <div className="work-row-mobile-img">
                     <img src={article.coverImage} alt={article.title} loading="lazy" />
@@ -215,7 +211,6 @@ export default function BlogPage() {
           </div>
         </section>
 
-        {/* Medium Profile Direct Link Banner */}
         <div className="blog-medium-banner">
           <MdArticle className="banner-icon" />
           <h3 className="banner-title">Read All Articles Live on Medium</h3>
@@ -233,7 +228,6 @@ export default function BlogPage() {
           </a>
         </div>
 
-        {/* Return Home Link */}
         <div className="myworks-footer-cta">
           <Link href="/" className="return-home-btn" data-cursor="disable">
             RETURN TO HOME

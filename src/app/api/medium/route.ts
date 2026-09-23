@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { config } from "@/data/config";
 
-// Helper to format raw RSS categories into clean capitalized tags
 function formatCategory(cat: string): string {
   return cat
     .split("-")
@@ -26,18 +25,15 @@ export async function GET() {
     const itemMatches = xml.match(/<item>[\s\S]*?<\/item>/g) || [];
 
     const fetchedArticles = itemMatches.map((itemStr, index) => {
-      // 1. Title
       const rawTitle =
         itemStr.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/)?.[1] ||
         itemStr.match(/<title>(.*?)<\/title>/)?.[1] ||
         "Untitled Article";
       const title = rawTitle.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 
-      // 2. Article Link
       const linkMatch = itemStr.match(/<link>(.*?)<\/link>/)?.[1] || "https://medium.com/@ayeshamughal21";
       const link = linkMatch.trim().split("?")[0];
 
-      // 3. Publication Name from Link
       let pub = "Artificial Intelligence in Plain English";
       if (link.includes("codetodeploy")) {
         pub = "Code To Deploy";
@@ -47,7 +43,6 @@ export async function GET() {
         pub = "Medium Tech Publication";
       }
 
-      // 4. Publish Date
       const rawPubDate = itemStr.match(/<pubDate>(.*?)<\/pubDate>/)?.[1] || new Date().toISOString();
       const pubDate = new Date(rawPubDate).toLocaleDateString("en-US", {
         year: "numeric",
@@ -55,14 +50,11 @@ export async function GET() {
         day: "numeric",
       });
 
-      // 5. Author
       const creator = itemStr.match(/<dc:creator><!\[CDATA\[(.*?)\]\]><\/dc:creator>/)?.[1] || "Ayesha Mughal";
 
-      // 6. Cover Image Extraction
       const imgMatch = itemStr.match(/<img[^>]+src=["'](https:\/\/[^"']+)["']/i);
       const coverImage = imgMatch ? imgMatch[1] : undefined;
 
-      // 7. Content Snippet & Word Count
       const snippetContentMatch =
         itemStr.match(/<content:encoded><!\[CDATA\[([\s\S]*?)\]\]><\/content:encoded>/) ||
         itemStr.match(/<description><!\[CDATA\[([\s\S]*?)\]\]><\/description>/);
@@ -83,16 +75,14 @@ export async function GET() {
         if (contentSnippet.length >= 195) contentSnippet += "...";
       }
 
-      // 8. Categories
       const categoryMatches = Array.from(itemStr.matchAll(/<category><!\[CDATA\[(.*?)\]\]><\/category>/g)).map((m) => m[1]);
       const categories = categoryMatches.length
         ? categoryMatches.map(formatCategory).slice(0, 3)
         : ["AI & Engineering", "Python", "Technical Writing"];
 
-      // 9. Read time from word count (standard 200 wpm). The RSS feed has no claps or views.
+      // Read time from word count (200 wpm). The RSS feed has no claps or views.
       const readTime = `${Math.max(2, Math.round(wordCount / 200))} min read`;
 
-      // 10. Highlight Tag
       const highlight = index === 0 ? "LATEST RELEASE" : categories[0] || "TECHNICAL DEEP DIVE";
 
       return {
