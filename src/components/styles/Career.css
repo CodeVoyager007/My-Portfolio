@@ -1,0 +1,220 @@
+.career-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  opacity: 1;
+  height: auto;
+  margin: 100px auto;
+  padding: 80px 0px;
+  width: 100%;
+}
+
+.career-container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 90px;
+  box-sizing: border-box;
+}
+
+.career-section h2.title {
+  font-family: "Geist", sans-serif;
+  font-size: calc(3.5vw + 22px);
+  line-height: calc(3.5vw + 18px);
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 20px;
+  margin-bottom: 70px;
+  letter-spacing: 1px;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.career-section h2.title .hat-h2 {
+  font-style: italic;
+}
+
+.career-section h2.title .do-h2 {
+  color: var(--accentColor);
+}
+
+.career-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.career-info-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 70px;
+  position: relative;
+  width: 100%;
+}
+
+.career-info-in {
+  display: flex;
+  width: 48%;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding-right: 35px;
+  box-sizing: border-box;
+}
+
+.career-role {
+  flex: 1;
+  min-width: 0;
+}
+
+.career-role h4 {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(20px, 1.8vw, 28px);
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.career-role h5 {
+  font-family: "Geist", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  font-size: clamp(13px, 1.1vw, 16px);
+  text-transform: uppercase;
+  margin: 8px 0 0 0;
+  color: var(--accentColor);
+}
+
+.career-info h3 {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(28px, 3.2vw, 44px);
+  margin: 0;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.9);
+  flex-shrink: 0;
+}
+
+.career-info-box p {
+  width: 48%;
+  font-family: "Geist", sans-serif;
+  font-size: clamp(13px, 1.1vw, 15px);
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.7;
+  color: rgba(220, 215, 225, 0.82);
+  padding-left: 35px;
+  box-sizing: border-box;
+}
+
+/* Timeline Vertical Crimson Bar */
+.career-timeline {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    #9E1010 20%,
+    var(--accentColor) 50%,
+    transparent 95%
+  );
+  max-height: 0%;
+  z-index: 2;
+}
+
+.career-dot {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: #9E1010;
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 5px 2px #CF5959, 0px 0px 15px 8px #CF5959,
+    0px 0px 110px 20px #E88080;
+  animation: timeline 0.8s linear infinite forwards;
+}
+
+@keyframes timeline {
+  10%, 20%, 50%, 70%, 90% {
+    box-shadow: 0px 0px 5px 2px #CF5959;
+  }
+  10%, 30%, 0%, 100%, 64%, 80% {
+    box-shadow: 0px 0px 5px 2px #CF5959, 0px 0px 15px 5px #CF5959,
+      0px 0px 110px 20px #E88080;
+  }
+}
+
+/* Responsive Media Queries */
+@media only screen and (max-width: 1024px) {
+  .career-container {
+    padding: 0 60px;
+  }
+
+  .career-info-in {
+    gap: 15px;
+    padding-right: 20px;
+  }
+
+  .career-info-box p {
+    padding-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .career-container {
+    padding: 0 25px;
+  }
+
+  .career-info-box {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 50px;
+  }
+
+  .career-info-in,
+  .career-info-box p {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 0;
+  }
+
+  .career-timeline {
+    left: 10px;
+    transform: none;
+  }
+
+  .career-dot {
+    left: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .career-section {
+    padding: 60px 0;
+    margin: 60px auto;
+  }
+
+  .career-section h2 {
+    font-size: 34px;
+    line-height: 1.15;
+    margin-bottom: 50px;
+  }
+
+  .career-info-in,
+  .career-info-box p {
+    padding-left: 24px;
+  }
+}

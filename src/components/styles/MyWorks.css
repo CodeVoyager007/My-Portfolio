@@ -1,0 +1,655 @@
+/* Option A: Editorial Structural List Layout */
+.myworks-page-main {
+  min-height: 100vh;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 140px 90px 100px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.myworks-header-editorial {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.myworks-eyebrow {
+  font-family: "Geist", sans-serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: var(--accentColor);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+  font-weight: 600;
+}
+
+.myworks-title-display {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: 1.1;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.myworks-title-accent {
+  background: linear-gradient(135deg, #FF8B8B 0%, #CF5959 50%, #9E1010 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.myworks-subtitle {
+  font-family: "Geist", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(220, 215, 225, 0.8);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Desktop Floating Cursor Hover Preview */
+.work-floating-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  display: none;
+}
+
+@media only screen and (min-width: 900px) {
+  .work-floating-preview {
+    display: block;
+  }
+}
+
+.work-floating-preview.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.preview-card-inner {
+  width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0f0b12;
+  border: 1.5px solid rgba(255, 139, 139, 0.45);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(158, 16, 16, 0.35);
+}
+
+.preview-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.preview-meta {
+  padding: 14px 18px;
+  background: rgba(15, 11, 18, 0.95);
+}
+
+.preview-cat {
+  font-family: "Geist", monospace;
+  font-size: 11px;
+  color: var(--accentColor);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.preview-title {
+  font-family: "Geist", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Structural List Table Section */
+.work-list-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  font-family: "Geist", monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.col-idx {
+  width: 50px;
+}
+
+.col-title {
+  flex: 1.4;
+}
+
+.col-tech {
+  flex: 1.1;
+}
+
+.col-action {
+  width: 80px;
+  text-align: right;
+}
+
+/* Row Items */
+.work-list-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-row-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.work-row-item:hover {
+  background: rgba(255, 139, 139, 0.035);
+  border-color: rgba(255, 139, 139, 0.4);
+}
+
+.work-row-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 20px;
+  gap: 30px;
+}
+
+.work-row-idx {
+  font-family: "Geist", monospace;
+  font-size: 16px;
+  color: var(--accentColor);
+  font-weight: 700;
+  width: 50px;
+  flex-shrink: 0;
+}
+
+.work-row-info {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-row-tag-line {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.work-cat-badge {
+  font-family: "Geist", monospace;
+  font-size: 11px;
+  color: var(--accentColor);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.work-featured-badge {
+  font-family: "Geist", monospace;
+  font-size: 10px;
+  background: rgba(158, 16, 16, 0.3);
+  border: 1px solid var(--accentColor);
+  color: #ffffff;
+  padding: 1px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.work-row-title {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.work-row-desc {
+  font-family: "Geist", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(200, 195, 205, 0.78);
+  margin: 0;
+  max-width: 540px;
+}
+
+.work-row-tech {
+  flex: 1.1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.work-tech-pill {
+  font-family: "Geist", monospace;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(230, 225, 235, 0.88);
+}
+
+.work-row-action {
+  width: 80px;
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.work-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Geist", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accentColor);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 14px;
+  border: 1px solid rgba(158, 16, 16, 0.4);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.work-action-btn:hover {
+  background: var(--accentColor);
+  color: #ffffff;
+  border-color: var(--accentColor);
+}
+
+/* Mobile Inline Image Preview */
+.work-row-mobile-img {
+  display: none;
+  padding: 0 20px 24px;
+}
+
+.work-row-mobile-img img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Footer CTA */
+.myworks-footer-cta {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.return-home-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--accentColor);
+  color: #ffffff;
+  font-family: "Geist", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.return-home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(207, 89, 89, 0.45);
+}
+
+/* Responsive Media Queries */
+@media only screen and (max-width: 1024px) {
+  .myworks-page-main {
+    padding: 120px 50px 80px;
+  }
+
+  .work-list-header {
+    display: none;
+  }
+
+  .work-row-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 10px;
+  }
+
+  .work-row-idx {
+    width: auto;
+  }
+
+  .work-row-tech {
+    width: 100%;
+  }
+
+  .work-row-action {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .work-row-mobile-img {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .myworks-page-main {
+    padding: 100px 20px 60px;
+  }
+
+  .myworks-title-display {
+    font-size: 36px;
+  }
+}
+
+/* ==========================================================================
+   BLOG PAGE SPECIAL STYLES (Metrics Strip, Spotlight Card, Medium Banner)
+   ========================================================================== */
+
+/* Reader Impact Metrics Strip */
+.blog-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 50px;
+}
+
+.metric-cell {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.metric-cell:hover {
+  background: rgba(255, 139, 139, 0.05);
+  border-color: rgba(255, 139, 139, 0.3);
+  transform: translateY(-2px);
+}
+
+.metric-value {
+  display: block;
+  font-family: "Geist", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--accentColor);
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  display: block;
+  font-family: "Geist", monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Spotlight Featured Article Card */
+.blog-spotlight-section {
+  margin-bottom: 50px;
+}
+
+.spotlight-header-tag {
+  font-family: "Geist", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accentColor);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.spotlight-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  background: rgba(15, 11, 18, 0.85);
+  border: 1px solid rgba(255, 139, 139, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(158, 16, 16, 0.15);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spotlight-card:hover {
+  border-color: var(--accentColor);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(158, 16, 16, 0.3);
+}
+
+.spotlight-image-col {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.spotlight-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spotlight-card:hover .spotlight-img {
+  transform: scale(1.04);
+}
+
+.spotlight-content-col {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.spotlight-badge-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.spotlight-badge {
+  font-family: "Geist", monospace;
+  font-size: 10px;
+  background: var(--accentColor);
+  color: #ffffff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.spotlight-pub {
+  font-family: "Geist", monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 1px;
+}
+
+.spotlight-title {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 0 0 14px 0;
+}
+
+.spotlight-snippet {
+  font-family: "Geist", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(220, 215, 225, 0.8);
+  margin: 0 0 24px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.spotlight-meta-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+.spotlight-stats {
+  display: flex;
+  gap: 16px;
+  font-family: "Geist", monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.spotlight-stats strong {
+  color: #ffffff;
+}
+
+.spotlight-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Geist", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--accentColor);
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.spotlight-action-btn:hover {
+  background: #e64a4a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(207, 89, 89, 0.4);
+}
+
+/* Medium Profile Banner */
+.blog-medium-banner {
+  margin-top: 70px;
+  background: linear-gradient(135deg, rgba(255, 139, 139, 0.08) 0%, rgba(158, 16, 16, 0.15) 100%);
+  border: 1px solid rgba(255, 139, 139, 0.25);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-icon {
+  font-size: 36px;
+  color: var(--accentColor);
+  margin-bottom: 12px;
+}
+
+.banner-title {
+  font-family: "Geist", sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+}
+
+.banner-desc {
+  font-family: "Geist", sans-serif;
+  font-size: 15px;
+  color: rgba(220, 215, 225, 0.8);
+  max-width: 580px;
+  margin: 0 0 24px 0;
+  line-height: 1.6;
+}
+
+.banner-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Geist", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--accentColor);
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.banner-action-btn:hover {
+  background: #e64a4a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(207, 89, 89, 0.45);
+}
+
+/* Responsive adjustments for Blog elements */
+@media only screen and (max-width: 1024px) {
+  .blog-metrics-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .spotlight-card {
+    grid-template-columns: 1fr;
+  }
+
+  .spotlight-image-col {
+    height: 240px;
+    min-height: 240px;
+  }
+
+  .spotlight-content-col {
+    padding: 24px 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-metrics-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-medium-banner {
+    padding: 24px 16px;
+  }
+}
+

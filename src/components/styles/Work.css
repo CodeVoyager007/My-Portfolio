@@ -1,0 +1,294 @@
+.work-section {
+  transition: 0s;
+  height: 100vh;
+  box-sizing: border-box;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 90px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.work-section h2.title {
+  font-family: "Geist", sans-serif;
+  font-size: calc(3.5vw + 20px);
+  line-height: 1.15;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  background: none;
+  -webkit-text-fill-color: initial;
+  white-space: nowrap;
+}
+
+.work-section h2.title .hat-h2 {
+  font-style: italic;
+}
+
+.work-section h2.title .do-h2 {
+  color: var(--accentColor);
+}
+
+.work-flex {
+  display: flex;
+  position: relative;
+  width: max-content;
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.work-box {
+  padding: 45px 40px;
+  display: flex;
+  flex-direction: column;
+  width: clamp(380px, 32vw, 500px);
+  box-sizing: border-box;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.work-flex .work-box:nth-child(even) {
+  flex-direction: column-reverse;
+}
+
+.work-title {
+  justify-content: space-between;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.work-title > div {
+  text-align: right;
+}
+
+.work-title h3 {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(36px, 3.5vw, 54px);
+  line-height: 1;
+  margin: 0;
+  font-weight: 700;
+  color: var(--accentColor);
+}
+
+.work-title h4 {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(18px, 1.5vw, 24px);
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.work-title p {
+  font-family: "Geist", sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.work-info h4 {
+  font-family: "Geist", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accentColor);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 16px 0 4px 0;
+}
+
+.work-info p {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(13px, 1.1vw, 15px);
+  font-weight: 300;
+  color: rgba(220, 215, 225, 0.82);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.work-image {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.work-image-in {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  display: block;
+}
+
+.work-link {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: rgba(11, 8, 12, 0.85);
+  backdrop-filter: blur(8px);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: var(--accentColor);
+  border: 1px solid rgba(255, 139, 139, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  z-index: 5;
+}
+
+.work-image a:hover .work-link {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.work-image img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.work-image-in:hover img {
+  transform: scale(1.03);
+}
+
+/* See All Works CTA Box */
+.work-box-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: none;
+}
+
+.see-all-works {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.see-all-works h3 {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(24px, 2.5vw, 34px);
+  font-weight: 600;
+  color: #fff;
+}
+
+.see-all-works p {
+  font-family: "Geist", sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 250px;
+  line-height: 1.6;
+}
+
+.see-all-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-family: "Geist", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accentColor);
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.see-all-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(207, 89, 89, 0.45);
+}
+
+/* Responsive Media Queries */
+@media only screen and (max-width: 1024px) {
+  .work-container {
+    padding: 0 50px;
+  }
+
+  .work-box {
+    width: 360px;
+    padding: 35px 25px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .work-section {
+    height: auto;
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .work-container {
+    padding: 0 20px;
+  }
+
+  .work-flex {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    padding-right: 0;
+  }
+
+  .work-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 35px 15px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    gap: 20px;
+  }
+
+  .work-flex .work-box:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .work-section h2 {
+    font-size: 36px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .work-image img {
+    max-height: 220px;
+  }
+
+  .work-box-cta {
+    padding: 40px 15px;
+    border-bottom: none;
+  }
+}

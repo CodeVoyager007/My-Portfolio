@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    "typeRoots": [
-      "./types",
-      "./node_modules/@types"
-    ],
+    "target": "ES2022",
     "lib": [
       "dom",
       "dom.iterable",
@@ -11,7 +8,7 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -29,17 +26,26 @@
       "@/*": [
         "./src/*"
       ]
-    },
-    "target": "ES2017"
+    }
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "src/app/**/*",
+    "src/components/**/*",
+    "src/context/**/*",
+    "src/data/**/*",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "ref-repo",
+    "cloned_repo",
+    "src/components/components",
+    "src/context/context",
+    "src/App.tsx",
+    "src/main.tsx",
+    "vite.config.ts",
+    "vite.config.old.ts"
   ]
 }

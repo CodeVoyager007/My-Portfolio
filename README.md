@@ -8,7 +8,7 @@ Welcome to my portfolio! I'm a passionate developer and AI enthusiast building e
 
 I'm **Ayesha Mughal** — a passionate and persistent learner standing at the intersection of logic and creativity. Currently delving into the intricacies of Agentic AI, I bring along a strong foundation in  development with a flair for interaction, minimalism, and dark design. With 27+ certifications and a commitment to constant growth, I don't just build code — I build experiences.
 
-- **Age**: 16 years old
+- **Age**: 17 years old
 - **Location**: Karachi, Pakistan
 - **Education**: Completed HSC Part II (Intermediate) this year
 - **Languages**: English, Urdu

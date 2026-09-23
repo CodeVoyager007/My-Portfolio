@@ -1,0 +1,571 @@
+/* ==========================================================================
+   CERTIFICATIONS PAGE -- CONCEPT B: EDITORIAL ARCHIVE
+   ========================================================================== */
+
+.certifications-page-main {
+  min-height: 100vh;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 140px 90px 100px;
+  box-sizing: border-box;
+}
+
+/* Header -- matches editorial system */
+.cert-header-editorial {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.cert-eyebrow {
+  font-family: "Geist", sans-serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: var(--accentColor);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+  font-weight: 600;
+}
+
+.cert-title-display {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: 1.1;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cert-title-accent {
+  background: linear-gradient(135deg, #FF8B8B 0%, #CF5959 50%, #9E1010 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline;
+}
+
+.cert-subtitle {
+  font-family: "Geist", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(220, 215, 225, 0.8);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   CREDENTIALS SUMMARY STRIP
+   ========================================================================== */
+.cert-summary-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.cert-stat-cell {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cert-stat-cell:hover {
+  background: rgba(255, 139, 139, 0.05);
+  border-color: rgba(255, 139, 139, 0.3);
+  transform: translateY(-2px);
+}
+
+.cert-stat-value {
+  display: block;
+  font-family: "Geist", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accentColor);
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.cert-stat-label {
+  display: block;
+  font-family: "Geist", monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   HERO CREDENTIAL SPOTLIGHT
+   ========================================================================== */
+.cert-hero-section {
+  margin-bottom: 60px;
+}
+
+.cert-hero-tag {
+  font-family: "Geist", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accentColor);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 700;
+  display: block;
+}
+
+.cert-hero-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  background: rgba(15, 11, 18, 0.85);
+  border: 1px solid rgba(255, 139, 139, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 25px rgba(158, 16, 16, 0.12);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cert-hero-card:hover {
+  border-color: var(--accentColor);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(158, 16, 16, 0.25);
+}
+
+.cert-hero-image-col {
+  position: relative;
+  overflow: hidden;
+  background: #0a080c;
+  min-height: 320px;
+}
+
+.cert-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cert-hero-card:hover .cert-hero-img {
+  transform: scale(1.03);
+}
+
+.cert-hero-content-col {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.cert-hero-badge-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cert-hero-icon-badge {
+  font-family: "Geist", monospace;
+  font-size: 10px;
+  background: var(--accentColor);
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cert-hero-issuer {
+  font-family: "Geist", monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 1px;
+}
+
+.cert-hero-title {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 0;
+}
+
+.cert-hero-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Geist", monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.cert-hero-verified svg {
+  color: var(--accentColor);
+  font-size: 16px;
+}
+
+.cert-hero-action-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cert-hero-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Geist", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--accentColor);
+  padding: 10px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.cert-hero-view-btn:hover {
+  background: #e64a4a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(207, 89, 89, 0.4);
+}
+
+/* ==========================================================================
+   CURSOR-TRACKING FLOATING PREVIEW (Desktop Only)
+   ========================================================================== */
+.cert-floating-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  display: none;
+}
+
+@media only screen and (min-width: 900px) {
+  .cert-floating-preview {
+    display: block;
+  }
+}
+
+.cert-floating-preview.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cert-preview-inner {
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0f0b12;
+  border: 1.5px solid rgba(255, 139, 139, 0.4);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85), 0 0 24px rgba(158, 16, 16, 0.3);
+}
+
+.cert-preview-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.cert-preview-meta {
+  padding: 12px 16px;
+  background: rgba(15, 11, 18, 0.95);
+}
+
+.cert-preview-issuer {
+  font-family: "Geist", monospace;
+  font-size: 10px;
+  color: var(--accentColor);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.cert-preview-title {
+  font-family: "Geist", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   STRUCTURAL ROW LIST
+   ========================================================================== */
+.cert-list-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  font-family: "Geist", monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cert-col-idx {
+  width: 50px;
+}
+
+.cert-col-title {
+  flex: 1.4;
+}
+
+.cert-col-issuer {
+  flex: 0.8;
+}
+
+.cert-col-action {
+  width: 80px;
+  text-align: right;
+}
+
+.cert-list-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Row Items */
+.cert-row-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.cert-row-item:hover {
+  background: rgba(255, 139, 139, 0.035);
+  border-color: rgba(255, 139, 139, 0.35);
+}
+
+.cert-row-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 20px;
+  gap: 24px;
+}
+
+.cert-row-idx {
+  font-family: "Geist", monospace;
+  font-size: 15px;
+  color: var(--accentColor);
+  font-weight: 700;
+  width: 50px;
+  flex-shrink: 0;
+}
+
+.cert-row-info {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cert-row-tag-line {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.cert-row-icon-badge {
+  font-family: "Geist", monospace;
+  font-size: 10px;
+  color: var(--accentColor);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.cert-row-verified-pill {
+  font-family: "Geist", monospace;
+  font-size: 9px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #aaa;
+  padding: 1px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cert-row-verified-pill svg {
+  font-size: 11px;
+  color: var(--accentColor);
+}
+
+.cert-row-title {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(17px, 1.8vw, 24px);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.cert-row-issuer-col {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cert-row-issuer-name {
+  font-family: "Geist", monospace;
+  font-size: 12px;
+  color: rgba(230, 225, 235, 0.8);
+  letter-spacing: 0.5px;
+}
+
+.cert-row-issuer-type {
+  font-family: "Geist", monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cert-row-action {
+  width: 80px;
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.cert-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Geist", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accentColor);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 14px;
+  border: 1px solid rgba(158, 16, 16, 0.4);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.cert-action-btn:hover {
+  background: var(--accentColor);
+  color: #ffffff;
+  border-color: var(--accentColor);
+}
+
+/* Mobile Inline Image */
+.cert-row-mobile-img {
+  display: none;
+  padding: 0 20px 20px;
+}
+
+.cert-row-mobile-img img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Footer CTA */
+.cert-footer-cta {
+  margin-top: 80px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media only screen and (max-width: 1024px) {
+  .certifications-page-main {
+    padding: 120px 50px 80px;
+  }
+
+  .cert-summary-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cert-hero-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-hero-image-col {
+    height: 240px;
+    min-height: 240px;
+  }
+
+  .cert-hero-content-col {
+    padding: 24px 20px;
+  }
+
+  .cert-list-header {
+    display: none;
+  }
+
+  .cert-row-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 10px;
+  }
+
+  .cert-row-idx {
+    width: auto;
+  }
+
+  .cert-row-issuer-col {
+    width: 100%;
+  }
+
+  .cert-row-action {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .cert-row-mobile-img {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .certifications-page-main {
+    padding: 100px 20px 60px;
+  }
+
+  .cert-title-display {
+    font-size: 36px;
+  }
+
+  .cert-summary-strip {
+    grid-template-columns: 1fr;
+  }
+}

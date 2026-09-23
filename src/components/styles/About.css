@@ -1,0 +1,221 @@
+.about-section {
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: 140px auto;
+  position: relative;
+  z-index: 5;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left Column - Seamless 3D Floating Cutout Portrait */
+.about-left-slot {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.portrait-3d-scene {
+  position: relative;
+  width: 340px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+/* Ambient Radial Glow & Orbit Ring */
+.portrait-glow-outer {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 139, 139, 0.35) 0%,
+    rgba(207, 89, 89, 0.25) 45%,
+    rgba(158, 16, 16, 0.1) 75%,
+    transparent 100%
+  );
+  filter: blur(40px);
+  z-index: 1;
+  pointer-events: none;
+  animation: glowPulse 4s ease-in-out infinite alternate;
+}
+
+.portrait-glow-ring {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 139, 139, 0.3);
+  box-shadow: 0 0 35px rgba(207, 89, 89, 0.25);
+  z-index: 2;
+  pointer-events: none;
+  animation: ringRotate 20s linear infinite;
+}
+
+/* 3D Borderless Cutout Image Card */
+.portrait-3d-card {
+  position: relative;
+  z-index: 3;
+  width: 310px;
+  border-radius: 20px;
+  background: transparent;
+  border: none !important;
+  outline: none !important;
+  transform-style: preserve-3d;
+  transform: perspective(1200px) rotateY(-10deg) rotateX(6deg) translateZ(25px);
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.5s ease;
+  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 30px rgba(158, 16, 16, 0.4));
+}
+
+.portrait-3d-card:hover {
+  transform: perspective(1200px) rotateY(0deg) rotateX(0deg) translateZ(45px) scale(1.04);
+  filter: drop-shadow(0 30px 45px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 50px rgba(207, 89, 89, 0.65));
+}
+
+.portrait-3d-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border: none !important;
+  border-radius: 20px;
+  user-select: none;
+}
+
+@keyframes glowPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+@keyframes ringRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Right Column - Narrative & Typography */
+.about-right-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.about-header {
+  margin-bottom: 24px;
+}
+
+/* Exact Title Typography matching What I Do section */
+.about-header .title {
+  font-family: "Geist", sans-serif;
+  font-size: calc(3vw + 20px);
+  line-height: calc(3vw + 16px);
+  font-weight: 600;
+  margin: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-header .title div {
+  display: inline-block;
+}
+
+.about-header .hat-h2 {
+  font-style: italic;
+}
+
+.about-header .do-h2 {
+  color: var(--accentColor);
+}
+
+/* Narrative Bio Paragraphs */
+.about-body-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-lead-para {
+  font-family: "Geist", sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+  font-weight: 400;
+}
+
+.about-secondary-para {
+  font-family: "Geist", sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(200, 195, 205, 0.78);
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .portrait-3d-scene {
+    width: 290px;
+  }
+
+  .portrait-glow-outer {
+    width: 300px;
+    height: 300px;
+  }
+
+  .portrait-glow-ring {
+    width: 270px;
+    height: 270px;
+  }
+
+  .portrait-3d-card {
+    width: 260px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-section {
+    margin: 80px auto;
+  }
+
+  .about-header .title {
+    font-size: 36px;
+    line-height: 38px;
+  }
+
+  .about-lead-para {
+    font-size: 15px;
+  }
+
+  .about-secondary-para {
+    font-size: 14px;
+  }
+}
