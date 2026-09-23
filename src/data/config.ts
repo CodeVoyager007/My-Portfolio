@@ -7,7 +7,7 @@ export const config = {
     location: "Karachi, Pakistan",
     email: "ayeshamughal2162@gmail.com",
     description:
-      "AI Agent Builder and Technical Writer based in Karachi, Pakistan. Building real production tools with FastAPI, Next.js, and Whisper AI — while publishing in-depth technical breakdowns that reached 1.4M+ cumulative views on Medium.",
+      "AI Agent Builder and Technical Writer based in Karachi, Pakistan. Building real production tools with FastAPI, Next.js, and Whisper AI, while publishing in-depth technical breakdowns that reached 1.4M+ cumulative views on Medium.",
   },
   social: {
     github: "https://github.com/CodeVoyager007",
@@ -73,7 +73,7 @@ export const config = {
       technologies: "TypeScript, Next.js, AI History Guide, Tailwind CSS",
       image: "/images/tareekh-jhonky.png",
       description:
-        "AI Seekho 2026 Hackathon Phase 2 Finalist (PKR 2.5M prize pool). An interactive AI guide for Pakistan's historic shrines, mosques, and ancient heritage landmarks — revealing hidden historical stories and folklore for domestic and international visitors.",
+        "AI Seekho 2026 Hackathon Phase 2 Finalist (PKR 2.5M prize pool). An interactive AI guide for Pakistan's historic shrines, mosques, and ancient heritage landmarks, revealing hidden historical stories and folklore for domestic and international visitors.",
       link: "https://github.com/CodeVoyager007/Tareekh-ky-jhonky",
       featured: true,
     },
@@ -106,7 +106,7 @@ export const config = {
       technologies: "Python, AI Agents, LangChain, LiteLLM, FastAPI",
       image: "/images/momentum-ai.png",
       description:
-        "Autonomous AI Employee & Full-Time Equivalent (FTE) agent built for GIAIC hackathon — executing autonomous scheduling, CRM automation, and tool execution loops.",
+        "Autonomous AI Employee & Full-Time Equivalent (FTE) agent built for GIAIC hackathon, executing autonomous scheduling, CRM automation, and tool execution loops.",
       link: "https://github.com/CodeVoyager007/Personal-AI-Employee-Hackathon-0",
       featured: true,
     },
@@ -117,7 +117,7 @@ export const config = {
       technologies: "Next.js, React, Tailwind CSS, TypeScript",
       image: "/images/robotics-course.png",
       description:
-        "A comprehensive educational platform for learning Physical AI and Humanoid Robotics — featuring structured learning modules, interactive resources, and real-time curriculum tracking.",
+        "A comprehensive educational platform for learning Physical AI and Humanoid Robotics, featuring structured learning modules, interactive resources, and real-time curriculum tracking.",
       link: "https://github.com/CodeVoyager007/Physical-AI-Humanoid-Robotics-Course",
       featured: true,
     },
@@ -152,7 +152,7 @@ export const config = {
       technologies: "Next.js, Supabase, Prompt Engineering",
       image: "/images/prompt-vault.png",
       description:
-        "A marketplace for high-quality AI prompts focused on coding and business automation — curated for engineers.",
+        "A marketplace for high-quality AI prompts focused on coding and business automation, curated for engineers.",
       link: "https://github.com/CodeVoyager007/Prompt-Vaulet",
       featured: false,
     },

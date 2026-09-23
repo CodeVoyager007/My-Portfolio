@@ -77,7 +77,7 @@ export default function JourneyPage() {
             THE <span style={{ color: "var(--accentColor)" }}>JOURNEY</span>
           </h1>
           <p style={{ color: "#a09ea8", maxWidth: "680px", margin: "auto", fontSize: "16px", lineHeight: "1.6" }}>
-            Key milestones from curiosity to code — every chapter that shaped the engineer.
+            Key milestones from curiosity to code: every chapter that shaped the engineer.
           </p>
         </div>
 

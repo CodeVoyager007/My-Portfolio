@@ -5,8 +5,8 @@ import { config } from "@/data/config";
 
 export const metadata: Metadata = {
   title: {
-    default: `${config.developer.name} — ${config.developer.title}`,
-    template: `%s — ${config.developer.name}`,
+    default: `${config.developer.name} | ${config.developer.title}`,
+    template: `%s | ${config.developer.name}`,
   },
   description: config.developer.description,
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: `${config.developer.name} — ${config.developer.tagline}`,
+    title: `${config.developer.name} | ${config.developer.tagline}`,
     description: config.developer.description,
     url: "https://ayesha-mughals-portfolio.vercel.app",
     siteName: "Ayesha Mughal Portfolio",
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
         url: "/images/about-portrait.png",
         width: 621,
         height: 1024,
-        alt: `${config.developer.name} — ${config.developer.title}`,
+        alt: `${config.developer.name} | ${config.developer.title}`,
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: `${config.developer.name} — ${config.developer.title}`,
+    title: `${config.developer.name} | ${config.developer.title}`,
     description: config.developer.tagline,
     creator: "@Ayesha_Mughal21",
     images: ["/images/about-portrait.png"],

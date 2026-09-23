@@ -87,7 +87,7 @@ const About = () => {
             <div className="portrait-3d-card">
               <img
                 src="/images/about-portrait.png"
-                alt="Ayesha Mughal — AI Agent Builder"
+                alt="Ayesha Mughal, AI Agent Builder"
                 className="portrait-3d-img"
                 loading="lazy"
                 decoding="async"

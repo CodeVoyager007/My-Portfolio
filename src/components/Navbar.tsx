@@ -90,6 +90,11 @@ const Navbar = () => {
         </a>
         <ul>
           <li>
+            <Link href="/">
+              <HoverLinks text="HOME" />
+            </Link>
+          </li>
+          <li>
             <Link href="/work">
               <HoverLinks text="WORK" />
             </Link>
