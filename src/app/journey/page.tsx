@@ -52,7 +52,7 @@ const milestones = [
     tags: ["Prompt Engineering", "LLMs", "Agentic Workflows"],
   },
   {
-    date: "April 2025 – Present",
+    date: "April 2025 - Present",
     title: "Technical Writer at In Plain English",
     category: "Publication",
     description: "Joined Artificial Intelligence in Plain English on Medium as a regular technical writer, crafting guides for global developer audiences.",
