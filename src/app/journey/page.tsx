@@ -3,89 +3,81 @@
 import Navbar from "@/components/Navbar";
 import SocialIcons from "@/components/SocialIcons";
 import Cursor from "@/components/Cursor";
-import { config } from "@/data/config";
 import Link from "next/link";
-import { MdTimeline, MdArrowOutward } from "react-icons/md";
-import "@/components/styles/MyWorks.css";
+import { MdArrowOutward, MdTimeline } from "react-icons/md";
+import "@/app/journey/journey.css";
 
-const milestones: {
-  date: string;
-  title: string;
-  category: string;
-  description: string;
-  tags: string[];
-  links?: { label: string; href: string; external?: boolean }[];
-}[] = [
+const milestones = [
   {
     date: "October 11, 2026",
     title: "Women Tech Quest 2026: Build with AI",
-    category: "AI Hackathon",
-    description: "Received a Certificate of Participation for the 10th edition of Women Tech Quest. At the Karachi event, I presented Bill Decoder, an AI tool that reads Pakistani electricity bills and explains the charges in plain language. My LinkedIn reflection shares the project, the two test images I missed, and the lesson to verify warnings under time pressure.",
-    tags: ["Women Tech Quest", "Build with AI", "Bill Decoder", "Python", "FastAPI", "Gemini"],
+    category: "AI hackathon",
+    description: "Presented Bill Decoder at the Karachi event: an AI tool that reads Pakistani electricity bills and explains the charges in plain language. The experience sharpened my approach to testing and validating edge cases under time pressure.",
+    tags: ["Women Tech Quest", "Bill Decoder", "Python", "FastAPI", "Gemini"],
     links: [
       { label: "View certificate", href: "/certificates/wtq-2026-certificate-ayesha-mughal.pdf" },
-      { label: "LinkedIn WTQ reflection", href: "https://www.linkedin.com/in/ayesha-mughal-in-tech/recent-activity/all/", external: true },
+      { label: "Read my LinkedIn reflection", href: "https://www.linkedin.com/in/ayesha-mughal-in-tech/recent-activity/all/", external: true },
     ],
   },
   {
     date: "October 3, 2026",
     title: "Alibaba Cloud AI Hackathon Pakistan 2026",
-    category: "AI Hackathon",
-    description: "Presented SpeakUp Coach at the Karachi Regional Technical Evaluation at NASTP Karachi and received a Certificate of Participation. The project provides AI-powered interview preparation and coaching.",
-    tags: ["Alibaba Cloud", "Bano Qabil", "SpeakUp Coach", "AI", "Karachi"],
+    category: "AI hackathon",
+    description: "Presented SpeakUp Coach at the Karachi Regional Technical Evaluation at NASTP Karachi. The project offers AI-powered interview preparation and coaching, and the event brought together builders working on practical AI products.",
+    tags: ["Alibaba Cloud", "SpeakUp Coach", "AI", "Karachi"],
     links: [
       { label: "Verify certificate", href: "https://aihackathon.cognix-pk.com/certificate/Z553-NWSD-ZTMN", external: true },
-      { label: "View certificate image", href: "/certificates/ai-hackathon-karachi-2026-speakup-coach.jpg" },
+      { label: "View certificate", href: "/certificates/ai-hackathon-karachi-2026-speakup-coach.jpg" },
     ],
   },
   {
     date: "June 2026",
     title: "Stanford Code in Place 2026 Graduation",
-    category: "Academic & Engineering",
-    description: "Built interactive software applications in Python. Completed full Stanford CS106A curriculum in the Experienced Student track with official completion certificate signed by Professor Christopher Piech.",
-    tags: ["Python", "Stanford CS106A", "Software Engineering", "Algorithms"],
+    category: "Education",
+    description: "Completed the Stanford CS106A curriculum in the Experienced Student track, building interactive software applications in Python.",
+    tags: ["Python", "Stanford CS106A", "Software engineering", "Algorithms"],
   },
   {
     date: "June 2026",
-    title: "Google Cloud & Generative AI Badges",
-    category: "Cloud & AI Architecture",
-    description: "Earned 1,060+ points and verified credentials across AI Agents, Google ADK, Cloud Run, LLMs, and Generative AI on Google Cloud Skills Boost.",
-    tags: ["Google Cloud", "Generative AI", "LLMs", "AI Agents", "Google ADK"],
+    title: "Google Cloud and Generative AI Badges",
+    category: "Cloud and AI",
+    description: "Earned more than 1,060 points and verified credentials across AI agents, Google ADK, Cloud Run, LLMs, and Generative AI on Google Cloud Skills Boost.",
+    tags: ["Google Cloud", "Generative AI", "LLMs", "AI agents", "Google ADK"],
   },
   {
     date: "May 2026",
-    title: "National AI Competition Contender",
-    category: "Hackathons",
-    description: "Built AI heritage & historical application deployed on Google Cloud Run utilizing Gemini API, Google ADK, and Vector RAG pipelines.",
+    title: "National AI Competition",
+    category: "Hackathon",
+    description: "Built an AI heritage and history application, deployed on Google Cloud Run with Gemini API, Google ADK, and a vector RAG pipeline.",
     tags: ["Gemini API", "Google ADK", "RAG", "Google Cloud Run", "Next.js"],
   },
   {
     date: "April 2026",
     title: "Stanford Code in Place 2026 Acceptance",
-    category: "Academic Honor",
-    description: "Accepted into Stanford Code in Place out of thousands of global applicants. Placed directly into the Experienced Student track.",
+    category: "Education",
+    description: "Accepted into Stanford Code in Place and placed directly into the Experienced Student track.",
     tags: ["Python", "Stanford", "Algorithms"],
   },
   {
     date: "April 2026",
     title: "1.4M+ Cumulative Views on Medium",
-    category: "Technical Publishing",
-    description: "Reached 1.4M+ cumulative Medium views by April 2026. Published flagship articles 'Vibe Coding Is Dead' and 'I Didn't Pay a Single Dollar to Use Claude Code' in In Plain English.",
-    tags: ["Technical Writing", "Medium", "AI Architecture", "Python"],
+    category: "Technical writing",
+    description: "Reached more than 1.4 million cumulative Medium views, publishing articles on AI development for In Plain English.",
+    tags: ["Technical writing", "Medium", "AI", "Python"],
   },
   {
     date: "March 2026",
     title: "Ramadan Prompting Nights: Top 5 of 317",
-    category: "AI Prompting Competition",
-    description: "Won Top 5 out of 317 international prompt engineers for multi-step agentic prompt design and LLM benchmark accuracy.",
-    tags: ["Prompt Engineering", "LLMs", "Agentic Workflows"],
+    category: "Competition",
+    description: "Placed in the top five among 317 participants for multi-step agentic prompt design and LLM benchmark accuracy.",
+    tags: ["Prompt engineering", "LLMs", "Agentic workflows"],
   },
   {
-    date: "April 2025 - Present",
+    date: "April 2025 – Present",
     title: "Technical Writer at In Plain English",
     category: "Publication",
-    description: "Joined Artificial Intelligence in Plain English on Medium as a regular technical writer, crafting guides for global developer audiences.",
-    tags: ["Writing", "Python", "JavaScript", "AI Agents"],
+    description: "Joined Artificial Intelligence in Plain English on Medium as a regular technical writer, creating practical guides for a global developer audience.",
+    tags: ["Writing", "Python", "JavaScript", "AI agents"],
   },
 ];
 
@@ -96,72 +88,43 @@ export default function JourneyPage() {
       <Navbar />
       <SocialIcons />
 
-      <main className="section-container" style={{ paddingTop: "140px", paddingBottom: "100px", minHeight: "100vh" }}>
+      <main className="journey-page">
+        <header className="journey-heading">
+          <span className="journey-eyebrow"><MdTimeline aria-hidden="true" /> Career, learning, and milestones</span>
+          <h1>My <span>journey</span></h1>
+          <p>A timeline of the projects, opportunities, and lessons that have shaped my work in AI and software engineering.</p>
+        </header>
 
-        <div style={{ marginBottom: "60px", textAlign: "center" }}>
-          <span style={{ font: "12px var(--font-mono, monospace)", color: "var(--accentColor)", letterSpacing: ".2em", textTransform: "uppercase" }}>
-            ORIGIN STORY & MILESTONES
-          </span>
-          <h1 style={{ fontSize: "clamp(44px, 7vw, 84px)", font: "900 clamp(44px, 7vw, 84px) var(--font-title, sans-serif)", textTransform: "uppercase", margin: "12px 0 16px" }}>
-            THE <span style={{ color: "var(--accentColor)" }}>JOURNEY</span>
-          </h1>
-          <p style={{ color: "#a09ea8", maxWidth: "680px", margin: "auto", fontSize: "16px", lineHeight: "1.6" }}>
-            Key milestones from curiosity to code: every chapter that shaped the engineer.
-          </p>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "column", gap: "28px", maxWidth: "900px", margin: "auto" }}>
-          {milestones.map((m, idx) => (
-            <div
-              key={idx}
-              style={{
-                background: "#0f0d14",
-                border: "1px solid #221e2c",
-                borderRadius: "8px",
-                padding: "28px",
-                position: "relative",
-              }}
-            >
-              <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "12px", marginBottom: "12px" }}>
-                <span style={{ font: "12px var(--font-mono, monospace)", color: "var(--accentColor)", textTransform: "uppercase", letterSpacing: ".1em" }}>
-                  {m.date}
-                </span>
-                <span style={{ font: "11px var(--font-mono, monospace)", background: "#1b1824", color: "#8a8798", padding: "3px 8px", borderRadius: "4px" }}>
-                  {m.category}
-                </span>
-              </div>
-              <h3 style={{ font: "700 22px var(--font-sans, sans-serif)", color: "#fff", margin: "0 0 10px 0" }}>{m.title}</h3>
-              <p style={{ color: "#a5a2b2", fontSize: "14px", lineHeight: "1.6", marginBottom: "16px" }}>{m.description}</p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-                {m.tags.map((tag, tIdx) => (
-                  <span key={tIdx} style={{ font: "11px var(--font-mono, monospace)", border: "1px solid #282433", color: "#7a7785", padding: "2px 8px", borderRadius: "4px" }}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              {m.links && (
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", marginTop: "18px" }}>
-                  {m.links.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target={link.external ? "_blank" : undefined}
-                      rel={link.external ? "noopener noreferrer" : undefined}
-                      style={{ color: "#ff8b8b", textDecoration: "underline", textUnderlineOffset: "3px", fontSize: "13px" }}
-                    >
-                      {link.label} {link.external && <MdArrowOutward aria-hidden="true" />}
-                    </a>
-                  ))}
+        <ol className="journey-timeline" aria-label="Career and learning milestones">
+          {milestones.map((milestone) => (
+            <li className="journey-item" key={milestone.title}>
+              <span className="journey-marker" aria-hidden="true" />
+              <article className="journey-card">
+                <div className="journey-meta">
+                  <time>{milestone.date}</time>
+                  <span className="journey-category">{milestone.category}</span>
                 </div>
-              )}
-            </div>
+                <h2>{milestone.title}</h2>
+                <p className="journey-description">{milestone.description}</p>
+                <ul className="journey-tags" aria-label="Skills and topics">
+                  {milestone.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                </ul>
+                {milestone.links && (
+                  <div className="journey-links">
+                    {milestone.links.map((link) => (
+                      <a key={link.label} href={link.href} target={link.external ? "_blank" : undefined} rel={link.external ? "noopener noreferrer" : undefined}>
+                        {link.label}{link.external && <MdArrowOutward aria-hidden="true" />}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </article>
+            </li>
           ))}
-        </div>
+        </ol>
 
-        <div style={{ marginTop: "80px", textAlign: "center" }}>
-          <Link href="/" style={{ display: "inline-block", padding: "14px 28px", background: "var(--accentColor)", color: "#fff", fontWeight: "700", textTransform: "uppercase", borderRadius: "4px" }}>
-            ← Return to Home
-          </Link>
+        <div className="journey-footer">
+          <Link href="/">Return to home</Link>
         </div>
       </main>
     </div>

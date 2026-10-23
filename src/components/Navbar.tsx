@@ -91,6 +91,11 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
+            <Link href="/journey" aria-label="Career and learning journey">
+              <HoverLinks text="JOURNEY" />
+            </Link>
+          </li>
+          <li>
             <Link href="/blog">
               <HoverLinks text="BLOG" />
             </Link>
