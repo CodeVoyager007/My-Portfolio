@@ -244,6 +244,8 @@ export const config = {
     },
   ],
   certifications: [
+    { title: "Women Tech Quest 2026: Build with AI (Certificate of Participation)", icon: "WTQ", issuer: "10Pearls - Women Tech Quest", link: "/certificates/wtq-2026-certificate-ayesha-mughal.pdf", image: "/certificates/wtq-2026-certificate-preview.png" },
+    { title: "Alibaba Cloud AI Hackathon Pakistan 2026: SpeakUp Coach (Certificate of Participation)", icon: "AI HACKATHON", issuer: "Alibaba Cloud AI Hackathon Pakistan", link: "https://aihackathon.cognix-pk.com/certificate/Z553-NWSD-ZTMN", image: "/certificates/ai-hackathon-karachi-2026-speakup-coach.jpg" },
     { title: "Ramadan Prompting Nights Challenge 2026 (Top 5 / 317)", icon: "TOP 5", issuer: "International AI Challenge", link: "/certificates/ramadan_prompting_nights_challenge_completion_certificate.pdf", image: "" },
     { title: "Stanford Code in Place 2026 Graduation (Experienced Track)", icon: "STANFORD", issuer: "Stanford University", link: "/certificates/stanford_code_in_place_2026_completion.pdf", image: "" },
     { title: "Harvard CS50 Introduction to AI with Python", icon: "HARVARD", issuer: "Harvard University", link: "/certificates/cs50_introduction_to_ai_with_python.pdf", image: "/certificates/cs50_introduction_to_ai_with_python.jpg" },

@@ -132,7 +132,7 @@ export default function ContactPage() {
 
           <div className="contact-form-card">
             {status === "sent" ? (
-              <div className="contact-submitted-state">
+              <div className="contact-submitted-state" role="status" aria-live="polite">
                 <MdCheckCircle className="contact-submitted-icon" />
                 <h3 className="contact-submitted-title">Message Sent</h3>
                 <p className="contact-submitted-desc">
@@ -156,10 +156,12 @@ export default function ContactPage() {
                 />
 
                 <div className="contact-field-group">
-                  <label className="contact-label">Your Name</label>
+                  <label className="contact-label" htmlFor="contact-name">Your Name</label>
                   <input
+                    id="contact-name"
                     type="text"
                     required
+                    autoComplete="name"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="Jane Doe"
@@ -168,10 +170,12 @@ export default function ContactPage() {
                 </div>
 
                 <div className="contact-field-group">
-                  <label className="contact-label">Email Address</label>
+                  <label className="contact-label" htmlFor="contact-email">Email Address</label>
                   <input
+                    id="contact-email"
                     type="email"
                     required
+                    autoComplete="email"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="jane@example.com"
@@ -180,8 +184,9 @@ export default function ContactPage() {
                 </div>
 
                 <div className="contact-field-group">
-                  <label className="contact-label">Message Content</label>
+                  <label className="contact-label" htmlFor="contact-message">Message Content</label>
                   <textarea
+                    id="contact-message"
                     required
                     minLength={10}
                     maxLength={5000}
@@ -205,6 +210,8 @@ export default function ContactPage() {
                   className="contact-submit-btn"
                   data-cursor="disable"
                   disabled={status === "sending"}
+                  aria-live="polite"
+                  aria-busy={status === "sending"}
                 >
                   {status === "sending" ? "Sending..." : "Send Message"} <MdSend />
                 </button>

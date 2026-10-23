@@ -5,7 +5,7 @@ export class TextSplitter {
   lines: Element[] = [];
   elements: Element[] = [];
   selector: string | Function;
-  private originalHTML: Map<Element, string> = new Map();
+  private originalNodes: Map<Element, Node[]> = new Map();
 
   constructor(target: string | Element | NodeListOf<Element> | Element[], vars?: { type?: string; linesClass?: string }) {
     const type = vars?.type || "chars,words,lines";
@@ -26,8 +26,8 @@ export class TextSplitter {
     this.elements = elements;
 
     elements.forEach((element) => {
-      // Store original HTML for revert
-      this.originalHTML.set(element, element.innerHTML);
+      // Keep the original DOM so text can be restored without reparsing HTML.
+      this.originalNodes.set(element, Array.from(element.childNodes, (node) => node.cloneNode(true)));
 
       if (type.includes("chars") && type.includes("words")) {
         // Split into words first, then chars
@@ -49,17 +49,20 @@ export class TextSplitter {
     const text = element.textContent || "";
     const chars = text.split("");
     
-    element.innerHTML = chars
-      .map((char) => {
-        if (char === " ") {
-          return '<span class="split-char" style="display: inline-block; white-space: pre;"> </span>';
-        }
-        if (char === "\n") {
-          return "<br>";
-        }
-        return `<span class="split-char" style="display: inline-block; white-space: pre;">${char}</span>`;
-      })
-      .join("");
+    const fragment = document.createDocumentFragment();
+    chars.forEach((char) => {
+      if (char === "\n") {
+        fragment.appendChild(document.createElement("br"));
+        return;
+      }
+      const span = document.createElement("span");
+      span.className = "split-char";
+      span.style.display = "inline-block";
+      span.style.whiteSpace = "pre";
+      span.textContent = char;
+      fragment.appendChild(span);
+    });
+    element.replaceChildren(fragment);
 
     this.chars.push(...Array.from(element.querySelectorAll(".split-char")));
   }
@@ -68,14 +71,20 @@ export class TextSplitter {
     const text = element.textContent || "";
     const words = text.split(/(\s+)/);
 
-    element.innerHTML = words
-      .map((word) => {
-        if (word.trim().length === 0) {
-          return word; // Preserve whitespace
-        }
-        return `<span class="split-word" style="display: inline-block; white-space: pre;">${word}</span>`;
-      })
-      .join("");
+    const fragment = document.createDocumentFragment();
+    words.forEach((word) => {
+      if (word.trim().length === 0) {
+        fragment.appendChild(document.createTextNode(word));
+        return;
+      }
+      const span = document.createElement("span");
+      span.className = "split-word";
+      span.style.display = "inline-block";
+      span.style.whiteSpace = "pre";
+      span.textContent = word;
+      fragment.appendChild(span);
+    });
+    element.replaceChildren(fragment);
 
     this.words.push(...Array.from(element.querySelectorAll(".split-word")));
   }
@@ -85,9 +94,16 @@ export class TextSplitter {
     words.forEach((word) => {
       const text = word.textContent || "";
       const chars = text.split("");
-      word.innerHTML = chars
-        .map((char) => `<span class="split-char" style="display: inline-block; white-space: pre;">${char}</span>`)
-        .join("");
+      const fragment = document.createDocumentFragment();
+      chars.forEach((char) => {
+        const span = document.createElement("span");
+        span.className = "split-char";
+        span.style.display = "inline-block";
+        span.style.whiteSpace = "pre";
+        span.textContent = char;
+        fragment.appendChild(span);
+      });
+      word.replaceChildren(fragment);
       this.chars.push(...Array.from(word.querySelectorAll(".split-char")));
     });
   }
@@ -143,14 +159,12 @@ export class TextSplitter {
 
   revert() {
     this.elements.forEach((element) => {
-      const original = this.originalHTML.get(element);
-      if (original !== undefined) {
-        element.innerHTML = original;
-      }
+      const originalNodes = this.originalNodes.get(element);
+      if (originalNodes) element.replaceChildren(...originalNodes);
     });
     this.chars = [];
     this.words = [];
     this.lines = [];
-    this.originalHTML.clear();
+    this.originalNodes.clear();
   }
 }

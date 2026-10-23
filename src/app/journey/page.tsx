@@ -8,7 +8,36 @@ import Link from "next/link";
 import { MdTimeline, MdArrowOutward } from "react-icons/md";
 import "@/components/styles/MyWorks.css";
 
-const milestones = [
+const milestones: {
+  date: string;
+  title: string;
+  category: string;
+  description: string;
+  tags: string[];
+  links?: { label: string; href: string; external?: boolean }[];
+}[] = [
+  {
+    date: "October 11, 2026",
+    title: "Women Tech Quest 2026: Build with AI",
+    category: "AI Hackathon",
+    description: "Received a Certificate of Participation for the 10th edition of Women Tech Quest. At the Karachi event, I presented Bill Decoder, an AI tool that reads Pakistani electricity bills and explains the charges in plain language. My LinkedIn reflection shares the project, the two test images I missed, and the lesson to verify warnings under time pressure.",
+    tags: ["Women Tech Quest", "Build with AI", "Bill Decoder", "Python", "FastAPI", "Gemini"],
+    links: [
+      { label: "View certificate", href: "/certificates/wtq-2026-certificate-ayesha-mughal.pdf" },
+      { label: "LinkedIn WTQ reflection", href: "https://www.linkedin.com/in/ayesha-mughal-in-tech/recent-activity/all/", external: true },
+    ],
+  },
+  {
+    date: "October 3, 2026",
+    title: "Alibaba Cloud AI Hackathon Pakistan 2026",
+    category: "AI Hackathon",
+    description: "Presented SpeakUp Coach at the Karachi Regional Technical Evaluation at NASTP Karachi and received a Certificate of Participation. The project provides AI-powered interview preparation and coaching.",
+    tags: ["Alibaba Cloud", "Bano Qabil", "SpeakUp Coach", "AI", "Karachi"],
+    links: [
+      { label: "Verify certificate", href: "https://aihackathon.cognix-pk.com/certificate/Z553-NWSD-ZTMN", external: true },
+      { label: "View certificate image", href: "/certificates/ai-hackathon-karachi-2026-speakup-coach.jpg" },
+    ],
+  },
   {
     date: "June 2026",
     title: "Stanford Code in Place 2026 Graduation",
@@ -110,6 +139,21 @@ export default function JourneyPage() {
                   </span>
                 ))}
               </div>
+              {m.links && (
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", marginTop: "18px" }}>
+                  {m.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
+                      style={{ color: "#ff8b8b", textDecoration: "underline", textUnderlineOffset: "3px", fontSize: "13px" }}
+                    >
+                      {link.label} {link.external && <MdArrowOutward aria-hidden="true" />}
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -260,6 +260,16 @@ a.contact-social {
   color: var(--accentColor);
 }
 
+.contact-channel-value:focus-visible,
+.contact-social-icon-btn:focus-visible,
+.contact-input:focus-visible,
+.contact-textarea:focus-visible,
+.contact-submit-btn:focus-visible,
+.contact-form-error a:focus-visible {
+  outline: 2px solid #ff8b8b;
+  outline-offset: 3px;
+}
+
 .contact-socials-block {
   padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -346,7 +356,6 @@ a.contact-social {
   color: #ffffff;
   font-family: "Geist", sans-serif;
   font-size: 15px;
-  outline: none;
   box-sizing: border-box;
   transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }

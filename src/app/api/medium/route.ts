@@ -8,6 +8,37 @@ function formatCategory(cat: string): string {
     .join(" ");
 }
 
+function safeArticleLink(value: string): string {
+  try {
+    const url = new URL(value.trim());
+    const host = url.hostname.toLowerCase();
+    const allowedHost =
+      host === "medium.com" ||
+      host.endsWith(".medium.com") ||
+      host === "plainenglish.io" ||
+      host.endsWith(".plainenglish.io") ||
+      host === "codetodeploy.com" ||
+      host.endsWith(".codetodeploy.com");
+    return url.protocol === "https:" && allowedHost
+      ? url.toString()
+      : "https://medium.com/@ayeshamughal21";
+  } catch {
+    return "https://medium.com/@ayeshamughal21";
+  }
+}
+
+function safeCoverImage(value: string | undefined): string | undefined {
+  if (!value) return undefined;
+  try {
+    const url = new URL(value);
+    const host = url.hostname.toLowerCase();
+    const allowedHost = host === "miro.medium.com" || host === "cdn-images-1.medium.com";
+    return url.protocol === "https:" && allowedHost ? url.toString() : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 export async function GET() {
   try {
     const res = await fetch("https://medium.com/feed/@ayeshamughal21", {
@@ -15,6 +46,7 @@ export async function GET() {
       headers: {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
       },
+      signal: AbortSignal.timeout(8_000),
     });
 
     if (!res.ok) {
@@ -32,7 +64,7 @@ export async function GET() {
       const title = rawTitle.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 
       const linkMatch = itemStr.match(/<link>(.*?)<\/link>/)?.[1] || "https://medium.com/@ayeshamughal21";
-      const link = linkMatch.trim().split("?")[0];
+      const link = safeArticleLink(linkMatch.trim().split("?")[0]);
 
       let pub = "Artificial Intelligence in Plain English";
       if (link.includes("codetodeploy")) {
@@ -53,7 +85,7 @@ export async function GET() {
       const creator = itemStr.match(/<dc:creator><!\[CDATA\[(.*?)\]\]><\/dc:creator>/)?.[1] || "Ayesha Mughal";
 
       const imgMatch = itemStr.match(/<img[^>]+src=["'](https:\/\/[^"']+)["']/i);
-      const coverImage = imgMatch ? imgMatch[1] : undefined;
+      const coverImage = safeCoverImage(imgMatch?.[1]);
 
       const snippetContentMatch =
         itemStr.match(/<content:encoded><!\[CDATA\[([\s\S]*?)\]\]><\/content:encoded>/) ||

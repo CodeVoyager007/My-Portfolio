@@ -76,15 +76,6 @@ const Navbar = () => {
           href={`mailto:${config.contact.email}`}
           className="navbar-connect"
           data-cursor="disable"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => {
-            e.preventDefault();
-            window.open(
-              `https://mail.google.com/mail/?view=cm&fs=1&to=${config.contact.email}`,
-              "_blank"
-            );
-          }}
         >
           {config.contact.email}
         </a>

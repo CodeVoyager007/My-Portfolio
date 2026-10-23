@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
+import { headers } from "next/headers";
 import "./globals.css";
 import { LoadingProvider } from "@/context/LoadingProvider";
 import { config } from "@/data/config";
+import { SITE_URL } from "@/data/seo";
 
 export const metadata: Metadata = {
   title: {
@@ -26,14 +28,14 @@ export const metadata: Metadata = {
   authors: [{ name: config.developer.name, url: "https://ayesha-mughals-portfolio.vercel.app" }],
   creator: config.developer.name,
   publisher: config.developer.name,
-  metadataBase: new URL("https://ayesha-mughals-portfolio.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: `${config.developer.name} | ${config.developer.tagline}`,
     description: config.developer.description,
-    url: "https://ayesha-mughals-portfolio.vercel.app",
+    url: SITE_URL,
     siteName: "Ayesha Mughal Portfolio",
     locale: "en_US",
     type: "website",
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: `${config.developer.name} | ${config.developer.title}`,
     description: config.developer.tagline,
     creator: "@Ayesha_Mughal21",
@@ -70,8 +72,8 @@ const jsonLdPerson = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: config.developer.fullName,
-  url: "https://ayesha-mughals-portfolio.vercel.app",
-  image: "https://ayesha-mughals-portfolio.vercel.app/images/about-portrait.png",
+  url: SITE_URL,
+  image: `${SITE_URL}/images/about-portrait.png`,
   jobTitle: config.developer.title,
   worksFor: {
     "@type": "Organization",
@@ -91,17 +93,20 @@ const jsonLdPerson = {
   email: `mailto:${config.contact.email}`,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
   return (
     <html lang="en">
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
+          nonce={nonce}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson).replace(/</g, "\\u003c") }}
         />
       </head>
       <body>
