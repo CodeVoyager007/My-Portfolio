@@ -60,7 +60,7 @@ export const config = {
       title: "SpeakUp Coach",
       category: "AI Interview Coaching Platform",
       technologies: "Next.js, Express, Supabase, Gemini, Claude, Alibaba Bailian",
-      image: "/images/speakup-coach.webp",
+      image: "/images/speakup-coach-portfolio.webp",
       description:
         "A free oral interview practice studio built for candidates who lack access to private coaching. It tailors questions to a job description, evaluates answers against STAR, measures delivery signals such as pace and pauses, then gives actionable Urdu or Roman Urdu coaching. Guest practice is available without an account.",
       link: "https://github.com/CodeVoyager007/Speakup-Coach",
@@ -84,7 +84,7 @@ export const config = {
       title: "PSX Halal Tracker",
       category: "Fintech & Automated Analytics",
       technologies: "Python, Gemini API, Supabase, GitHub Actions, Pandas",
-      image: "/images/psx-halal.webp",
+      image: "/images/psx-halal-portfolio.webp",
       description:
         "A personal watchlist and email briefing service for companies in the PSX KMI All-Share index. Its scheduled pipeline imports market data, computes indicators, and sends daily or weekly digests with closing prices, movers, unusual volume, and RSI extremes; the live dashboard uses passwordless email sign-in.",
       link: "https://github.com/CodeVoyager007/PSX-Halal-Tracker",
@@ -165,24 +165,24 @@ export const config = {
       title: "Yaadon ki Baithak",
       category: "AI, Voice & Family Heritage",
       technologies: "Next.js 16, FastAPI, Gemini, Cloudflare AI, Supabase",
-      image: "/images/yaadon-ki-baithak.svg",
+      image: "/images/yaadon-ki-baithak-portfolio.webp",
       description:
         "A voice-first way to preserve elders’ stories in Urdu and English. I built the story-centered interface and AI agent pipeline around Hudhud, a hoopoe from Urdu folk tales: it listens first, asks at most three gentle clarifying questions, then helps turn the recording into an illustrated, page-turning book with the elder’s real voice. Quote checks and links back to recordings help keep the story grounded in what was actually said.",
       link: "https://github.com/CodeVoyager007/Yaadon-Ki-Baithak",
       demoLink: "https://yaadon-ki-baithak.vercel.app/",
       demoLabel: "LIVE APP",
-      featured: false,
+      featured: true,
     },
     {
       id: 11,
       title: "Bill Decoder",
       category: "Women Tech Quest · AI Prototype",
       technologies: "Next.js 16, FastAPI, Gemini, Pandas, scikit-learn",
-      image: "/images/bill-decoder.svg",
+      image: "/images/bill-decoder-portfolio.webp",
       description:
         "A Women Tech Quest Build with AI prototype built around a modular analysis workspace: upload a dataset or documents, ask questions, extract or classify text, or try a baseline prediction, with results shown alongside charts, tables, or sources. The public repo still contains challenge-day placeholders and a generic custom-mode prompt, so the bill-specific use case and completed event outcome need confirmation before making stronger claims.",
       link: "https://github.com/CodeVoyager007/Bill-Decoder",
-      featured: false,
+      featured: true,
     },
   ],
   experiences: [

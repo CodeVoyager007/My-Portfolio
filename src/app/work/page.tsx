@@ -26,7 +26,10 @@ export default function WorkPage() {
   const allProjects: Project[] = [
     ...config.featuredProjects,
     ...config.secondaryProjects,
-  ];
+  ].sort((a, b) => {
+    const priority = [1, 3, 2, 10, 11, 5, 7, 4, 6, 8, 9];
+    return priority.indexOf(a.id) - priority.indexOf(b.id);
+  });
 
   return (
     <div className="container-main">

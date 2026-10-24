@@ -5,7 +5,11 @@
   place-items: center;
   position: relative;
   opacity: 1;
-  height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  height: auto;
+  padding: 64px 0;
+  box-sizing: border-box;
   width: var(--cWidth);
   max-width: 1920px;
   margin: auto;
@@ -26,7 +30,7 @@
   font-weight: 600;
   margin-right: 10%;
   margin-bottom: 60px;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .hat-h2 {

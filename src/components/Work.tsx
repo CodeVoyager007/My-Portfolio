@@ -2,57 +2,14 @@
 
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
 import { config } from "@/data/config";
 import Link from "next/link";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const Work = () => {
-  useEffect(() => {
-    if (typeof window === "undefined" || window.innerWidth <= 768) return;
-
-    let translateX: number = 0;
-
-    function setTranslateX() {
-      const flex = document.querySelector(".work-flex") as HTMLElement;
-      const container = document.querySelector(".work-container") as HTMLElement;
-      if (!flex || !container) return;
-      const totalWidth = flex.scrollWidth;
-      const visibleWidth = container.clientWidth;
-      translateX = Math.max(0, totalWidth - visibleWidth + 40);
-    }
-
-    setTranslateX();
-
-    let timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".work-section",
-        start: "top top",
-        end: `+=${translateX}`,
-        scrub: 1,
-        pin: true,
-        pinSpacing: true,
-        anticipatePin: 1,
-        id: "work",
-        invalidateOnRefresh: true,
-      },
-    });
-
-    timeline.to(".work-flex", {
-      x: -translateX,
-      ease: "none",
-    });
-
-    ScrollTrigger.refresh();
-
-    return () => {
-      timeline.kill();
-      ScrollTrigger.getById("work")?.kill();
-    };
-  }, []);
+  const priority = [1, 3, 2, 10, 11, 5, 7, 4];
+  const projects = [...config.featuredProjects, ...config.secondaryProjects]
+    .sort((a, b) => priority.indexOf(a.id) - priority.indexOf(b.id))
+    .slice(0, 8);
 
   return (
     <div className="work-section" id="work">
@@ -61,7 +18,7 @@ const Work = () => {
           F<span className="hat-h2">EATURED</span>&nbsp;<span className="do-h2">WORK</span>
         </h2>
         <div className="work-flex">
-          {config.featuredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <div className="work-box" key={project.id}>
               <div className="work-info">
                 <div className="work-title">

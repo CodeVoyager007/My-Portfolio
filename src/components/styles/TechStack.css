@@ -1,11 +1,12 @@
 .techstack-new {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: clip;
   padding: 80px 0;
 }
 
@@ -29,7 +30,7 @@
   letter-spacing: 1px;
   background: none;
   -webkit-text-fill-color: initial;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .techstack-content h2.title .hat-h2 {
