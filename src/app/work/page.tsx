@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import SocialIcons from "@/components/SocialIcons";
 import Cursor from "@/components/Cursor";
 import { config } from "@/data/config";
 import Link from "next/link";
+import Image from "next/image";
 import { MdArrowOutward } from "react-icons/md";
-import gsap from "gsap";
 import "@/components/styles/MyWorks.css";
 
 interface Project {
@@ -18,61 +17,22 @@ interface Project {
   image: string;
   description: string;
   link: string;
+  demoLink?: string;
+  demoLabel?: string;
   featured?: boolean;
 }
 
 export default function WorkPage() {
-  const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
-  const previewRef = useRef<HTMLDivElement>(null);
-
   const allProjects: Project[] = [
     ...config.featuredProjects,
     ...config.secondaryProjects,
   ];
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (previewRef.current && hoveredProject) {
-        gsap.to(previewRef.current, {
-          x: e.clientX + 24,
-          y: e.clientY - 140,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [hoveredProject]);
 
   return (
     <div className="container-main">
       <Cursor />
       <Navbar />
       <SocialIcons />
-
-      <div
-        ref={previewRef}
-        className={`work-floating-preview ${hoveredProject ? "active" : ""}`}
-        aria-hidden="true"
-      >
-        {hoveredProject && (
-          <div className="preview-card-inner">
-            <img
-              src={hoveredProject.image}
-              alt={hoveredProject.title}
-              className="preview-img"
-            />
-            <div className="preview-meta">
-              <span className="preview-cat">{hoveredProject.category}</span>
-              <h4 className="preview-title">{hoveredProject.title}</h4>
-            </div>
-          </div>
-        )}
-      </div>
 
       <main className="myworks-page-main">
 
@@ -96,16 +56,15 @@ export default function WorkPage() {
 
           <div className="work-list-rows">
             {allProjects.map((project, idx) => (
-              <div
-                key={project.id}
-                className="work-row-item"
-                onMouseEnter={() => setHoveredProject(project)}
-                onMouseLeave={() => setHoveredProject(null)}
-              >
-                <div className="work-row-main">
+              <article key={project.id} className="work-row-item">
+                <div className="work-row-main project-row-main">
                   <span className="work-row-idx">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
+
+                  <div className="project-row-image">
+                    <Image src={project.image} alt={`${project.title} project artwork`} fill sizes="(max-width: 1024px) min(100vw, 640px), 220px" priority={idx === 0} />
+                  </div>
 
                   <div className="work-row-info">
                     <div className="work-row-tag-line">
@@ -134,15 +93,24 @@ export default function WorkPage() {
                       className="work-action-btn"
                       data-cursor="disable"
                     >
-                      VIEW <MdArrowOutward />
+                      {project.link.includes("github.com/") ? "SOURCE" : "VIEW"} <MdArrowOutward />
                     </a>
+                    {project.demoLink && (
+                      <a
+                        href={project.demoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="work-action-btn"
+                        data-cursor="disable"
+                        aria-label={`${project.demoLabel ?? "DEMO"}: ${project.title}`}
+                      >
+                        {project.demoLabel ?? "DEMO"} <MdArrowOutward />
+                      </a>
+                    )}
                   </div>
                 </div>
 
-                <div className="work-row-mobile-img">
-                  <img src={project.image} alt={project.title} loading="lazy" />
-                </div>
-              </div>
+              </article>
             ))}
           </div>
         </section>

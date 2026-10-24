@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import SocialIcons from "@/components/SocialIcons";
 import Cursor from "@/components/Cursor";
 import Link from "next/link";
+import Image from "next/image";
 import { MdArrowOutward, MdTimeline } from "react-icons/md";
 import "@/app/journey/journey.css";
 
@@ -12,11 +13,13 @@ const milestones = [
     date: "October 11, 2026",
     title: "Women Tech Quest 2026: Build with AI",
     category: "AI hackathon",
-    description: "Presented Bill Decoder at the Karachi event: an AI tool that reads Pakistani electricity bills and explains the charges in plain language. The experience sharpened my approach to testing and validating edge cases under time pressure.",
+    description: "Took part in the Women Tech Quest 2026 Build with AI track with Bill Decoder, an AI-assisted analysis workspace for uploaded data and documents. The prototype explores how model-generated answers can be presented with tables, charts, and sources people can inspect.",
     tags: ["Women Tech Quest", "Bill Decoder", "Python", "FastAPI", "Gemini"],
+    visual: "/certificates/wtq-2026-certificate-preview.webp",
+    visualAlt: "Women Tech Quest 2026 Build with AI participation certificate awarded to Ayesha Mughal",
     links: [
       { label: "View certificate", href: "/certificates/wtq-2026-certificate-ayesha-mughal.pdf" },
-      { label: "Read my LinkedIn reflection", href: "https://www.linkedin.com/in/ayesha-mughal-in-tech/recent-activity/all/", external: true },
+      { label: "LinkedIn posts about my work", href: "https://www.linkedin.com/in/ayeshaintech/recent-activity/all/", external: true },
     ],
   },
   {
@@ -25,9 +28,11 @@ const milestones = [
     category: "AI hackathon",
     description: "Presented SpeakUp Coach at the Karachi Regional Technical Evaluation at NASTP Karachi. The project offers AI-powered interview preparation and coaching, and the event brought together builders working on practical AI products.",
     tags: ["Alibaba Cloud", "SpeakUp Coach", "AI", "Karachi"],
+    visual: "/certificates/ai-hackathon-karachi-2026-speakup-coach.webp",
+    visualAlt: "Alibaba Cloud AI Hackathon Pakistan 2026 participation certificate for SpeakUp Coach",
     links: [
       { label: "Verify certificate", href: "https://aihackathon.cognix-pk.com/certificate/Z553-NWSD-ZTMN", external: true },
-      { label: "View certificate", href: "/certificates/ai-hackathon-karachi-2026-speakup-coach.jpg" },
+      { label: "View certificate", href: "/certificates/ai-hackathon-karachi-2026-speakup-coach.webp" },
     ],
   },
   {
@@ -106,6 +111,12 @@ export default function JourneyPage() {
                 </div>
                 <h2>{milestone.title}</h2>
                 <p className="journey-description">{milestone.description}</p>
+                {milestone.visual && (
+                  <a className="journey-evidence" href={milestone.visual} target="_blank" rel="noopener noreferrer" aria-label={`Open certificate image for ${milestone.title}`}>
+                    <Image src={milestone.visual} alt={milestone.visualAlt} width={1400} height={990} sizes="(max-width: 640px) 100vw, 500px" />
+                    <span>Certificate preview <MdArrowOutward aria-hidden="true" /></span>
+                  </a>
+                )}
                 <ul className="journey-tags" aria-label="Skills and topics">
                   {milestone.tags.map((tag) => <li key={tag}>{tag}</li>)}
                 </ul>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Yaadon ki Baithak</title><desc id="desc">An open family storybook with a lantern and Urdu inspired decorative details.</desc>
+  <rect width="1200" height="760" fill="#efe5d3"/><path d="M0 590 Q250 530 490 610 T960 585 T1200 590V760H0Z" fill="#d8c6a5"/>
+  <circle cx="920" cy="165" r="88" fill="#e3a858" opacity=".28"/><path d="M880 174h80l-8 80h-64z" fill="#bd704a"/><path d="M894 173q26-59 52 0" fill="none" stroke="#765140" stroke-width="12"/><path d="M920 205v39" stroke="#ffe1a0" stroke-width="8"/>
+  <g transform="translate(220 180)"><path d="M55 35Q250-5 430 45v360Q245 355 55 400Z" fill="#4d6655"/><path d="M430 45Q610-4 810 35v365q-192-45-380 5Z" fill="#faf3e6"/><path d="M430 45v360" stroke="#b8a98d" stroke-width="7"/><path d="M95 95q125-27 275 8M95 138q125-27 275 8M95 181q125-27 275 8" stroke="#e9d7b7" stroke-width="8" opacity=".8"/><path d="M500 98q110-25 245 7M500 145q110-25 245 7M500 192q110-25 245 7" stroke="#ad8d68" stroke-width="7" opacity=".55"/><path d="M500 278q100-92 220-2-112 40-220 2Z" fill="#d18b59" opacity=".7"/><circle cx="608" cy="248" r="37" fill="#e5b765" opacity=".8"/></g>
+  <text x="600" y="665" text-anchor="middle" fill="#34483d" font-family="Georgia,serif" font-size="45" letter-spacing="5">YAADON KI BAITHAK</text>
+</svg>

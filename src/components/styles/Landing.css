@@ -202,6 +202,14 @@
   white-space: nowrap;
 }
 
+.hero-location-line {
+  max-width: 32ch;
+  margin: 14px 0 0;
+  color: rgba(230, 225, 235, 0.78);
+  font: 400 13px/1.55 "Geist", sans-serif;
+  white-space: normal;
+}
+
 @media screen and (max-width: 900px) {
   .landing-section {
     height: auto;

@@ -1,5 +1,6 @@
 import { MdArrowOutward } from "react-icons/md";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Props {
   image: string;
@@ -9,7 +10,7 @@ interface Props {
 
 const WorkImage = (props: Props) => {
   const isExternalLink = Boolean(props.link && !props.link.startsWith("/"));
-  const img = <img src={props.image} alt={props.alt} loading="lazy" decoding="async" />;
+  const img = <Image src={props.image} alt={props.alt ?? "Project artwork"} width={1024} height={535} sizes="(max-width: 900px) 100vw, 50vw" />;
   const arrow = (
     <div className="work-link">
       <MdArrowOutward />

@@ -23,6 +23,33 @@ interface Article {
   categories?: string[];
 }
 
+function ArticleArtwork({ article }: { article: Article }) {
+  const title = article.title.toLowerCase();
+  const topic = title.includes("watermark") || title.includes("security")
+    ? "security"
+    : title.includes("claude") || title.includes("code")
+      ? "developer-tools"
+      : "agent-systems";
+
+  return (
+    <div className={`article-artwork article-artwork--${topic}`} aria-hidden="true">
+      {article.coverImage ? (
+        <img src={article.coverImage} alt="" loading="lazy" decoding="async" />
+      ) : (
+        <>
+          <span className="article-artwork-kicker">{article.pub || "AI & ENGINEERING"}</span>
+          <div className="article-artwork-orbit" />
+          <div className="article-artwork-copy">
+            <span>{article.highlight || "TECHNICAL DEEP DIVE"}</span>
+            <strong>{article.title}</strong>
+          </div>
+          <span className="article-artwork-index">AM / FIELD NOTES</span>
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function BlogPage() {
   const [articles, setArticles] = useState<Article[]>(config.articles);
   const stats = config.writingStats;
@@ -88,16 +115,9 @@ export default function BlogPage() {
           <section className="blog-spotlight-section">
             <div className="spotlight-header-tag">LATEST PUBLISHED ARTICLE</div>
             <div className="spotlight-card">
-              {latestArticle.coverImage && (
-                <div className="spotlight-image-col">
-                  <img
-                    src={latestArticle.coverImage}
-                    alt={latestArticle.title}
-                    className="spotlight-img"
-                    loading="lazy"
-                  />
-                </div>
-              )}
+              <div className="spotlight-image-col">
+                <ArticleArtwork article={latestArticle} />
+              </div>
 
               <div className="spotlight-content-col">
                 <div className="spotlight-badge-line">
@@ -153,11 +173,15 @@ export default function BlogPage() {
 
           <div className="work-list-rows">
             {remainingArticles.map((article, idx) => (
-              <div key={idx} className="work-row-item">
-                <div className="work-row-main">
+              <article key={article.link} className="work-row-item">
+                <div className="work-row-main article-row-main">
                   <span className="work-row-idx">
                     {String(idx + 2).padStart(2, "0")}
                   </span>
+
+                  <div className="article-row-visual">
+                    <ArticleArtwork article={article} />
+                  </div>
 
                   <div className="work-row-info">
                     <div className="work-row-tag-line">
@@ -201,12 +225,7 @@ export default function BlogPage() {
                   </div>
                 </div>
 
-                {article.coverImage && (
-                  <div className="work-row-mobile-img">
-                    <img src={article.coverImage} alt={article.title} loading="lazy" />
-                  </div>
-                )}
-              </div>
+              </article>
             ))}
           </div>
         </section>

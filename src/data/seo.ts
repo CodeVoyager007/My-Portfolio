@@ -16,13 +16,13 @@ export function createPageMetadata(title: string, description: string, path: str
       description,
       siteName: "Ayesha Mughal Portfolio",
       locale: "en_US",
-      images: [{ url: "/images/about-portrait.png", alt: "Ayesha Mughal, AI Agent Builder and Technical Writer" }],
+      images: [{ url: "/images/ayesha-mughal-social.jpg", alt: "Ayesha Mughal, AI agent builder and full-stack developer in Karachi, Pakistan" }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | Ayesha Mughal`,
       description,
-      images: ["/images/about-portrait.png"],
+      images: ["/images/ayesha-mughal-social.jpg"],
       creator: "@Ayesha_Mughal21",
     },
   };

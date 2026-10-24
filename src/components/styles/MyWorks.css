@@ -170,6 +170,35 @@
   gap: 30px;
 }
 
+.project-row-main {
+  display: grid;
+  grid-template-columns: 42px minmax(170px, 220px) minmax(0, 1.35fr) minmax(150px, 0.9fr) 78px;
+  align-items: center;
+  gap: 20px;
+}
+
+.project-row-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid rgba(255, 139, 139, 0.28);
+  border-radius: 7px;
+  background: #100d12;
+}
+
+.project-row-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 350ms ease;
+}
+
+.work-row-item:hover .project-row-image img {
+  transform: scale(1.035);
+}
+
 .work-row-idx {
   font-family: "Geist", monospace;
   font-size: 16px;
@@ -250,8 +279,11 @@
 }
 
 .work-row-action {
-  width: 80px;
+  width: 108px;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
   justify-content: flex-end;
   flex-shrink: 0;
 }
@@ -332,6 +364,15 @@
     padding: 24px 10px;
   }
 
+  .project-row-main {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .project-row-image {
+    width: min(100%, 640px);
+  }
+
   .work-row-idx {
     width: auto;
   }
@@ -342,7 +383,10 @@
 
   .work-row-action {
     width: 100%;
+    flex-direction: row;
     justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   .work-row-mobile-img {
@@ -446,6 +490,157 @@
   object-fit: cover;
   display: block;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.article-artwork {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: clamp(16px, 3vw, 30px);
+  box-sizing: border-box;
+  isolation: isolate;
+  background-color: #100d12;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(ellipse at 80% 22%, rgba(207, 89, 89, 0.32), transparent 45%);
+  background-size: 32px 32px, 32px 32px, auto;
+  color: #fff;
+}
+
+.article-artwork--developer-tools {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(ellipse at 80% 22%, rgba(255, 139, 139, 0.26), transparent 48%);
+}
+
+.article-artwork--security {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(ellipse at 78% 25%, rgba(158, 16, 16, 0.35), transparent 46%);
+}
+
+.article-artwork > img {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-artwork-kicker,
+.article-artwork-index,
+.article-artwork-copy > span {
+  color: rgba(255, 220, 220, 0.8);
+  font: 600 9px/1.4 "Geist", monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.article-artwork-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  max-width: 500px;
+  gap: 9px;
+}
+
+.article-artwork-copy strong {
+  max-width: 16ch;
+  color: #fff;
+  font-size: clamp(18px, 2.5vw, 32px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.article-artwork-index {
+  align-self: flex-end;
+  opacity: 0.6;
+}
+
+.article-artwork-orbit {
+  position: absolute;
+  top: 18%;
+  right: 13%;
+  width: 92px;
+  height: 92px;
+  border: 1px solid rgba(255, 139, 139, 0.48);
+  border-radius: 50%;
+  box-shadow: 0 0 0 16px rgba(255, 139, 139, 0.045), 0 0 0 32px rgba(255, 139, 139, 0.025);
+}
+
+.article-artwork--developer-tools .article-artwork-orbit {
+  width: 74px;
+  height: 74px;
+  border-radius: 8px;
+  transform: rotate(24deg);
+}
+
+.article-artwork--security .article-artwork-orbit {
+  width: 80px;
+  height: 100px;
+  border-radius: 45% 45% 50% 50%;
+  transform: rotate(12deg);
+}
+
+.spotlight-image-col .article-artwork {
+  min-height: 320px;
+}
+
+.article-row-main {
+  display: grid;
+  grid-template-columns: 42px minmax(130px, 176px) minmax(0, 1.45fr) minmax(140px, 0.9fr) 76px;
+  align-items: center;
+  gap: 18px;
+}
+
+.article-row-visual {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid rgba(255, 139, 139, 0.24);
+  border-radius: 6px;
+  background: #100d12;
+}
+
+.article-row-visual .article-artwork {
+  min-height: 0;
+  padding: 12px;
+}
+
+.article-row-visual .article-artwork-kicker,
+.article-row-visual .article-artwork-index,
+.article-row-visual .article-artwork-copy > span {
+  font-size: 7px;
+}
+
+.article-row-visual .article-artwork-copy strong {
+  font-size: clamp(12px, 1.4vw, 17px);
+}
+
+.article-row-visual .article-artwork-orbit {
+  width: 42px;
+  height: 42px;
+  right: 12%;
+}
+
+.article-row-visual .article-artwork--developer-tools .article-artwork-orbit {
+  width: 36px;
+  height: 36px;
+}
+
+.article-row-visual .article-artwork--security .article-artwork-orbit {
+  width: 34px;
+  height: 42px;
 }
 
 .spotlight-card:hover .spotlight-img {
@@ -622,6 +817,23 @@
     min-height: 240px;
   }
 
+  .work-row-main.article-row-main {
+    display: grid;
+    grid-template-columns: 34px minmax(118px, 0.65fr) minmax(0, 1.35fr);
+    align-items: start;
+    gap: 14px;
+  }
+
+  .article-row-main .work-row-tech,
+  .article-row-main .work-row-action {
+    grid-column: 3;
+    width: 100%;
+  }
+
+  .article-row-main .work-row-action {
+    justify-content: flex-start;
+  }
+
   .spotlight-content-col {
     padding: 24px 20px;
   }
@@ -634,6 +846,22 @@
 
   .blog-medium-banner {
     padding: 24px 16px;
+  }
+
+  .work-row-main.article-row-main {
+    grid-template-columns: 28px minmax(0, 1fr);
+    padding: 22px 8px;
+  }
+
+  .article-row-main .article-row-visual,
+  .article-row-main .work-row-info,
+  .article-row-main .work-row-tech,
+  .article-row-main .work-row-action {
+    grid-column: 2;
+  }
+
+  .article-row-main .article-row-visual {
+    width: min(100%, 360px);
   }
 }
 

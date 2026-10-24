@@ -44,6 +44,7 @@ const Landing = () => {
               TECHNICAL WRITER
             </h2>
           </div>
+          <p className="hero-location-line">AI agent builder and full-stack developer based in Karachi, Pakistan.</p>
         </div>
       </div>
     </div>

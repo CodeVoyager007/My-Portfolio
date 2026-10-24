@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 import "./styles/About.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -83,12 +84,13 @@ const About = () => {
             <div className="portrait-glow-ring" aria-hidden="true" />
             
             <div className="portrait-3d-card">
-              <img
-                src="/images/about-portrait.png"
+              <Image
+                src="/images/about-portrait.webp"
                 alt="Ayesha Mughal, AI Agent Builder"
                 className="portrait-3d-img"
-                loading="lazy"
-                decoding="async"
+                width={621}
+                height={1024}
+                sizes="(max-width: 768px) 260px, 310px"
               />
             </div>
           </div>
@@ -106,7 +108,7 @@ const About = () => {
 
           <div className="about-body-narrative">
             <p className="about-lead-para">
-              I am an AI Agent Builder and Full-Stack Engineer based in Karachi, Pakistan. My philosophy is simple: code is proof. While the internet is flooded with AI hype, I focus on stress-testing LLMs, building autonomous agent tool loops, and engineering resilient software architectures.
+              I’m Ayesha Mughal, an AI Agent Builder and Full-Stack Engineer based in Karachi, Pakistan. My philosophy is simple: code is proof. While the internet is flooded with AI hype, I focus on stress-testing LLMs, building autonomous agent tool loops, and engineering resilient software architectures.
             </p>
 
             <p className="about-secondary-para">

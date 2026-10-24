@@ -6,6 +6,7 @@ import SocialIcons from "@/components/SocialIcons";
 import Cursor from "@/components/Cursor";
 import { config } from "@/data/config";
 import Link from "next/link";
+import Image from "next/image";
 import { MdArrowOutward, MdVerified } from "react-icons/md";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -163,10 +164,13 @@ export default function CertificationsPage() {
       >
         {hoveredCert && hoveredCert.image && (
           <div className="cert-preview-inner">
-            <img
+            <Image
               src={hoveredCert.image}
               alt={hoveredCert.title}
               className="cert-preview-img"
+              width={600}
+              height={360}
+              sizes="300px"
             />
             <div className="cert-preview-meta">
               <span className="cert-preview-issuer">
@@ -222,11 +226,13 @@ export default function CertificationsPage() {
           <div className="cert-hero-card">
             <div className="cert-hero-image-col">
               {heroCert.image ? (
-                <img
+                <Image
                   src={heroCert.image}
                   alt={heroCert.title}
                   className="cert-hero-img"
-                  loading="lazy"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  preload
                 />
               ) : (
                 <div
@@ -301,13 +307,20 @@ export default function CertificationsPage() {
                   </span>
 
                   <div className="cert-row-info">
-                    <div className="cert-row-tag-line">
-                      <span className="cert-row-icon-badge">{cert.icon}</span>
-                      <span className="cert-row-verified-pill">
-                        <MdVerified /> VERIFIED
-                      </span>
+                    {cert.image && (
+                      <div className="cert-row-thumb" aria-hidden="true">
+                        <Image src={cert.image} alt="" fill sizes="128px" />
+                      </div>
+                    )}
+                    <div className="cert-row-copy">
+                      <div className="cert-row-tag-line">
+                        <span className="cert-row-icon-badge">{cert.icon}</span>
+                        <span className="cert-row-verified-pill">
+                          <MdVerified /> VERIFIED
+                        </span>
+                      </div>
+                      <h3 className="cert-row-title">{cert.title}</h3>
                     </div>
-                    <h3 className="cert-row-title">{cert.title}</h3>
                   </div>
 
                   <div className="cert-row-issuer-col">
@@ -339,10 +352,12 @@ export default function CertificationsPage() {
 
                 {cert.image && cert.image.length > 0 && (
                   <div className="cert-row-mobile-img">
-                    <img
+                    <Image
                       src={cert.image}
                       alt={cert.title}
-                      loading="lazy"
+                      width={1200}
+                      height={850}
+                      sizes="100vw"
                     />
                   </div>
                 )}
