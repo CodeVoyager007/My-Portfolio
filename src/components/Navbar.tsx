@@ -12,13 +12,13 @@ const Navbar = () => {
         <Link href="/" className="navbar-title" data-cursor="disable">
           AM
         </Link>
-        <a
-          href={`mailto:${config.contact.email}`}
+        <Link
+          href="/contact"
           className="navbar-connect"
           data-cursor="disable"
         >
-          {config.contact.email}
-        </a>
+          CONTACT
+        </Link>
         <ul>
           <li>
             <Link href="/">
@@ -45,12 +45,15 @@ const Navbar = () => {
               <HoverLinks text="CERTS" />
             </Link>
           </li>
-          <li>
-            <Link href="/contact">
-              <HoverLinks text="CONTACT" />
-            </Link>
-          </li>
         </ul>
+        <a
+          href={config.contact.resume}
+          download="Ayesha-Mughal-Resume.pdf"
+          className="navbar-resume"
+          data-cursor="disable"
+        >
+          RESUME <span aria-hidden="true">↗</span>
+        </a>
       </div>
 
       <div className="landing-circle1"></div>

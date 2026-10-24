@@ -11,6 +11,7 @@ import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
 import HoverLinks from "./HoverLinks";
 import { config } from "@/data/config";
+import Link from "next/link";
 
 const SocialIcons = () => {
   useEffect(() => {
@@ -94,24 +95,15 @@ const SocialIcons = () => {
           </a>
         </span>
       </div>
-      <a
+      <Link
+        href="/contact"
         className="resume-button"
-        href={`mailto:${config.contact.email}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={(e) => {
-          e.preventDefault();
-          window.open(
-            `https://mail.google.com/mail/?view=cm&fs=1&to=${config.contact.email}`,
-            "_blank"
-          );
-        }}
       >
         <HoverLinks text="CONTACT" />
         <span>
           <TbNotes />
         </span>
-      </a>
+      </Link>
     </div>
   );
 };

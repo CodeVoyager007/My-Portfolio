@@ -24,7 +24,7 @@
 }
 
 .navbar-connect {
-  display: none;
+  display: block;
   font-size: 13px;
   letter-spacing: 0.8px;
   font-weight: 500;
@@ -33,10 +33,36 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 280px;
+  max-width: 100px;
   margin-right: auto;
   margin-left: 30px;
   transition: color 0.3s ease;
+}
+
+.navbar-resume {
+  flex-shrink: 0;
+  border: 1px solid var(--accentColor);
+  border-radius: 999px;
+  padding: 9px 13px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar-resume:hover,
+.navbar-resume:focus-visible {
+  color: #111;
+  background: var(--accentColor);
+}
+
+.navbar-resume:focus-visible,
+.navbar-connect:focus-visible {
+  outline: 2px solid var(--accentColor);
+  outline-offset: 4px;
 }
 
 .navbar-connect:hover {
@@ -66,17 +92,13 @@
 
 /* Small phones: HOME replaces the logo; wrap instead of overflowing on the narrowest screens */
 @media only screen and (max-width: 480px) {
-  .navbar-title {
-    display: none;
-  }
-
   .header {
-    justify-content: center;
+    gap: 8px;
   }
 
   .header ul {
-    font-size: 11px;
-    column-gap: 12px;
+    font-size: 10px;
+    column-gap: 9px;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -93,9 +115,6 @@
 }
 
 @media only screen and (min-width: 1025px) {
-  .navbar-connect {
-    display: block;
-  }
   .header ul {
     column-gap: 28px;
     font-size: 14px;
@@ -107,7 +126,7 @@
     padding: 30px 0px;
   }
   .navbar-connect {
-    max-width: 400px;
+    max-width: 120px;
     font-size: 15px;
   }
   .header ul {
@@ -116,5 +135,23 @@
   }
   .navbar-title {
     font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .header {
+    gap: 6px;
+  }
+  .header ul {
+    column-gap: 6px;
+    font-size: 9px;
+  }
+  .navbar-resume {
+    padding: 7px 9px;
+    font-size: 9px;
+  }
+  .navbar-connect {
+    font-size: 10px;
+    margin-left: 0;
   }
 }
