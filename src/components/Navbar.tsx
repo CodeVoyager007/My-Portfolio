@@ -50,11 +50,6 @@ const Navbar = () => {
               <HoverLinks text="CONTACT" />
             </Link>
           </li>
-          <li>
-            <a href={config.contact.resume} download="Ayesha-Mughal-Resume.pdf">
-              <HoverLinks text="RESUME" />
-            </a>
-          </li>
         </ul>
       </div>
 

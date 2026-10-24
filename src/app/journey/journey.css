@@ -141,40 +141,6 @@
   line-height: 1.75;
 }
 
-.journey-evidence {
-  display: grid;
-  width: min(100%, 500px);
-  margin-top: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 7px;
-  background: #f6f6f6;
-  text-decoration: none;
-}
-
-.journey-evidence img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1.414 / 1;
-  object-fit: contain;
-}
-
-.journey-evidence > span {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 9px 12px;
-  background: #100d12;
-  color: #ff9a9a;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.journey-evidence:hover > span,
-.journey-evidence:focus-visible > span {
-  color: #fff;
-}
-
 .journey-tags {
   display: flex;
   flex-wrap: wrap;

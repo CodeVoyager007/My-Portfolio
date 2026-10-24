@@ -6,7 +6,7 @@ import SocialIcons from "@/components/SocialIcons";
 import Cursor from "@/components/Cursor";
 import { config } from "@/data/config";
 import Link from "next/link";
-import { MdEmail, MdLocationOn, MdSend, MdCheckCircle } from "react-icons/md";
+import { MdEmail, MdLocationOn, MdSend, MdCheckCircle, MdDownload } from "react-icons/md";
 import { FaGithub, FaLinkedin, FaMedium, FaTwitter } from "react-icons/fa";
 import "@/components/styles/Contact.css";
 
@@ -80,6 +80,19 @@ export default function ContactPage() {
                 <div className="contact-channel-value">
                   {config.contact.location}
                 </div>
+              </div>
+
+              <div className="contact-channel-item contact-resume-item">
+                <div className="contact-channel-label">Resume</div>
+                <a
+                  href={config.contact.resume}
+                  download="Ayesha-Mughal-Resume.pdf"
+                  className="contact-resume-link"
+                  data-cursor="disable"
+                >
+                  <MdDownload aria-hidden="true" />
+                  Download my resume
+                </a>
               </div>
             </div>
 
